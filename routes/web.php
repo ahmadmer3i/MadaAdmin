@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::controller(AdminController::class)->group(function () {
+    Route::get('admin/logout', 'destroy')->name('admin.logout');
+    Route::get('admin/profile', 'profile')->name('admin.profile');
+    Route::get('admin/edit/profile', 'edit_profile')->name('edit.profile');
+    Route::post('admin/update/profile', 'store_profile')->name('update.profile');
+    Route::get('admin/profile/change/password', 'change_password')->name('admin.profile.change.password');
+    Route::post('admin/profile/update/password', 'update_password')->name('admin.profile.update.password');
+});
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('admin.index');
+})->middleware([ 'auth', 'verified' ])->name('dashboard');
 
 require __DIR__ . '/auth.php';
