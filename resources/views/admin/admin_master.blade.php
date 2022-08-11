@@ -4,35 +4,38 @@
 <head>
 
     <meta charset="utf-8"/>
-    <title>Dashboard | Upcube - Admin & Dashboard Template</title>
+    <title>MADA | Admin Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description"/>
-    <meta content="Themesdesign" name="author"/>
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="{{  asset('backend/assets/images/favicon.ico') }}">
-
+    <meta content="MADA | Admin Dashboard" name="description"/>
+    <meta content="" name="author"/>
+    <!-- DataTables -->
     <!-- jquery.vectormap css -->
-    <link href="{{  asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}"
+    <link href="{{asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}"
           rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- DataTables -->
-    <link href="{{  asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}"
-          rel="stylesheet"
+    <link href="{{asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
           type="text/css"/>
 
     <!-- Responsive datatable examples -->
-    <link href="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}"
+    <link href="{{asset('backend/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}"
           rel="stylesheet" type="text/css"/>
 
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.1/css/bootstrap-colorpicker.min.css"
+          rel="stylesheet">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.1/js/bootstrap-colorpicker.min.js"></script>
+
     <!-- Bootstrap Css -->
-    <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet"
+    <link href="{{asset('backend/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet"
           type="text/css"/>
     <!-- Icons Css -->
-    <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('backend/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css"/>
     <!-- App Css-->
-    <link href="{{ asset('backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('backend/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-
 </head>
 
 <body data-topbar="dark">
@@ -96,13 +99,21 @@
 <!-- Responsive examples -->
 <script src="{{asset('backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{asset('backend/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
-
+<script src="{{asset('backend/assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js')}}"></script>
+<script src="{{asset('backend/assets/libs/datatables.net-select/js/dataTables.select.min.js')}}"></script>
+<script src="{{asset('backend/assets/libs/tinymce/tinymce.min.js')}}"></script>
+<script src="{{asset('backend/assets/js/pages/form-editor.init.js')}}"></script>
 <script src="{{asset('backend/assets/js/pages/dashboard.init.js')}}"></script>
 
+{{--Ionic--}}
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <!-- App js -->
-<script src="{{asset('backend/assets/js/app.js')}}"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="{{asset('backend/assets/js/pages/datatables.init.js')}}"></script>
 
+<script src="{{asset('backend/assets/js/app.js')}}"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script>
     @if(Session::has('message'))
     const type = "{{ Session::get('alert-type','info') }}";
@@ -125,6 +136,8 @@
     }
     @endif
 </script>
+
+
 </body>
 
 </html>

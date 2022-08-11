@@ -30,6 +30,7 @@
     <!--CSS -->
     <link href='{{asset('frontend/content/css/structure.css')}}' rel='stylesheet'>
     <link href='{{asset('frontend/content/css/finance2.css')}}' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ asset('frontend/content/css/custom.css') }}">
     <!-- Revolution Slider -->
     <link href="{{asset('frontend/content/plugins/rs-plugin-6.custom/css/rs6.css')}}"
           rel="stylesheet">
@@ -41,9 +42,9 @@
     @include('frontend.body.header')
     <div id="Content">
         @yield('main')
-        @include('frontend.body.subfooter')
-    </div>
 
+    </div>
+    @include('frontend.body.subfooter')
     @include('frontend.body.footer')
 </div>
 <div class="right light" data-width="250" id="Side_slide">
@@ -69,6 +70,8 @@
 <script src="{{asset('frontend/content/js/scripts.js')}}"></script>
 <script src="{{asset('frontend/content/plugins/rs-plugin-6.custom/js/revolution.tools.min.js')}}"></script>
 <script src="{{asset('frontend/content/plugins/rs-plugin-6.custom/js/rs6.min.js')}}"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 

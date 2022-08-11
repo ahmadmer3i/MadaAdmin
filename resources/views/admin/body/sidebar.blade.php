@@ -19,55 +19,75 @@
                     </a>
                 </li>
 
+
                 <li>
-                    <a href="calendar.html" class=" waves-effect">
-                        <i class="ri-calendar-2-line"></i>
-                        <span>Calendar</span>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-mail-send-line"></i>
+                        <span>Home Page</span>
                     </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('home.hero') }}">Hero</a></li>
+                        <li><a href="{{ route('home.counter') }}">Counter Section</a></li>
+                        <li><a href="{{ route('home.overview') }}">Overview Section</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-account-box-fill"></i>
+                        <span>About Page</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('about.about-title') }}">Title And Image</a></li>
+                        <li><a href="{{ route('about.core-values') }}">Core Values</a></li>
+                        <li><a href="{{ route('about.mission') }}">Mission Section</a></li>
+                        <li><a href="{{ route('about.vision') }}">Vision Section</a></li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-account-box-fill"></i>
+                        <span>Services Page</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('services.title') }}">Header & Services</a></li>
+                    </ul>
                 </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-mail-send-line"></i>
-                        <span>Email</span>
+                        <span>Clients Page</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="email-inbox.html">Inbox</a></li>
-                        <li><a href="email-read.html">Read Email</a></li>
+                        <li><a href="{{ route('clients.title') }}">Header Image & Title</a></li>
+                        <li><a href="{{ route('clients.list') }}">Clients List</a></li>
                     </ul>
                 </li>
-
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-layout-3-line"></i>
-                        <span>Layouts</span>
+                        <i class="ri-mail-send-line"></i>
+                        <span>Partners Page</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="true">
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">Vertical</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="layouts-dark-sidebar.html">Dark Sidebar</a></li>
-                                <li><a href="layouts-compact-sidebar.html">Compact Sidebar</a></li>
-                                <li><a href="layouts-icon-sidebar.html">Icon Sidebar</a></li>
-                                <li><a href="layouts-boxed.html">Boxed Layout</a></li>
-                                <li><a href="layouts-preloader.html">Preloader</a></li>
-                                <li><a href="layouts-colored-sidebar.html">Colored Sidebar</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">Horizontal</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="layouts-horizontal.html">Horizontal</a></li>
-                                <li><a href="layouts-hori-topbar-light.html">Topbar light</a></li>
-                                <li><a href="layouts-hori-boxed-width.html">Boxed width</a></li>
-                                <li><a href="layouts-hori-preloader.html">Preloader</a></li>
-                                <li><a href="layouts-hori-colored-header.html">Colored Header</a></li>
-                            </ul>
-                        </li>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('partners.title') }}">Header Image & Title</a></li>
+                        <li><a href="{{ route('partners.list') }}">Partners List</a></li>
                     </ul>
                 </li>
-
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-mail-send-line"></i>
+                        <span>Contact Us Page</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('contacts-us.title') }}">Header Image & Title</a></li>
+                        <li><a href="{{ route('contact-us.why') }}">Why Section</a></li>
+                        <li><a href="{{ route('contact-us.address') }}">Company Address</a></li>
+                        <li><a href="{{ route('contact-us.social-media') }}">Social Media Links</a></li>
+                        <li><a href="{{ route('contact-us.email') }}">Emails</a></li>
+                    </ul>
+                </li>
                 <li class="menu-title">Pages</li>
 
                 <li>
@@ -97,7 +117,7 @@
                         <li><a href="pages-500.html">Error 500</a></li>
                     </ul>
                 </li>
-                
+
 
             </ul>
         </div>
