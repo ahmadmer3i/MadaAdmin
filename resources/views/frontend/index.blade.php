@@ -18,7 +18,7 @@
     @include('frontend.body.home_services')
 
     <script type="text/javascript">
-        var revapi1, tpj;
+        let revapi1, tpj;
 
         function revinit_revslider11() {
             jQuery(function () {
@@ -52,7 +52,7 @@
                 }
             });
         } // End of RevInitScript
-        var once_revslider11 = false;
+        let once_revslider11 = false;
         if (document.readyState === "loading") {
             document.addEventListener("readystatechange", function () {
                 if ((document.readyState === "interactive" || document.readyState === "complete") && !once_revslider11) {

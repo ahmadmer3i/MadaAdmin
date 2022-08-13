@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @method static findOrFail()
+ * @method static findOrFail($num)
  */
 class Contact extends Model
 {

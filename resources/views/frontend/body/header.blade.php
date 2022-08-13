@@ -95,8 +95,7 @@
                     <div class="top_bar_right">
                         <div class="top_bar_right_wrapper"><a
                                 class="action_button"
-                                href="#"
-                                target="_blank">Apply now <i
+                                href="{{route('request_page')}}">Apply now <i
                                     class="icon-right-open"></i></a>
                         </div>
                     </div>

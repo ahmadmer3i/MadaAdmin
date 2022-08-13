@@ -23,7 +23,7 @@
                                     @csrf
                                     <input type="hidden" name="id" value="{{$partner->id}}">
                                     <div class="row mb-3 mt-5">
-                                        <label for="title" class="col-sm-2 col-form-label">Partner Name</label>
+                                        <label for="name" class="col-sm-2 col-form-label">Partner Name</label>
                                         <div class="col-sm-10">
                                             <input class="form-control" type="text" id="name" name="name"
                                                    placeholder="Partner Name"
@@ -31,7 +31,7 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3 mt-5">
-                                        <label for="subtitle" class="col-sm-2 col-form-label">Partner
+                                        <label for="description" class="col-sm-2 col-form-label">Partner
                                             Description</label>
                                         <div class="col-sm-10">
                                             <textarea

@@ -17,18 +17,7 @@
                     <div class="col-12">
                         <hr style="margin:0 auto 30px;"/>
                     </div>
-                    <div class="col-md-8">
-                        <p> If you have any questions, order a free
-                            conversation with our consultant </p>
-                        <h6>CALL US</h6>
-                        <h4><span style="color: #db4041;">+962 79 979 8886</span>
-                        </h4></div>
-                    <div class="col-md-4 text-right"><img
-                            alt="finance2-pic3"
-                            height="48"
-                            src="{{asset('frontend/content/images/finance2-pic3.png')}}"
-                            title=""
-                            width="84"/></div>
+                    @include('frontend.body.phone')
                 </div>
             </div>
             <div class="col-md-6" style="padding:0 4%"><img
@@ -38,24 +27,17 @@
                     src="{{ !empty($contact_title->image) ? $contact_title->image : 'upload/960-854.png' }}"
                     title="" width="960"/></div>
         </div>
+
     </div>
     @include('frontend.body.contact_ways')
     @include('frontend.body.contact_form')
     @include('frontend.body.contact_why')
     <script>
-
-
         let items = <?php echo json_encode($social_media); ?>;
-        console.log(items);
         for (let item of items) {
-            console.log(item);
-
             let icon = document.querySelector(`#${item.name}`)
-            console.log(icon);
-
             icon.firstElementChild.style.fontSize = '44px'
             icon.firstElementChild.style.color = `${item.icon_color}`
         }
-
     </script>
 @endsection

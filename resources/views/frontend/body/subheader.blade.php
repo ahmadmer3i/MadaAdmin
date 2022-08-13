@@ -1,10 +1,9 @@
 @section('subheader')
     @php
         $home_hero = \App\Models\HomeHero::find(1);
-
+        $phone=  \App\Models\ContactPhoneList::findOrFail(1);
     @endphp
     <div class="mfn-main-slider mfn-rev-slider">
-        <!-- START Home Finance2 REVOLUTION SLIDER 6.3.6 -->
         <p class="rs-p-wp-fix"></p>
         <rs-module-wrap data-source="gallery"
                         id="rev_slider_1_1_wrapper"
@@ -73,7 +72,7 @@
                            data-text="w:normal;s:17;l:55;fw:600;"
                            data-type="button"
                            data-xy="x:c;xo:-480px,-480px,-50px,-50px;yo:545px,545px,330px,330px;"
-                           href="about.html"
+                           href="{{route('about')}}"
                            id="slider-1-slide-1-layer-4"
                            rel="nofollow"
                            style="z-index:11;background-color:#efefef;font-family:Gotham, sans-serif;"
@@ -104,7 +103,7 @@
                                   data-xy="x:c;xo:-614px,-614px,-248px,-248px;yo:784px,784px,317px,317px;"
                                   id="slider-1-slide-1-layer-8"
                                   style="z-index:14;font-family:Gotham,sans-serif;">
-                            {{ $home_hero->contact_phone }}
+                            {{ $phone->phone }}
                         </rs-layer>
                         <rs-layer
                             data-border="bor:50%,50%,50%,50%;"
@@ -200,7 +199,7 @@
                            data-text="w:normal;s:17;l:55;fw:600;"
                            data-type="button"
                            data-xy="x:c;xo:-655px,-655px,-221px,-221px;yo:545px,545px,330px,330px;"
-                           href="contact.html"
+                           href="{{route('contact-us')}}"
                            id="slider-1-slide-1-layer-18"
                            rel="nofollow"
                            style="z-index:10;background-color:#2b4076;font-family:Gotham,sans-serif;"

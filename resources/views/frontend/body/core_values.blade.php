@@ -1,5 +1,5 @@
 <div class="section mcb-section"
-     style="padding-top:30px;padding-bottom:0px;background-image:url({{asset('frontend/content/images/fsecbig3.png')}});background-repeat:no-repeat;background-position:center top">
+     style="padding-top:30px;padding-bottom:{{!Route::is('about') ? '20px' : '60px'}};background-image:url({{asset('frontend/content/images/fsecbig3.png')}});background-repeat:no-repeat;background-position:center top">
     <div class="container">
         <div class="row">
             <div class="col-md-8"
@@ -46,13 +46,16 @@
                                 {{ $core->description }}
                             </p>
                         </div>
-                        <a class="button has-icon button_right button_size_2"
-                           href="our-services.html"
-                           style="background-color:#f4f4f4!important;color:#000;"><span
-                                class="button_icon"><i
-                                    class="icon-right-open"
-                                    style="color:#000000!important;"></i></span><span
-                                class="button_label">Read more</span></a>
+                        @if(!request()->is('about'))
+                            <a class="button has-icon button_right button_size_2"
+                               href="our-services.html"
+                               style="background-color:#f4f4f4!important;color:#000;"><span
+                                    class="button_icon"><i
+                                        class="icon-right-open"
+                                        style="color:#000000!important;"></i></span><span
+                                    class="button_label">Read more</span></a>
+                        @endif
+
                     </div>
                 @endforeach
             @endif

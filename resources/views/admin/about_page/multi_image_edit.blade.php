@@ -7,7 +7,6 @@
                     <div class="col-8">
                         <div class="card">
                             <div class="card-body">
-
                                 <h4 class="card-title">Edit Image</h4>
                                 <form action="{{ route('about.multi-image.update') }}" method="post"
                                       enctype="multipart/form-data">
@@ -40,7 +39,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     <script type="text/javascript">
         $(document).ready(function () {

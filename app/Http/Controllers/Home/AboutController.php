@@ -13,10 +13,11 @@ use Intervention\Image\Facades\Image;
 
 class AboutController extends Controller
 {
-    public function about()
+    public function __construct()
     {
-        return view('frontend.about');
+        $this->middleware('auth')->except([ 'index', 'show' ]);
     }
+
 
     public function about_title()
     {

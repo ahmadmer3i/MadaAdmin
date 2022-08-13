@@ -13,7 +13,15 @@
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $contact_address->id }}">
                                     <div class="row mb-3 mt-5">
-                                        <label for="title" class="col-sm-2 col-form-label">Office</label>
+                                        <label for="title" class="col-sm-2 col-form-label">Title</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" type="text" id="title" name="title"
+                                                   placeholder="Title"
+                                                   value="{{!empty($contact_address->title) ? $contact_address->title : ''}}">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3 mt-5">
+                                        <label for="office" class="col-sm-2 col-form-label">Office</label>
                                         <div class="col-sm-10">
                                             <input class="form-control" type="text" id="office" name="office"
                                                    placeholder="Office"
@@ -55,8 +63,7 @@
                                          </div>
                                      </div>--}}
                                     <div class="row mb-3">
-                                        <label for="address_icon" class="col-sm-2 col-form-label">Header
-                                            Image</label>
+                                        <label for="address_icon" class="col-sm-2 col-form-label">Address Icon</label>
                                         <div class="col-sm-10">
                                             <input class="form-control" type="file" id="address_icon"
                                                    name="address_icon"

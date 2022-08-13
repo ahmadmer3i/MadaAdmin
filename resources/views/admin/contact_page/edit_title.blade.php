@@ -20,6 +20,14 @@
                                                    value="{{!empty($contact_title->title) ? $contact_title->title : ''}}">
                                         </div>
                                     </div>
+                                    <div class="row mb-5 mt-5">
+                                        <label for="subtitle" class="col-sm-2 col-form-label">Subtitle</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" type="text" id="subtitle" name="subtitle"
+                                                   placeholder="Subtitle"
+                                                   value="{{!empty($contact_title->subtitle) ? $contact_title->subtitle : ''}}">
+                                        </div>
+                                    </div>
                                     {{-- <div class="row mb-3 mt-5">
                                          <label for="title" class="col-sm-2 col-form-label">Title</label>
                                          <div class="col-sm-10">

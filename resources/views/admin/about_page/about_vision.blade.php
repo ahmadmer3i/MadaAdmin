@@ -25,7 +25,7 @@
                                         </div>
                                     </div>
                                     <div class="row mb-5 mt-5">
-                                        <label for="title" class="col-sm-2 col-form-label">Description</label>
+                                        <label for="description" class="col-sm-2 col-form-label">Description</label>
                                         <div class="col-sm-10">
                                             <textarea
                                                 rows="5"

@@ -11,10 +11,9 @@ use Intervention\Image\Facades\Image;
 
 class PartnersController extends Controller
 {
-    public function partners()
+    public function __construct()
     {
-        $partner_data = Partners::findOrFail(1);
-        return view('frontend.partners', compact('partner_data'));
+        $this->middleware('auth')->except([ 'index', 'show' ]);
     }
 
     public function partners_title()

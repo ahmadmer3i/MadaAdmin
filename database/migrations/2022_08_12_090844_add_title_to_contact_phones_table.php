@@ -12,12 +12,8 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('contact_social_media', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->nullable();
-            $table->string('link')->nullable();
-            $table->string('icon')->nullable();
-            $table->timestamps();
+        Schema::table('contact_phones', function (Blueprint $table) {
+            $table->string('title')->nullable();
         });
     }
 
@@ -28,6 +24,8 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('contact_social_media');
+        Schema::table('contact_phones', function (Blueprint $table) {
+            $table->dropColumn('title');
+        });
     }
 };

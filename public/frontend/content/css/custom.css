@@ -3,3 +3,16 @@
     border-radius: 5px;
     color: #ffffff;
 }
+
+.font-type input {
+    font-family: 'Gotham', sans-serif;
+    unicode-bidi: embed;
+
+}
+
+.font-type h4, .font-type h3, .font-type h2 {
+    font-family: "GE Flow", sans-serif;
+    direction: rtl;
+
+}
+

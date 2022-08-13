@@ -12,11 +12,11 @@ use function Symfony\Component\String\u;
 
 class ClientsController extends Controller
 {
-    public function clients()
+    public function __construct()
     {
-        $client_title = Clients::findOrFail(1);
-        return view('frontend.client', compact('client_title'));
+        $this->middleware('auth')->except([ 'index', 'show' ]);
     }
+
 
     public function client_list()
     {

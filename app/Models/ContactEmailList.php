@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @method static insert(array $array)
+ * @method static findOrFail($id)
  */
 class ContactEmailList extends Model
 {

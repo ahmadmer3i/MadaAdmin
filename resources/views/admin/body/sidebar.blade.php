@@ -12,7 +12,7 @@
                 <li class="menu-title">Menu</li>
 
                 <li>
-                    <a href="index.html" class="waves-effect">
+                    <a href="{{route('dashboard')}}" class="waves-effect">
                         <i class="ri-dashboard-line"></i><span
                             class="badge rounded-pill bg-success float-end">3</span>
                         <span>Dashboard</span>
@@ -86,39 +86,35 @@
                         <li><a href="{{ route('contact-us.address') }}">Company Address</a></li>
                         <li><a href="{{ route('contact-us.social-media') }}">Social Media Links</a></li>
                         <li><a href="{{ route('contact-us.email') }}">Emails</a></li>
+                        <li><a href="{{ route('contact-us.phones') }}">Phones</a></li>
                     </ul>
                 </li>
-                <li class="menu-title">Pages</li>
+                <li class="menu-title">Sections</li>
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-account-circle-line"></i>
-                        <span>Authentication</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="auth-login.html">Login</a></li>
-                        <li><a href="auth-register.html">Register</a></li>
-                        <li><a href="auth-recoverpw.html">Recover Password</a></li>
-                        <li><a href="auth-lock-screen.html">Lock Screen</a></li>
-                    </ul>
-                </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-profile-line"></i>
-                        <span>Utility</span>
+                        <span>Sections</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="pages-starter.html">Starter Page</a></li>
-                        <li><a href="pages-timeline.html">Timeline</a></li>
-                        <li><a href="pages-directory.html">Directory</a></li>
-                        <li><a href="pages-invoice.html">Invoice</a></li>
-                        <li><a href="pages-404.html">Error 404</a></li>
-                        <li><a href="pages-500.html">Error 500</a></li>
+                        <li><a href="{{ route('phone-section.phone') }}">Phone Section</a></li>
                     </ul>
                 </li>
 
+                <li class="menu-title">Application</li>
 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-account-circle-line"></i>
+                        <span>Application</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('form-application.applications')}}">Applied Applications</a></li>
+                        <li><a href="{{route('form-application.services')}}">Services Categories</a></li>
+                        <li><a href="{{route('form-application.transfer-ways')}}">Salary Transfer Methods</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

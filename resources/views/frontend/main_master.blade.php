@@ -25,6 +25,7 @@
     <!-- FONTS -->
 
     <link href="{{asset('frontend/content/webfontkit/stylesheet.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('frontend/content/webfonterarabic/stylesheet.css')}}">
     <!-- Bootstrap core CSS -->
     <link href="{{asset('frontend/content/css/bootstrap.min.css')}}" rel="stylesheet">
     <!--CSS -->
@@ -72,7 +73,6 @@
 <script src="{{asset('frontend/content/plugins/rs-plugin-6.custom/js/rs6.min.js')}}"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
 
 </html>

@@ -13,10 +13,9 @@ use Intervention\Image\Facades\Image;
 
 class ServicesController extends Controller
 {
-    public function services()
+    public function __construct()
     {
-        $services = Services::findOrFail(1);
-        return view('frontend.services', compact('services'));
+        $this->middleware('auth')->except([ 'index', 'show' ]);
     }
 
     public function services_title()

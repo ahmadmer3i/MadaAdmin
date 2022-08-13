@@ -22,7 +22,7 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3 mt-5">
-                                        <label for="title" class="col-sm-2 col-form-label">Subtitle</label>
+                                        <label for="subtitle" class="col-sm-2 col-form-label">Subtitle</label>
                                         <div class="col-sm-10">
                                             <textarea rows="5" class="form-control" type="text" id="subtitle"
                                                       name="subtitle"
@@ -31,7 +31,7 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3 mt-5">
-                                        <label for="title" class="col-sm-2 col-form-label">Description</label>
+                                        <label for="elm1" class="col-sm-2 col-form-label">Description</label>
                                         <div class="col-sm-10">
                                             <textarea rows="5" class="form-control" type="text" id="elm1"
                                                       name="description"
