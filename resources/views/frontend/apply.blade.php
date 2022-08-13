@@ -10,7 +10,7 @@
             <div class="col-md-6" style="padding:0 4%">
                 <div class="row">
                     <div class="col-12 column-margin-40px">
-                        <h1>Test</h1></div>
+                        <h1></h1></div>
                     <div class="col-12">
                         <hr class="no_line"
                             style="margin:0 auto 40px">
@@ -383,7 +383,6 @@
                                             <div class="col-sm-4 font-type">
                                                 <input class="form-control" type="text" id="apply_salary"
                                                        name="apply_salary"
-                                                       onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"
                                                        placeholder="الراتب الاجمالي"
                                                        value=""
                                                 >
@@ -427,7 +426,6 @@
                                             <div class="col-sm-4 font-type">
                                                 <input class="form-control" type="number" id="salary_deduction"
                                                        name="salary_deduction"
-                                                       onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"
                                                        placeholder="قيمة الاقتطاع على الراتب"
                                                        value=""
                                                 >
@@ -506,7 +504,7 @@
                                             <input class="form-control" type="text"
                                                    onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"
                                                    id="sponsor_national_id" name="sponsor_national_id"
-                                                   placeholder="الإسم الكامل"
+                                                   placeholder="الرقم الوطني / الشخصي لغير الأردنيين"
                                                    value="">
                                         </div>
                                         <label for="sponsor_gender" class="col-sm-2 col-form-label">الجنس</label>
@@ -594,7 +592,6 @@
                                         </label>
                                         <div class="col-sm-4 font-type">
                                             <input class="form-control" type="number"
-                                                   onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"
                                                    id="sponsor_salary" name="sponsor_salary"
                                                    placeholder="الراتب"
                                                    value="">
@@ -627,7 +624,7 @@
                                 <div class="column one">
                                     <div class="row mb-3 mt-2 one-second">
                                         <div class="col-sm-1 font-type">
-                                            <input class="form-control" type="checkbox"
+                                            <input class="form-control" type="checkbox" required
                                                    id="check_confirm" name="check_confirm">
                                         </div>
                                         <label for="check_confirm"

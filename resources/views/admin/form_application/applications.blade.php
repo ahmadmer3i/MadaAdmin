@@ -38,9 +38,19 @@
                                                     @foreach($applications as $application)
                                                         <tr>
                                                             <td>{{ $i++ }}</td>
-                                                            <td>{{$application->apply_full_name}}</td>
+                                                            <td>
+                                                                <a href="{{route('form-application.applications.details', $application->id)}}">{{$application->apply_full_name}}</a>
+                                                            </td>
                                                             <td>{{$application->form_services->name}}</td>
-                                                            <td>{{!empty($application->approved) ? $application->approved : 'waiting'}}</td>
+                                                            <td>
+                                                                @if(($application->approved))
+                                                                    {!! '<i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Approved' !!}
+                                                                @elseif(is_null($application->approved))
+                                                                    {!! '<i class="ri-checkbox-blank-circle-fill font-size-10 text-warning align-middle me-2"></i>Waiting'  !!}
+                                                                @else
+                                                                    {!!  '<i class="ri-checkbox-blank-circle-fill font-size-10 text-danger align-middle me-2"></i>Rejected' !!}
+                                                                @endif
+                                                            </td>
                                                             <td>
                                                                 <a href="{{route('form-application.transfer-way.edit', $application->id)}}"
                                                                    class="btn btn-info" title="Edit">

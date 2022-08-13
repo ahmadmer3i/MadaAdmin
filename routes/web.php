@@ -150,6 +150,8 @@ Route::controller(ApplyApplicationController::class)->group(function () {
 });
 Route::controller(FormController::class)->group(function () {
     Route::get('admin/form-application/applications', 'application_list')->name('form-application.applications');
+    Route::get('admin/form-application/applications/{id}', 'application_details')->name('form-application.applications.details');
+    Route::post('admin/form-application/application/submit', 'application_details_submit')->name('form-application.application.submit');
 });
 
 Route::get('about', [ PagesController::class, 'about' ])->name('about');
