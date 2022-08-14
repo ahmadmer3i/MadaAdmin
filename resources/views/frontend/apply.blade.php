@@ -1,6 +1,7 @@
 @php
     $services = \App\Models\ApplyFormService::all();
     $transfers = \App\Models\SalaryTransferWay::all();
+    $qualifications = \App\Models\FormQualification::all();
 @endphp
 @extends('frontend.main_master')
 @section('main')
@@ -22,7 +23,7 @@
                 </div>
             </div>
             <div class="col-md-6" style="padding:0 4%"><img
-                    alt="fsubpic1"
+                    alt=""
                     class="scale-with-grid"
                     height="854"
                     src="{{ !empty($contact_title->image) ? $contact_title->image : 'upload/960-854.png' }}"
@@ -58,7 +59,7 @@
                                         <label for="application_type_id" class="col-sm-2 col-form-label">نوع
                                             الطلب</label>
                                         <div class="col-sm-4 font-type">
-                                            <select name="application_type_id" id="application_type_id">
+                                            <select name="application_type_id" id="application_type_id" required>
                                                 <option value="" selected disabled>اختر نوع
                                                     الطلب
                                                 </option>
@@ -82,17 +83,23 @@
                                             الإسم الكامل
                                         </label>
                                         <div class="col-sm-4 font-type">
-                                            <input class="form-control" type="text" id="apply_full_name"
+                                            <input class="form-control"
+                                                   type="text"
+                                                   id="apply_full_name"
                                                    name="apply_full_name"
                                                    placeholder="الإسم الكامل"
-                                                   value="">
+                                                   value=""
+                                                   required
+                                            >
                                         </div>
                                         <label for="apply_nationality" class="col-sm-2 col-form-label">الجنسية</label>
                                         <div class="col-sm-4 font-type">
                                             <input class="form-control" type="text" id="apply_nationality"
                                                    name="apply_nationality"
                                                    placeholder="الجنسية"
-                                                   value="">
+                                                   value=""
+                                                   required
+                                            >
                                         </div>
                                     </div>
                                 </div>
@@ -108,11 +115,13 @@
                                                    name="apply_national_id"
                                                    onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"
                                                    placeholder="الرقم الوطني جواز / السفر لغير الاردنيين"
-                                                   value="">
+                                                   value=""
+                                                   required
+                                            >
                                         </div>
                                         <label for="apply_gender" class="col-sm-2 col-form-label">الجنس</label>
                                         <div class="col-sm-4 font-type">
-                                            <select name="apply_gender" id="apply_gender">
+                                            <select name="apply_gender" id="apply_gender" required>
                                                 <option value="male">ذكر</option>
                                                 <option value="female">انثى</option>
                                             </select>
@@ -124,7 +133,9 @@
                                             <input class="form-apply_address" type="text" id="apply_address"
                                                    name="apply_address"
                                                    placeholder="العنوان"
-                                                   value="">
+                                                   value=""
+                                                   required
+                                            >
                                         </div>
                                     </div>
                                     <div class="column one">
@@ -143,7 +154,7 @@
                                                 <input class="form-control" type="email" id="apply_email"
                                                        name="apply_email"
                                                        placeholder="البريد الالكتروني"
-                                                       value="">
+                                                       value="" required>
                                             </div>
                                         </div>
                                     </div>
@@ -155,15 +166,23 @@
                                                 <input class="form-control" type="date"
                                                        id="apply_birthdate" name="apply_birthdate"
                                                        placeholder="تاريخ الميلاد"
-                                                       value="">
+                                                       value=""
+                                                       required
+                                                >
                                             </div>
-                                            <label for="qualification" class="col-sm-2 col-form-label">المؤهل
+                                            <label for="qualification_id" class="col-sm-2 col-form-label">المؤهل
                                                 العلمي</label>
                                             <div class="col-sm-4 font-type">
-                                                <input class="form-control" type="text" id="qualification"
-                                                       name="qualification"
-                                                       placeholder="المؤهل العلمي"
-                                                       value="">
+                                                <select class="form-select" name="qualification_id"
+                                                        id="qualification_id" required>
+                                                    <option value="" selected disabled>اختر المؤهل
+                                                        العلمي
+                                                    </option>
+                                                    @foreach($qualifications as $qualification)
+                                                        <option
+                                                            value="{{$qualification->id}}">{{$qualification->name}}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -243,8 +262,9 @@
                                                    placeholder="المهنة"
                                                    value="">
                                         </div>
-                                        <label for="relative_one_work_place" class="col-sm-1 col-form-label">مكان
-                                            العمل</label>
+                                        <label for="relative_one_work_place" class="col-sm-1 col-form-label">
+                                            مكان العمل
+                                        </label>
                                         <div class="col-sm-2 font-type">
                                             <input class="form-control" type="text" id="relative_one_work_place"
                                                    name="relative_one_work_place"

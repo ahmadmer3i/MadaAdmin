@@ -147,6 +147,18 @@ Route::controller(ApplyApplicationController::class)->group(function () {
     Route::get('admin/form-application/transfer-way/edit/{id}', 'application_transfer_way_edit')->name('form-application.transfer-way.edit');
     Route::post('admin/form-application/transfer-way/update', 'application_transfer_way_update')->name('form-application.transfer-way.update');
     Route::get('admin/form-application/transfer-way/delete/{id}', 'application_transfer_way_delete')->name('form-application.transfer-way.delete');
+    Route::get('admin/form-application/qualification', 'application_qualification')->name('form-application.qualification');
+    Route::get('admin/form-application/qualification/add', 'application_qualification_add')->name('form-application.qualification.add');
+    Route::post('admin/form-application/qualification/store', 'application_qualification_store')->name('form-application.qualification.store');
+    Route::get('admin/form-application/qualification/edit/{id}', 'application_qualification_edit')->name('form-application.qualification.edit');
+    Route::post('admin/form-application/qualification/update', 'application_qualification_update')->name('form-application.qualification.update');
+    Route::get('admin/form-application/qualification/delete/{id}', 'application_qualification_delete')->name('form-application.qualification.delete');
+    Route::get('admin/form-application/material-status', 'application_material_status')->name('form-application.material-status');
+    Route::get('admin/form-application/material-status/add', 'application_material_status_add')->name('form-application.material-status.add');
+    Route::post('admin/form-application/material-status/store', 'application_material_status_store')->name('form-application.material-status.store');
+    Route::get('admin/form-application/material-status/edit/{id}', 'application_material_status_edit')->name('form-application.material-status.edit');
+    Route::post('admin/form-application/material-status/update', 'application_material_status_update')->name('form-application.material-status.update');
+    Route::get('admin/form-application/material-status/delete/{id}', 'application_material_status_delete')->name('form-application.material-status.delete');
 });
 Route::controller(FormController::class)->group(function () {
     Route::get('admin/form-application/applications', 'application_list')->name('form-application.applications');
@@ -161,6 +173,7 @@ Route::get('contact-us', [ PagesController::class, 'contact_us' ])->name('contac
 Route::get('clients', [ PagesController::class, 'clients' ])->name('clients');
 Route::get('apply', [ RequestController::class, 'request_page' ])->name('request_page');
 Route::post('apply/submit', [ PagesController::class, 'submit_form' ])->name('apply.submit');
+Route::get('request-from', [ PagesController::class, 'request_form' ])->name('request_form');
 
 Route::get('/dashboard', function () {
     return view('admin.index');

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\ApplyFormService;
+use App\Models\FormMaterialStatus;
+use App\Models\FormQualification;
 use App\Models\SalaryTransferWay;
 use Illuminate\Http\Request;
 
@@ -95,6 +97,90 @@ class ApplyApplicationController extends Controller
     {
         SalaryTransferWay::find($id)->delete();
         $notification = array( 'message' => 'Transfer Method Deleted Successfully', 'alert-type' => 'error' );
+        return redirect()->back()->with($notification);
+    }
+
+    public function application_qualification()
+    {
+        $qualifications = FormQualification::all();
+        return view('admin.form_application.application_qualification', compact('qualifications'));
+    }
+
+    public function application_qualification_add()
+    {
+        return view('admin.form_application.application_qualification_add');
+    }
+
+    public function application_qualification_store(Request $request)
+    {
+        $qualification = new FormQualification();
+        $qualification->name = $request->name;
+        $qualification->save();
+        $notification = array( 'message' => 'Qualification Added Successfully', 'alert-type' => 'success' );
+        return redirect()->route('form-application.qualification')->with($notification);
+    }
+
+    public function application_qualification_edit($id)
+    {
+        $qualification = FormQualification::find($id);
+        return view('admin.form_application.application_qualification_edit', compact('qualification'));
+    }
+
+    public function application_qualification_update(Request $request)
+    {
+        FormQualification::find($request->id)->update([
+            'name' => $request->name,
+        ]);
+        $notification = array( 'message' => 'Qualification Updated Successfully', 'alert-type' => 'warning' );
+        return redirect()->route('form-application.qualification')->with($notification);
+    }
+
+    public function application_qualification_delete($id)
+    {
+        FormQualification::find($id)->delete();
+        $notification = array( 'message' => 'Qualification Deleted Successfully', 'alert-type' => 'error' );
+        return redirect()->back()->with($notification);
+    }
+
+    public function application_material_status()
+    {
+        $statuses = FormMaterialStatus::all();
+        return view('admin.form_application.application_material_status', compact('statuses'));
+    }
+
+    public function application_material_status_add()
+    {
+        return view('admin.form_application.application_material_status_add');
+    }
+
+    public function application_material_status_store(Request $request)
+    {
+        $status = new FormMaterialStatus();
+        $status->name = $request->name;
+        $status->save();
+        $notification = array( 'message' => 'Status Added Successfully', 'alert-type' => 'success' );
+        return redirect()->route('form-application.material-status')->with($notification);
+    }
+
+    public function application_material_status_edit($id)
+    {
+        $status = FormMaterialStatus::find($id);
+        return view('admin.form_application.application_material_status_edit', compact('status'));
+    }
+
+    public function application_material_status_update(Request $request)
+    {
+        FormMaterialStatus::find($request->id)->update([
+            'name' => $request->name,
+        ]);
+        $notification = array( 'message' => 'Status Updated Successfully', 'alert-type' => 'warning' );
+        return redirect()->route('form-application.material-status')->with($notification);
+    }
+
+    public function application_material_status_delete($id)
+    {
+        FormMaterialStatus::find($id)->delete();
+        $notification = array( 'message' => 'Status Deleted Successfully', 'alert-type' => 'error' );
         return redirect()->back()->with($notification);
     }
 }

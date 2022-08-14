@@ -56,7 +56,7 @@ class PagesController extends Controller
         $apply->material_status = $request->material_status;
         $apply->husband_wife_name = $request->husband_wife_name;
         $apply->husband_wife_work = $request->husband_wife_work;
-        $apply->qualification = $request->qualification;
+        $apply->qualification_id = $request->qualification_id;
         $apply->dependents = $request->dependents;
         $apply->relative_one_name = $request->relative_one_name;
         $apply->relative_one_relation = $request->relative_one_relation;
@@ -105,5 +105,10 @@ class PagesController extends Controller
         $apply->sponsor_salary_transfer_way_id = $request->sponsor_salary_transfer_way_id;
         $apply->save();
         return redirect()->back()->with('success', 'done');
+    }
+
+    public function request_form()
+    {
+        return view('admin.form.form');
     }
 }

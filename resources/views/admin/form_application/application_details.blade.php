@@ -171,7 +171,7 @@
                                                    id="subtitle"
                                                    name="subtitle"
                                                    placeholder="Subtitle"
-                                                   value="{{ !empty($application->qualification) ? $application->qualification : 'NO' }}">
+                                                   value="{{ !empty($application->form_qualification->name) ? $application->form_qualification->name : '-' }}">
                                         </div>
                                     </div>
                                     <div class="row mb-3 mt-5">

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use phpDocumentor\Reflection\Types\This;
 
 /**
  * @method static find($id)
@@ -28,5 +29,15 @@ class ApplyForm extends Model
     function transfer_ways(): BelongsTo
     {
         return $this->belongsTo(SalaryTransferWay::class, 'transfer_way_id');
+    }
+
+    function form_qualification(): BelongsTo
+    {
+        return $this->belongsTo(FormQualification::class, 'qualification_id');
+    }
+
+    function form_material_status(): BelongsTo
+    {
+        return $this->belongsTo(FormMaterialStatus::class, 'material_status_id');
     }
 }
