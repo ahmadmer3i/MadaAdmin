@@ -56,7 +56,13 @@
                                     <li class="{{request()->is('contact-us') ? 'current-menu-item':null}}">
                                         <a href="{{ route('contact-us') }}"><span>Contact</span></a>
                                     </li>
-
+                                    <li class="top_bar_right">
+                                        <div class="top_bar_right_wrapper"><a
+                                                class="action_button"
+                                                href="{{route('request_form')}}">Apply now <i
+                                                    class="icon-right-open"></i></a>
+                                        </div>
+                                    </li>
                                 </ul>
                             </nav>
                             <a class="responsive-menu-toggle"
@@ -86,19 +92,13 @@
                                         <a href="{{route('partners')}}">Our
                                             clients</a></li>
                                     <li>
-                                        <a href="{{ route('contact-us') }}">Contact</a>
+                                        <a href="{{ route('contact-us') }}" class="action_button">Contact</a>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
-                    <div class="top_bar_right">
-                        <div class="top_bar_right_wrapper"><a
-                                class="action_button"
-                                href="{{route('request_form')}}">Apply now <i
-                                    class="icon-right-open"></i></a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
