@@ -24,7 +24,9 @@
     <link href="{{asset('frontend/content/images/favicon.ico')}}" rel="shortcut icon">
     <!-- FONTS -->
 
+
     <link href="{{asset('frontend/content/webfontkit/stylesheet.css')}}" rel="stylesheet">
+
     <link rel="stylesheet" href="{{asset('frontend/content/webfonterarabic/stylesheet.css')}}">
     <!-- Bootstrap core CSS -->
     <link href="{{asset('frontend/content/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -35,6 +37,7 @@
     <!-- Revolution Slider -->
     <link href="{{asset('frontend/content/plugins/rs-plugin-6.custom/css/rs6.css')}}"
           rel="stylesheet">
+
 </head>
 
 <body
@@ -42,7 +45,9 @@
 <div id="Wrapper">
     @include('frontend.body.header')
     <div id="Content">
-        @yield('main')
+        <div class="content_wrapper clearfix">
+            @yield('main')
+        </div>
 
     </div>
     @include('frontend.body.subfooter')

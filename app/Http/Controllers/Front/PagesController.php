@@ -53,10 +53,11 @@ class PagesController extends Controller
         $apply->apply_phone = $request->apply_phone;
         $apply->apply_birthdate = $request->apply_birthdate;
         $apply->apply_email = $request->apply_email;
-        $apply->material_status = $request->material_status;
+        $apply->material_status_id = $request->material_status_id;
         $apply->husband_wife_name = $request->husband_wife_name;
         $apply->husband_wife_work = $request->husband_wife_work;
         $apply->qualification_id = $request->qualification_id;
+        $apply->bank_id = $request->bank_id;
         $apply->dependents = $request->dependents;
         $apply->relative_one_name = $request->relative_one_name;
         $apply->relative_one_relation = $request->relative_one_relation;
@@ -90,6 +91,7 @@ class PagesController extends Controller
         $apply->sponsor_work_place = $request->sponsor_work_place;
         $apply->sponsor_work_address = $request->sponsor_work_address;
         $apply->sponsor_salary = $request->sponsor_salary;
+        $apply->sponsor_bank_id = $request->sponsor_bank_id;
         $apply->sponsor_work_date = $request->sponsor_work_date;
         $apply->application_date = $request->application_date;
         $apply->approved = $request->approved;

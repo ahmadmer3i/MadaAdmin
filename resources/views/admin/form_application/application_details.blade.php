@@ -148,7 +148,7 @@
                                                    id="title"
                                                    name="title"
                                                    placeholder=""
-                                                   value="{{ !empty($application->material_status) ? $application->material_status : '' }}">
+                                                   value="{{ !empty($application->form_material_status->name) ? $application->form_material_status->name : '' }}">
                                         </div>
 
 
@@ -379,15 +379,14 @@
                                                    value="{{ !empty($application->transfer_ways->transfer_way) ? $application->transfer_ways->transfer_way : '0' }}">
                                         </div>
                                         <label for="subtitle"
-                                               class="col-sm-2 col-form-label  px-5">Salary Deduction Details</label>
+                                               class="col-sm-2 col-form-label px-4">Transfer Way</label>
                                         <div class="col-sm-4">
-                                            <textarea disabled
-                                                      class="form-control form-details" type="text"
-                                                      id="subtitle"
-                                                      rows="5"
-                                                      name="subtitle"
-                                                      placeholder="No Deductions"
-                                            >{{ !empty($application->salary_deduction_detail) ? $application->salary_deduction_detail : '' }}</textarea>
+                                            <input disabled
+                                                   class="form-control form-details" type="text"
+                                                   id="subtitle"
+                                                   name="subtitle"
+                                                   placeholder="Subtitle"
+                                                   value="{{ !empty($application->partner_bank->name) ? $application->partner_bank->name : 'No' }}">
                                         </div>
 
 
@@ -414,6 +413,19 @@
                                                       name="subtitle"
                                                       placeholder="No Deductions"
                                             >{{ !empty($application->mortgages) ? $application->mortgages : '' }}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3 mt-5">
+                                        <label for="subtitle"
+                                               class="col-sm-2 col-form-label  px-5">Salary Deduction Details</label>
+                                        <div class="col-sm-4">
+                                            <textarea disabled
+                                                      class="form-control form-details" type="text"
+                                                      id="subtitle"
+                                                      rows="5"
+                                                      name="subtitle"
+                                                      placeholder="No Deductions"
+                                            >{{ !empty($application->salary_deduction_detail) ? $application->salary_deduction_detail : '' }}</textarea>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -523,13 +535,23 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3 mt-5">
+                                        <label for="title" class="col-sm-2 col-form-label  px-5">Work Start Date</label>
+                                        <div class="col-sm-4">
+                                            <input disabled class="form-control form-details" type="text" id="title"
+                                                   name="title"
+                                                   placeholder="Applicant Name"
+                                                   value="{{ !empty($application->sponsor_work_date) ? $application->sponsor_work_date : '' }}">
+                                        </div>
                                         <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor Salary</label>
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
                                                    placeholder="Applicant Name"
-                                                   value="{{ !empty($application->sponsor_salary) ? $application->sponsor_salary : '' }}">
+                                                   value="{{ !empty($application->sponsor_bank->name) ? $application->sponsor_bank->name : 'No' }}">
                                         </div>
+
+                                    </div>
+                                    <div class="row mb-3 mt-5">
                                         <label for="subtitle"
                                                class="col-sm-2 col-form-label  px-5">Salary Transfer</label>
                                         <div class="col-sm-4">
@@ -540,24 +562,13 @@
                                                    placeholder="Subtitle"
                                                    value="{{ !empty($application->transfer_ways_sponsor->transfer_way) ? $application->transfer_ways_sponsor->transfer_way : '' }}">
                                         </div>
-                                    </div>
-                                    <div class="row mb-3 mt-5">
-                                        <label for="title" class="col-sm-2 col-form-label  px-5">Work Start Date</label>
+
+                                        <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor Bank</label>
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
                                                    placeholder="Applicant Name"
-                                                   value="{{ !empty($application->sponsor_work_date) ? $application->sponsor_work_date : '' }}">
-                                        </div>
-                                        <label for="subtitle"
-                                               class="col-sm-2 col-form-label  px-5">Work Address</label>
-                                        <div class="col-sm-4">
-                                            <input disabled
-                                                   class="form-control form-details" type="text"
-                                                   id="subtitle"
-                                                   name="subtitle"
-                                                   placeholder="Subtitle"
-                                                   value="{{ !empty($application->sponsor_work_address) ? $application->sponsor_work_address : '' }}">
+                                                   value="{{ !empty($application->sponsor_salary) ? $application->sponsor_salary : '' }}">
                                         </div>
                                     </div>
                                     <div class="row">

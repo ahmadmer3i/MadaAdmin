@@ -114,6 +114,7 @@
                         <li><a href="{{route('form-application.services')}}">Services Categories</a></li>
                         <li><a href="{{route('form-application.qualification')}}">Qualifications</a></li>
                         <li><a href="{{route('form-application.material-status')}}">Material Status</a></li>
+                        <li><a href="{{route('form-application.banks')}}">Banks</a></li>
                         <li><a href="{{route('form-application.transfer-ways')}}">Salary Transfer Methods</a></li>
                     </ul>
                 </li>

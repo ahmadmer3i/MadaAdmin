@@ -8,6 +8,7 @@
         $qualifications = \App\Models\FormQualification::all();
         $statuses = \App\Models\FormMaterialStatus::all();
         $transfers = \App\Models\SalaryTransferWay::all();
+        $banks = \App\Models\FormBank::all();
     @endphp
     <meta charset="utf-8"/>
     <title>MADA Form</title>
@@ -40,7 +41,7 @@
 
                 <div class="text-center mt-4">
                     <div class="mb-3">
-                        <a href="index.html" class="auth-logo">
+                        <a href="{{url('/')}}" class="auth-logo">
                             <img src="{{asset('backend/assets/images/logo-dark.png')}}" height="30"
                                  class="logo-dark mx-auto" alt="">
                             <img src="{{asset('backend/assets/images/logo-light.png')}}" height="30"
@@ -71,9 +72,10 @@
                                 <label class="col-sm-1 col-form-label" for="application_type_id">نوع
                                     الطلب</label>
                                 <div class="col-sm-4 pr-0">
-                                    <select class="form-select" aria-label="Default select example"
+                                    <select class="form-select"
+                                            required
                                             id="application_type_id" name="application_type_id">
-                                        <option selected="" disabled>اختر نوع الطلب</option>
+                                        <option selected="" disabled value="">اختر نوع الطلب</option>
                                         @foreach($services as $service)
                                             <option value="{{$service->id}}">{{$service->name}}</option>
                                         @endforeach
@@ -89,14 +91,14 @@
                             </div>
                         </div>
                         <div class="form-group mb-3 row">
-                            <label for="apply_full_name" class="col-sm-2 col-form-label">الإسم الكامل</label>
+                            <label for="apply_full_name" class="col-sm-1 col-form-label">الإسم الكامل</label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
 
                                 <input class="form-control" id="apply_full_name" name="apply_full_name" type="text"
                                        required=""
                                        placeholder="الإسم الكامل من اربع مقاطع">
                             </div>
-                            <label for="apply_nationality" class="col-sm-2 col-form-label">الجنسية</label>
+                            <label for="apply_nationality" class="col-sm-1 col-form-label">الجنسية</label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
 
                                 <input class="form-control" id="apply_nationality" name="apply_nationality" type="text"
@@ -105,7 +107,7 @@
                             </div>
                         </div>
                         <div class="form-group mb-3 row">
-                            <label for="apply_national_id" class="col-sm-2 col-form-label"> الرقم الوطني<br>
+                            <label for="apply_national_id" class="col-sm-1 col-form-label"> الرقم الوطني<br>
                                 جواز
                                 السفر لغير الاردنيين</label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
@@ -114,7 +116,7 @@
                                        required=""
                                        placeholder="الرقم الوطني جواز / السفر لغير الاردنيين">
                             </div>
-                            <label for="apply_gender" class="col-sm-2 col-form-label">الجنس</label>
+                            <label for="apply_gender" class="col-sm-1 col-form-label">الجنس</label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
 
                                 <select class="form-select" aria-label=""
@@ -126,7 +128,7 @@
                             </div>
                         </div>
                         <div class="form-group mb-3 row">
-                            <label for="apply_address" class="col-sm-2 col-form-label">العنوان</label>
+                            <label for="apply_address" class="col-sm-1 col-form-label">العنوان</label>
                             <div class="col-lg-6 col-md-12 col-sm-12">
 
                                 <input class="form-control" id="apply_address" name="apply_address" type="text"
@@ -135,7 +137,7 @@
                             </div>
                         </div>
                         <div class="form-group mb-3 row">
-                            <label for="apply_phone" class="col-sm-2 col-form-label"> رقم الهاتف
+                            <label for="apply_phone" class="col-sm-1 col-form-label"> رقم الهاتف
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
 
@@ -144,7 +146,7 @@
                                        required=""
                                        placeholder="07XXXXXXXX">
                             </div>
-                            <label for="apply_email" class="col-sm-2 col-form-label">البريد
+                            <label for="apply_email" class="col-sm-1 col-form-label">البريد
                                 الالكتروني</label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
                                 <input class="form-control" id="apply_email" name="apply_email"
@@ -154,7 +156,7 @@
                             </div>
                         </div>
                         <div class="form-group mb-3 row">
-                            <label for="apply_birthdate" class="col-sm-2 col-form-label"> تاريخ
+                            <label for="apply_birthdate" class="col-sm-1 col-form-label"> تاريخ
                                 الميلاد
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
@@ -164,7 +166,7 @@
                                        required=""
                                        placeholder="">
                             </div>
-                            <label for="qualification_id" class="col-sm-2 col-form-label">المؤهل
+                            <label for="qualification_id" class="col-sm-1 col-form-label">المؤهل
                                 العلمي</label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
                                 <select class="form-select" aria-label=""
@@ -179,26 +181,7 @@
                             </div>
                         </div>
                         <div class="form-group mb-3 row">
-                            <label for="apply_phone" class="col-sm-2 col-form-label"> رقم الهاتف
-                            </label>
-                            <div class="col-lg-4 col-md-12 col-sm-12">
-
-                                <input class="form-control" id="apply_phone" name="apply_phone"
-                                       type="text"
-                                       required=""
-                                       placeholder="07XXXXXXXX">
-                            </div>
-                            <label for="apply_email" class="col-sm-2 col-form-label">البريد
-                                الالكتروني</label>
-                            <div class="col-lg-4 col-md-12 col-sm-12">
-                                <input class="form-control" id="apply_email" name="apply_email"
-                                       type="email"
-                                       required=""
-                                       placeholder="name@example.com">
-                            </div>
-                        </div>
-                        <div class="form-group mb-3 row">
-                            <label for="material_status_id" class="col-sm-2 col-form-label"> الحالة
+                            <label for="material_status_id" class="col-sm-1 col-form-label"> الحالة
                                 الإجتماعية
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
@@ -213,7 +196,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <label for="dependents" class="col-sm-2 col-form-label">
+                            <label for="dependents" class="col-sm-1 col-form-label">
                                 عدد المعالين
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
@@ -225,7 +208,7 @@
                             </div>
                         </div>
                         <div class="form-group mb-3 row">
-                            <label for="husband_wife_name" class="col-sm-2 col-form-label">
+                            <label for="husband_wife_name" class="col-sm-1 col-form-label">
                                 إسم الزوج / الزوجة
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
@@ -234,7 +217,7 @@
                                        type="text"
                                        placeholder="إسم الزوج / الزوجة">
                             </div>
-                            <label for="husband_wife_work" class="col-sm-2 col-form-label">
+                            <label for="husband_wife_work" class="col-sm-1 col-form-label">
                                 عمل الزوج / الزوجة
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
@@ -253,7 +236,8 @@
                         <div class="column one">
                             <div class="row mt-2 one-second">
                                 <div class="col-sm-12 font-type">
-                                    <h5 class="d-flex justify-content-start pb-1 pt-1" style="font-family: 'GE Flow'">
+                                    <h5 class="d-flex justify-content-start pb-1 pt-1"
+                                        style="font-family: 'GE Flow',sans-serif">
                                         القريب الاول
                                     </h5>
                                 </div>
@@ -306,7 +290,8 @@
                         <div class="column one">
                             <div class="row mt-2 one-second">
                                 <div class="col-sm-12 font-type">
-                                    <h5 class="d-flex justify-content-start pb-4 pt-2" style="font-family: 'GE Flow'">
+                                    <h5 class="d-flex justify-content-start pb-4 pt-2"
+                                        style="font-family: 'GE Flow',sans-serif">
                                         القريب الثاني</h5>
                                 </div>
                             </div>
@@ -365,7 +350,7 @@
                             </div>
                         </div>
                         <div class="form-group mb-3 row">
-                            <label for="apply_work_place" class="col-sm-2 col-form-label">
+                            <label for="apply_work_place" class="col-sm-1 col-form-label">
                                 اسم الشركة
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
@@ -374,7 +359,7 @@
                                        required=""
                                        placeholder="اسم الشركة">
                             </div>
-                            <label for="apply_work_title" class="col-sm-2 col-form-label">
+                            <label for="apply_work_title" class="col-sm-1 col-form-label">
                                 الوظيفة
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
@@ -386,7 +371,7 @@
                             </div>
                         </div>
                         <div class="form-group mb-3 row">
-                            <label for="apply_work_phone" class="col-sm-2 col-form-label">
+                            <label for="apply_work_phone" class="col-sm-1 col-form-label">
                                 رقم الهاتف
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
@@ -395,7 +380,7 @@
                                        required=""
                                        placeholder="رقم الهاتف">
                             </div>
-                            <label for="apply_work_website" class="col-sm-2 col-form-label">
+                            <label for="apply_work_website" class="col-sm-1 col-form-label">
                                 الموقع الالكتروني
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
@@ -407,7 +392,7 @@
                             </div>
                         </div>
                         <div class="form-group mb-3 row">
-                            <label for="apply_work_address" class="col-sm-2 col-form-label">
+                            <label for="apply_work_address" class="col-sm-1 col-form-label">
                                 عنوان العمل
                             </label>
                             <div class="col-lg-6 col-md-12 col-sm-12">
@@ -418,7 +403,7 @@
                             </div>
                         </div>
                         <div class="form-group mb-3 row">
-                            <label for="apply_work_date" class="col-sm-2 col-form-label">
+                            <label for="apply_work_date" class="col-sm-1 col-form-label">
                                 تاريخ التعيين
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
@@ -427,7 +412,7 @@
                                        required=""
                                        placeholder="تاريخ التعيين">
                             </div>
-                            <label for="apply_salary" class="col-sm-2 col-form-label">
+                            <label for="apply_salary" class="col-sm-1 col-form-label">
                                 الراتب الاجمالي
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
@@ -447,12 +432,12 @@
                                        type="email"
                                        placeholder="البريد الإلكتروني">
                             </div>
-                            <label for="apply_salary" class="col-sm-1 col-form-label">
+                            <label for="transfer_way_id" class="col-sm-1 col-form-label">
                                 طريقة استلام الراتب
                             </label>
                             <div class="col-lg-3 col-md-12 col-sm-12">
                                 <select class="form-select" aria-label=""
-                                        id="material_status_id" name="material_status_id">
+                                        id="transfer_way_id" name="transfer_way_id">
                                     <option value="" selected disabled>
                                         اختر طريقة الاستلام
                                     </option>
@@ -460,6 +445,242 @@
                                         <option value="{{$transfer->id}}">{{$transfer->transfer_way}}</option>
                                     @endforeach
                                 </select>
+                            </div>
+                            <label for="bank_id" class="col-sm-1 col-form-label">
+                                اسم البنك
+                            </label>
+                            <div class="col-lg-3 col-md-12 col-sm-12">
+                                <select class="form-select" aria-label=""
+                                        id="bank_id" name="bank_id">
+                                    <option value="" selected disabled>
+                                        اختر اسم البنك
+                                    </option>
+                                    @foreach($banks as $bank)
+                                        <option value="{{$bank->id}}">{{$bank->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 row">
+                            <label for="salary_deduction" class="col-sm-1 col-form-label">
+                                قيمة الاقتطاع على الراتب
+                            </label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <input class="form-control" id="salary_deduction" name="salary_deduction"
+                                       type="number"
+                                       step="0.01"
+                                       required=""
+                                       placeholder="قيمة الاقتطاع على الراتب">
+                            </div>
+                            <label for="salary_deduction_detail" class="col-sm-1 col-form-label">
+                                تفاصيل الاقتطاعات
+                            </label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <textarea class="form-control" id="salary_deduction_detail"
+                                          name="salary_deduction_detail"
+                                          rows="4"
+                                          type="text"
+                                          required=""
+                                          placeholder="تفاصيل الاقتطاعات"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 row">
+                            <label for="personal_loan" class="col-sm-1 col-form-label">
+                                القروض الشخصية
+                            </label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <textarea class="form-control" id="personal_loan" name="personal_loan"
+                                          required=""
+                                          rows="4"
+                                          placeholder="القروض الشخصية"></textarea>
+                            </div>
+                            <label for="mortgages" class="col-sm-1 col-form-label">
+                                الرهونات على الاموال غير المنقولة
+                            </label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <textarea class="form-control" id="mortgages"
+                                          name="mortgages"
+                                          rows="4"
+                                          type="text"
+                                          required=""
+                                          placeholder="الرهونات على الاموال غير المنقولة"></textarea>
+                            </div>
+                        </div>
+                        <div class="column one">
+                            <div class="row mt-2 one-second">
+                                <div class="col-sm-12 font-type">
+                                    <h4 class="d-flex justify-content-start pb-4 pt-5">
+                                        تفاصيل الكفيل
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 row">
+                            <label for="sponsor_full_name" class="col-sm-1 col-form-label">الإسم الكامل</label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="sponsor_full_name" name="sponsor_full_name" type="text"
+                                       required=""
+                                       placeholder="الإسم الكامل من اربع مقاطع">
+                            </div>
+                            <label for="sponsor_nationality" class="col-sm-1 col-form-label">الجنسية</label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="sponsor_nationality" name="sponsor_nationality"
+                                       type="text"
+                                       required=""
+                                       placeholder="على سبيل المثال اردني">
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 row">
+                            <label for="sponsor_national_id" class="col-sm-1 col-form-label"> الرقم الوطني<br>
+                                جواز
+                                السفر لغير الاردنيين</label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="sponsor_national_id" name="sponsor_national_id"
+                                       type="text"
+                                       required=""
+                                       placeholder="الرقم الوطني جواز / السفر لغير الاردنيين">
+                            </div>
+                            <label for="sponsor_gender" class="col-sm-1 col-form-label">الجنس</label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+
+                                <select class="form-select" aria-label=""
+                                        id="sponsor_gender" name="sponsor_gender">
+
+                                    <option value="male">ذكر</option>
+                                    <option value="female">انثى</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 row">
+                            <label for="sponsor_address" class="col-sm-1 col-form-label">العنوان</label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="sponsor_address" name="sponsor_address" type="text"
+                                       required=""
+                                       placeholder="العنوان">
+                            </div>
+                            <label for="sponsor_relationship" class="col-sm-1 col-form-label">القرابة</label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="sponsor_relationship" name="sponsor_relationship"
+                                       type="text"
+                                       required=""
+                                       placeholder="القرابة">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3 row">
+                            <label for="sponsor_phone" class="col-sm-1 col-form-label">
+                                رقم الهاتف
+                            </label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="sponsor_phone" name="sponsor_phone" type="tel"
+                                       required=""
+                                       placeholder="رقم الهاتف">
+                            </div>
+                            <label for="sponsor_work_title" class="col-sm-1 col-form-label">
+                                عمل الكفيل
+                            </label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="sponsor_work_title" name="sponsor_work_title"
+                                       type="text"
+                                       required=""
+                                       placeholder="عمل الكفيل">
+                            </div>
+
+                        </div>
+                        <div class="form-group mb-3 row">
+                            <label for="sponsor_work_place" class="col-sm-1 col-form-label">
+                                اسم الشركة
+                            </label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="sponsor_work_place" name="sponsor_work_place"
+                                       type="text"
+                                       required=""
+                                       placeholder="اسم الشركة">
+                            </div>
+                            <label for="sponsor_work_date" class="col-sm-1 col-form-label">
+                                تاريخ التعيين
+                            </label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="sponsor_work_date" name="sponsor_work_date"
+                                       type="date"
+                                       required=""
+                                       placeholder="تاريخ التعيين">
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 row">
+                            <label for="sponsor_work_address" class="col-sm-1 col-form-label">
+                                عنوان العمل
+                            </label>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="sponsor_work_address" name="sponsor_work_address"
+                                       type="text"
+                                       required=""
+                                       placeholder="عنوان العمل">
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 row">
+                            <label for="sponsor_salary" class="col-sm-1 col-form-label">
+                                الراتب
+                            </label>
+                            <div class="col-lg-3 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="sponsor_salary" name="sponsor_salary"
+                                       type="number"
+                                       step="0.01"
+                                       required=""
+                                       placeholder="الراتب">
+                            </div>
+                            <label for="sponsor_salary_transfer_way_id" class="col-sm-1 col-form-label">طريقة
+                                استلام الراتب</label>
+                            <div class="col-lg-3 col-md-12 col-sm-12">
+
+
+                                <select class="form-select" aria-label=""
+                                        id="sponsor_salary_transfer_way_id" name="sponsor_salary_transfer_way_id">
+                                    <option value="" selected disabled>
+                                        اختر طريقة الاستلام
+                                    </option>
+                                    @foreach($transfers as $transfer)
+                                        <option value="{{$transfer->id}}">{{$transfer->transfer_way}}</option>
+                                    @endforeach
+                                </select>
+
+                            </div>
+                            <label for="sponsor_bank_id" class="col-sm-1 col-form-label">
+                                اسم البنك
+                            </label>
+                            <div class="col-lg-3 col-md-12 col-sm-12">
+                                <select class="form-select" aria-label=""
+                                        id="sponsor_bank_id" name="sponsor_bank_id">
+                                    <option value="" selected disabled>
+                                        اختر اسم البنك
+                                    </option>
+                                    @foreach($banks as $bank)
+                                        <option value="{{$bank->id}}">{{$bank->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 row">
+                            <div class="form-check form-check-right">
+
+                                <input class="form-check-input" type="checkbox" id="formCheckRight2" checked="">
+                                <label for="sponsor_bank_id" class="col-sm-12 col-form-label text-right">
+                                    أقر ان كافة المعلومات المذكورة اعلاه صحيحة و دقيقة، و انني اتحمل كافة
+                                    المسؤولية عن اي معلومات مغلوطة أو غير صحيحة، و أننا نفوض الشركة للإطلاع
+                                    الدائم في أي وقت من الاوقات على نظام كريف و نظام سيكريت، و اننا نتنازل عن
+                                    حقنا بأحكام السرية المصرفية لغايات هذا التفويض.
+                                </label>
                             </div>
                         </div>
                         <div class="form-group mb-3 text-center row mt-3 pt-1">

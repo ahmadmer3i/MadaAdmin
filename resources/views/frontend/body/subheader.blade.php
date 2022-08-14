@@ -3,11 +3,11 @@
         $home_hero = \App\Models\HomeHero::find(1);
         $phone=  \App\Models\ContactPhoneList::findOrFail(1);
     @endphp
-    <div class="mfn-main-slider mfn-rev-slider">
+    <div class="mfn-main-slider mfn-rev-slider pt-5">
         <p class="rs-p-wp-fix"></p>
         <rs-module-wrap data-source="gallery"
                         id="rev_slider_1_1_wrapper"
-                        style="background:transparent;padding:0;margin:0 auto;margin-top:0;margin-bottom:0;">
+                        style="background:transparent;padding:0;margin: 0 auto;">
             <rs-module data-version="6.3.6" id="rev_slider_1_1">
                 <rs-slides>
                     <rs-slide

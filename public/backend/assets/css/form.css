@@ -3,5 +3,16 @@ body {
 }
 
 input {
-    font-family: inherit;
+    font-family: "Gotham", sans-serif;
+}
+
+.col-sm-1 {
+    width: 8%;
+}
+
+.form-check {
+    text-align: right;
+    font-size: larger;
+    color: #db4041;
+    font-weight: bolder;
 }

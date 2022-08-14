@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\ApplyFormService;
+use App\Models\FormBank;
 use App\Models\FormMaterialStatus;
 use App\Models\FormQualification;
 use App\Models\SalaryTransferWay;
@@ -181,6 +182,48 @@ class ApplyApplicationController extends Controller
     {
         FormMaterialStatus::find($id)->delete();
         $notification = array( 'message' => 'Status Deleted Successfully', 'alert-type' => 'error' );
+        return redirect()->back()->with($notification);
+    }
+
+    public function application_banks()
+    {
+        $banks = FormBank::all();
+        return view('admin.form_application.application_bank', compact('banks'));
+    }
+
+    public function application_banks_add()
+    {
+        return view('admin.form_application.application_bank_add');
+    }
+
+    public function application_banks_store(Request $request)
+    {
+        $bank = new FormBank();
+        $bank->name = $request->name;
+        $bank->save();
+        $notification = array( 'message' => 'Bank Added Successfully', 'alert-type' => 'success' );
+        return redirect()->route('form-application.banks')->with($notification);
+    }
+
+    public function application_banks_edit($id)
+    {
+        $bank = FormBank::findOrFail($id);
+        return view('admin.form_application.application_bank_edit', compact('bank'));
+    }
+
+    public function application_banks_update(Request $request)
+    {
+        FormBank::findOrFail($request->id)->update([
+            'name' => $request->name,
+        ]);
+        $notification = array( 'message' => 'Bank Updated Successfully', 'alert-type' => 'warning' );
+        return redirect()->route('form-application.banks')->with($notification);
+    }
+
+    public function application_banks_delete($id)
+    {
+        FormBank::findOrFail($id)->delete();
+        $notification = array( 'message' => 'Bank Deleted Successfully', 'alert-type' => 'error' );
         return redirect()->back()->with($notification);
     }
 }

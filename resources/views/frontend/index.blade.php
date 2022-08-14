@@ -1,20 +1,14 @@
 @extends('frontend.main_master')
 @section('main')
     @include('frontend.body.subheader')
+    @include('frontend.body.home_overview')
     <div class="section mcb-section"
          style="padding-bottom:60px;background-image:url({{asset('frontend/content/images/finance2-wrapbg1.png')}});background-repeat:no-repeat;background-position:center top">
         <div class="container">
-            @include('frontend.body.home_counter')
-            <div class="row">
-                <div class="col-12 column_divider">
-                    <hr style="margin:0 auto 25px;"/>
-                </div>
-            </div>
             @include('frontend.body.home_why')
         </div>
     </div>
-    @include('frontend.body.home_overview')
-    @include('frontend.body.core_values')
+
     @include('frontend.body.home_services')
 
     <script type="text/javascript">

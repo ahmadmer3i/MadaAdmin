@@ -40,4 +40,15 @@ class ApplyForm extends Model
     {
         return $this->belongsTo(FormMaterialStatus::class, 'material_status_id');
     }
+
+    function partner_bank(): BelongsTo
+    {
+        return $this->belongsTo(FormBank::class, 'bank_id');
+    }
+
+    function sponsor_bank(): BelongsTo
+    {
+        return $this->belongsTo(FormBank::class, 'sponsor_bank_id');
+    }
+
 }

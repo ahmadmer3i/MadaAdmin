@@ -159,6 +159,12 @@ Route::controller(ApplyApplicationController::class)->group(function () {
     Route::get('admin/form-application/material-status/edit/{id}', 'application_material_status_edit')->name('form-application.material-status.edit');
     Route::post('admin/form-application/material-status/update', 'application_material_status_update')->name('form-application.material-status.update');
     Route::get('admin/form-application/material-status/delete/{id}', 'application_material_status_delete')->name('form-application.material-status.delete');
+    Route::get('admin/form-application/banks', 'application_banks')->name('form-application.banks');
+    Route::get('admin/form-application/banks/add', 'application_banks_add')->name('form-application.banks.add');
+    Route::post('admin/form-application/banks/store', 'application_banks_store')->name('form-application.banks.store');
+    Route::get('admin/form-application/bank/edit/{id}', 'application_banks_edit')->name('form-application.bank.edit');
+    Route::post('admin/form-application/bank/update', 'application_banks_update')->name('form-application.bank.update');
+    Route::get('admin/form-application/bank/delete/{id}', 'application_banks_delete')->name('form-application.bank.delete');
 });
 Route::controller(FormController::class)->group(function () {
     Route::get('admin/form-application/applications', 'application_list')->name('form-application.applications');
