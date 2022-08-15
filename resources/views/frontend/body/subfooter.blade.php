@@ -67,7 +67,7 @@
             <div class="col-md-4">
                 <div class="column_attr clearfix align_right mobile_align_center">
                     <a class="button has-icon button_right button_size_2 button_dark"
-                       href="{{route('request_page')}}"><span
+                       href="{{route('request_form')}}"><span
                             class="button_icon"><i
                                 class="icon-right-open"></i></span><span
                             class="button_label">Apply now</span></a>
