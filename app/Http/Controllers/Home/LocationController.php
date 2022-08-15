@@ -13,7 +13,7 @@ class LocationController extends Controller
     public function index(Request $request)
     {
         $userIp = $request->ip();
-        $locationData = Location::get('149.200.255.243');
+        $locationData = Location::get($userIp);
         VisitorInfo::insert([
             'ip' => $locationData->ip,
             'countryName' => $locationData->countryName,
