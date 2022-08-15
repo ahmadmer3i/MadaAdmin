@@ -31,5 +31,6 @@ class LocationController extends Controller
             'timezone' => $locationData->timezone,
             'created_at' => Carbon::now(),
         ]);
+        return redirect()->route('/');
     }
 }
