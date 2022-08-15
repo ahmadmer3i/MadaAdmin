@@ -538,7 +538,7 @@
                                 <input class="form-control" id="sponsor_national_id" name="sponsor_national_id"
                                        type="text"
                                        required=""
-                                       placeholder="الرقم الوطني جواز / السفر لغير الاردنيين">
+                                       placeholder="الرقم الوطني / جواز السفر لغير الاردنيين">
                             </div>
                             <label for="sponsor_gender" class="col-sm-1 col-form-label">الجنس</label>
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
