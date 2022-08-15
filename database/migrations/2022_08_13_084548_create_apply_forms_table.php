@@ -61,7 +61,7 @@ return new class extends Migration {
             $table->string('sponsor_work_address');
             $table->double('sponsor_salary');
             $table->string('sponsor_salary_transfer_way');
-            $table->date('sponsor_work_date');
+            $table->date('sponsor_work_date')->nullable();
             $table->unsignedBigInteger('application_type_id')->nullable();
             $table->timestamp('application_date')->default(\Illuminate\Support\Carbon::now());
             $table->boolean('approved')->nullable();

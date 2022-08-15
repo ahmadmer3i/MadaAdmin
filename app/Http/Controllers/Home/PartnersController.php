@@ -10,11 +10,11 @@ use Illuminate\Support\Carbon;
 use Intervention\Image\Facades\Image;
 
 class PartnersController extends Controller
-{
+{/*
     public function __construct()
     {
         $this->middleware('auth')->except([ 'index', 'show' ]);
-    }
+    }*/
 
     public function partners_title()
     {

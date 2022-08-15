@@ -13,10 +13,10 @@ use Intervention\Image\Facades\Image;
 
 class ServicesController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth')->except([ 'index', 'show' ]);
-    }
+    /* public function __construct()
+     {
+         $this->middleware('auth')->except([ 'index', 'show' ]);
+     }*/
 
     public function services_title()
     {

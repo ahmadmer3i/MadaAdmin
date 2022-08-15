@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class PhoneController extends Controller
 {
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('auth')->except([ 'index', 'show' ]);
-    }
+    }*/
 
     public function phone_section()
     {

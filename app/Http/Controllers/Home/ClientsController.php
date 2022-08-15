@@ -12,10 +12,10 @@ use function Symfony\Component\String\u;
 
 class ClientsController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth')->except([ 'index', 'show' ]);
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth')->except([ 'index', 'show' ]);
+//    }
 
 
     public function client_list()

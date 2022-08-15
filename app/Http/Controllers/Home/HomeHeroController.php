@@ -11,10 +11,7 @@ use Intervention\Image\Facades\Image;
 
 class HomeHeroController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth')->except([ 'index', 'show' ]);
-    }
+
 
     public function home_hero()
     {

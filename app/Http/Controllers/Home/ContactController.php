@@ -18,11 +18,6 @@ use Intervention\Image\Facades\Image;
 
 class ContactController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth')->except([ 'index', 'show' ]);
-    }
-
 
     public function contact_us_title()
     {

@@ -12,10 +12,11 @@ use Illuminate\Http\Request;
 
 class ApplyApplicationController extends Controller
 {
+    /*
     public function __construct()
     {
         $this->middleware('auth')->except([ 'index', 'show' ]);
-    }
+    }*/
 
     public function application_services()
     {
