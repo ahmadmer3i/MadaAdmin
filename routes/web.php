@@ -8,6 +8,7 @@ use App\Http\Controllers\Home\ClientsController;
 use App\Http\Controllers\Home\ContactController;
 use App\Http\Controllers\Home\FormController;
 use App\Http\Controllers\Home\HomeHeroController;
+use App\Http\Controllers\Home\LocationController;
 use App\Http\Controllers\Home\PartnersController;
 use App\Http\Controllers\Home\PhoneController;
 use App\Http\Controllers\Home\RequestController;
@@ -180,6 +181,7 @@ Route::get('clients', [ PagesController::class, 'clients' ])->name('clients');
 Route::get('apply', [ RequestController::class, 'request_page' ])->name('request_page');
 Route::post('apply/submit', [ PagesController::class, 'submit_form' ])->name('apply.submit');
 Route::get('request-from', [ PagesController::class, 'request_form' ])->name('request_form');
+Route::post('/', [ LocationController::class, 'index' ]);
 
 Route::get('/dashboard', function () {
     return view('admin.index');
