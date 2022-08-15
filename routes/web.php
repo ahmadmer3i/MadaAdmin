@@ -13,6 +13,7 @@ use App\Http\Controllers\Home\PartnersController;
 use App\Http\Controllers\Home\PhoneController;
 use App\Http\Controllers\Home\RequestController;
 use App\Http\Controllers\Home\ServicesController;
+use App\Models\User;
 use App\Models\VisitorInfo;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
@@ -62,6 +63,12 @@ Route::middleware([ 'auth' ])->group(function () {
         Route::post('admin/update/profile', 'store_profile')->name('update.profile');
         Route::get('admin/profile/change/password', 'change_password')->name('admin.profile.change.password');
         Route::post('admin/profile/update/password', 'update_password')->name('admin.profile.update.password');
+        Route::get('admin/users/add-user', 'add_user')->name('admin.users.add-user');
+
+        Route::get('admin/users', 'users_list')->name('admin.users')->middleware('admin');
+
+        Route::post('admin/users/store-user', 'store_user')->name('admin.users.store-user');
+
     });
 
     Route::controller(HomeHeroController::class)->group(function () {

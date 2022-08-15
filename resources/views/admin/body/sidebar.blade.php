@@ -118,6 +118,21 @@
                         <li><a href="{{route('form-application.transfer-ways')}}">Salary Transfer Methods</a></li>
                     </ul>
                 </li>
+                <li class="menu-title">Users</li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-account-circle-line"></i>
+                        <span>Application</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        @if(Auth::user()->username == 'ahmadmerie')
+                            <li><a href="{{route('admin.users')}}">Users</a></li>
+                        @endif
+
+                        <li><a href="{{route('admin.users.add-user')}}">Add User</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

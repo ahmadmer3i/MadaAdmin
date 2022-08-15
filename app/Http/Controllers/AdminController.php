@@ -3,16 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth')->except([ 'index', 'show' ]);
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth')->except([ 'index', 'show' ]);
+//    }
 
     public function destroy(Request $request)
     {
@@ -87,5 +89,36 @@ class AdminController extends Controller
             session()->flash('message', 'Your Old Password is Incorrect');
             return redirect()->back();
         }
+    }
+
+    public function users_list()
+    {
+        $users = User::all();
+        return view('admin.users.all_users', compact('users'));
+    }
+
+    public function add_user()
+    {
+        return view('admin.users.add_user');
+    }
+
+    public function store_user(Request $request)
+    {
+        $request->validate([
+            'name' => [ 'required', 'string', 'max:255' ],
+            'username' => [ 'required', 'string', 'max:255', 'unique:users' ],
+            'email' => [ 'required', 'string', 'email', 'max:255', 'unique:users' ],
+            'password' => [ 'required', 'confirmed', Rules\Password::defaults() ],
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        event(new Registered($user));
+        return redirect()->back()->with(array( 'message' => 'User Register Successfully', 'alert-message' => 'success' ));
     }
 }
