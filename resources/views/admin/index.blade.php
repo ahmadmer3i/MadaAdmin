@@ -1,7 +1,7 @@
 @extends('admin.admin_master')
 @section('admin')
     @php
-        $forms = \App\Models\ApplyForm::all();
+        $forms = \App\Models\ApplyForm::latest()->take(5)->get();
     @endphp
     <div class="page-content">
         <div class="container-fluid">
@@ -14,8 +14,6 @@
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);"></a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div>
 
@@ -120,7 +118,7 @@
 
                             </div>
 
-                            <h4 class="card-title mb-4">Latest Transactions</h4>
+                            <h4 class="card-title mb-4">Latest Applications</h4>
 
                             <div class="table-responsive">
                                 <table class="table table-centered mb-0 align-middle table-hover table-nowrap">
