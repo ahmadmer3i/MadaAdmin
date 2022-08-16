@@ -21,23 +21,24 @@
                                 <form method="post" action="{{ route('admin.profile.update.password') }}">
                                     @csrf
                                     <div class="row mb-3 mt-5">
-                                        <label for="old_password" class="col-sm-2 col-form-label">Old Password</label>
-                                        <div class="col-sm-10">
+                                        <label for="old_password" class="col-sm-3 col-form-label">Old Password</label>
+                                        <div class="col-sm-9">
                                             <input class="form-control" type="password" id="old_password"
                                                    name="old_password"
                                                    placeholder="Old Password">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="password" class="col-sm-2 col-form-label">Email</label>
-                                        <div class="col-sm-10">
+                                        <label for="password" class="col-sm-3 col-form-label">New Password</label>
+                                        <div class="col-sm-9">
                                             <input class="form-control" type="password" id="password" name="password"
                                                    placeholder="New Password">
                                         </div>
                                     </div>
                                     <div class="row mb-5">
-                                        <label for="confirm_password" class="col-sm-2 col-form-label">Username</label>
-                                        <div class="col-sm-10">
+                                        <label for="confirm_password" class="col-sm-3 col-form-label">Confirm
+                                            Password</label>
+                                        <div class="col-sm-9">
                                             <input class="form-control" type="password" id="confirm_password"
                                                    name="confirm_password"
                                                    placeholder="Password Confirmation">
