@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\ApplyForm;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Http\Request;
 
 class FormController extends Controller
@@ -46,5 +47,13 @@ class FormController extends Controller
             'approved' => $approved,
         ]);
         return redirect()->route('form-application.applications');
+    }
+
+    public function PDF_download($id)
+    {
+        $application = ApplyForm::find($id);
+
+        $pdf = PDF::loadView('admin.form_application.application_details_pdf', compact('application'));
+        return $pdf->download('application.pdf');
     }
 }

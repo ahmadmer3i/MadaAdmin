@@ -204,6 +204,7 @@ Route::middleware([ 'auth' ])->group(function () {
         Route::get('admin/form-application/applications', 'application_list')->name('form-application.applications');
         Route::get('admin/form-application/applications/{id}', 'application_details')->name('form-application.applications.details');
         Route::post('admin/form-application/application/submit', 'application_details_submit')->name('form-application.application.submit');
+        Route::get('admin/form-application/applications/{id}/pdf', 'PDF_download')->name('form-application.applications.pdf');
     });
 });
 

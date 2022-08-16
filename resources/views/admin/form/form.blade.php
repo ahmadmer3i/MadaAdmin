@@ -747,10 +747,19 @@
                 value = value.replace(/\s+/g, "");
                 return this.optional(element) || value.length > 9 && value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
             }, "يرجى ادخال البريد الالكتروني بالشكل الصحيح");
+        $.validator.addMethod(
+            "nameValidation",
+            function (value, element) {
+                // value = value.replace(/\s+/g, "");
+                return this.optional(element) || value.match(/(^[(ёЁЇїІіЄєҐґa-zA-Zа-яА-Я\u0621-\u064A\u0660-\u0669)]{3,26})(\s)([(ёЁЇїІіЄєҐґa-zA-Zа-яА-Я\u0621-\u064A\u0660-\u0669)]{3,26})?(\s)?([(ёЁЇїІіЄєҐґa-zA-Zа-яА-Я\u0621-\u064A\u0660-\u0669)]{3,26})?(\s)?([(ёЁЇїІіЄєҐґa-zA-Zа-яА-Я\u0621-\u064A\u0660-\u0669)]{3,26})+$/);
+            }, "يرجى ادخال الاسم من اربع مقاطع");
         $('#requestForm').validate({
             rules: {
                 application_type_id: {
                     required: true,
+                },
+                apply_full_name: {
+                    nameValidation: true,
                 },
                 apply_gender: {
                     required: true,

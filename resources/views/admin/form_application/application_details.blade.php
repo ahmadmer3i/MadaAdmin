@@ -21,7 +21,7 @@
 
                                 <form action="{{ route('form-application.application.submit') }}" method="post">
                                     @csrf
-                                    <input type="hidden" name="id" value="{{ $application->id }}">
+                                    <input type="hidden" name="id" value="{{ !empty($application->id) }}">
                                     <div class="row mb-3 mt-5">
                                         <label for="title" class="col-sm-2 col-form-label">Service
                                             Requested</label>
@@ -717,6 +717,10 @@
                                                     <a href="{{ route('form-application.applications') }}"
                                                        class="btn btn-danger">Back</a>
                                                 </div>
+                                                {{--                                                <div class="page-title-right">--}}
+                                                {{--                                                    <a href="{{ route('form-application.applications.pdf', $application->id) }}"--}}
+                                                {{--                                                       class="btn btn-danger">Download</a>--}}
+                                                {{--                                                </div>--}}
 
                                             </div>
                                         </div>

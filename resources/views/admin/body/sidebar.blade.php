@@ -123,7 +123,7 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-account-circle-line"></i>
-                        <span>Application</span>
+                        <span>Users</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         @if(Auth::user()->username == 'ahmadmerie')
