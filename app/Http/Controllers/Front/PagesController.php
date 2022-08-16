@@ -44,6 +44,9 @@ class PagesController extends Controller
     public function submit_form(Request $request)
     {
         $apply = new ApplyForm();
+        $request->validate([
+            'apply_full_name' => [ 'min:20' ],
+        ]);
         $apply->apply_full_name = $request->apply_full_name;
         $apply->application_type_id = $request->application_type_id;
         $apply->apply_gender = $request->apply_gender;

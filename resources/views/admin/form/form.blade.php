@@ -164,6 +164,7 @@
 
                                 <input class="form-control" id="apply_birthdate" name="apply_birthdate"
                                        type="date"
+                                       max="{{\Illuminate\Support\Carbon::now()->subYear(13)}}"
                                        required=""
                                        placeholder="">
                             </div>
@@ -734,6 +735,18 @@
 </script>
 <script>
     $(document).ready(function () {
+        $.validator.addMethod(
+            "mobileValidation",
+            function (value, element) {
+                value = value.replace(/\s+/g, "");
+                return this.optional(element) || value.length > 9 && value.match(/^07[7-9][0-9][0-9]{6}?$/);
+            }, "يرجى ادخال الرقم بالانجليزية و مبتدئاً 07 و من 9 خانات");
+        $.validator.addMethod(
+            "emailValidation",
+            function (value, element) {
+                value = value.replace(/\s+/g, "");
+                return this.optional(element) || value.length > 9 && value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+            }, "يرجى ادخال البريد الالكتروني بالشكل الصحيح");
         $('#requestForm').validate({
             rules: {
                 application_type_id: {
@@ -753,12 +766,16 @@
                 },
                 apply_phone: {
                     required: true,
+                    mobileValidation: true,
+                    minlength: 10,
+                    maxlength: 10,
                 },
                 apply_birthdate: {
                     required: true,
                 },
                 apply_email: {
                     required: true,
+                    emailValidation: true,
                 },
                 material_status_id: {
                     required: true,
@@ -888,9 +905,11 @@
                 },
                 apply_phone: {
                     required: '* ادخل رقم الهاتف',
+                    digits: 'يرجى ادخال الرقم بالانجليزية'
                 },
                 apply_birthdate: {
                     required: '* ادخل تاريخ الميلاد',
+                    max: "العمر يجب ان يكون على الاقل ١٣ عاماً",
                 },
                 apply_email: {
                     required: '* ادخل البريد الالكتروني',
