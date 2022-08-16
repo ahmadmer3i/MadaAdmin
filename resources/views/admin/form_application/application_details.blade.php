@@ -21,7 +21,7 @@
 
                                 <form action="{{ route('form-application.application.submit') }}" method="post">
                                     @csrf
-                                    <input type="hidden" name="id" value="{{ !empty($application->id) }}">
+                                    <input type="hidden" name="id" value="{{ $application->id}}">
                                     <div class="row mb-3 mt-5">
                                         <label for="title" class="col-sm-2 col-form-label">Service
                                             Requested</label>
