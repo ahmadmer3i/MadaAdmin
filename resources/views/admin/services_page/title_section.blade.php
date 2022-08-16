@@ -6,7 +6,7 @@
 
             <div class="row">
                 <div class="d-flex justify-content-center">
-                    <div class="col-10">
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-body">
 
@@ -95,7 +95,7 @@
                                                 <div class="card">
                                                     <div class="card-body">
                                                         <table id="datatable"
-                                                               class="table table-bordered dt-responsive nowrap"
+                                                               class="table table-bordered dt-responsive wrap"
                                                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                             <thead>
                                                             <tr>
@@ -128,15 +128,22 @@
                                                                             height="100"
                                                                             alt="">
                                                                     </td>
-                                                                    <td>
+                                                                    <td nowrap="">
+
+
                                                                         <a href="{{route('services.category.edit', $cat->id)}}"
-                                                                           class="btn btn-info" title="Edit">
+                                                                           class="btn btn-sm btn-info"
+                                                                           title="Edit">
                                                                             <i class="ri-pencil-fill"></i>
                                                                         </a>
-                                                                        <a href="" class="btn btn-danger"
+
+
+                                                                        <a href="" class="btn btn-sm btn-danger"
                                                                            title="Delete">
                                                                             <i class="ri-delete-bin-2-fill"></i>
                                                                         </a>
+
+
                                                                     </td>
                                                                 </tr>
                                                             @endforeach
