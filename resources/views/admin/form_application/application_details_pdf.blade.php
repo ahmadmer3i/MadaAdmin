@@ -237,7 +237,7 @@
     }
 
     table .table-row {
-        font-size: 20px;
+        font-size: 16px;
         width: 50%;
         padding-left: 20px;
         white-space: nowrap;
@@ -258,12 +258,12 @@
     }
 
     .table-row {
-        font-size: 20px;
+        font-size: 16px;
         padding-bottom: 20px;
     }
 
     body {
-        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        font-family: 'XBRiyaz', sans-serif;
         text-align: center;
         color: #000;
     }
@@ -276,7 +276,7 @@
         /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);*/
         font-size: 16px;
         line-height: 24px;
-        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        font-family: 'XBRiyaz', sans-serif;
         color: #555;
     }
 
@@ -349,7 +349,7 @@
     /** RTL **/
     .invoice-box.rtl {
         direction: ltr;
-        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        font-family: 'XBRiyaz', sans-serif;
     }
 
     .invoice-box.rtl table {
@@ -748,9 +748,9 @@
 
     </table>
     <h2 style="text-align: right">اقرار</h2>
-    <p style="font-size: 20px; text-align: right">نحن الموقعين
+    <p style="font-size: 16px; text-align: right">نحن الموقعين
         ادناه.................................................................</p>
-    <p style="font-size: 20px; text-align: right">
+    <p style="font-size: 16px; text-align: right">
         اقر ان كافة المعلومات المذكورة اعلاه صحيحة و دقيقة، و انني اتحمل كافة المسؤولية عن اي معلومات مغلوطة
         أو غير صحيحة، و أننا نفوض الشركة للإطلاع الدائم في أي وقت من الاوقات على نظام كريف و نظام سيكريت، و
         اننا نتنازل عن حقنا بأحكام السرية المصرفية لغايات هذا التفويض عليه اوقع.
