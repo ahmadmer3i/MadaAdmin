@@ -528,7 +528,6 @@
         </tbody>
     </table>
     <br>
-    <br>
     <h2 style='text-align: right'>بيانات العمل</h2>
     <table style="padding-top: 20px;font-size: 20px">
 
