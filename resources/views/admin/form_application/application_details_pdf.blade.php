@@ -404,23 +404,23 @@
         <tr>
             <td class="table-row">
 
-                <span class="name-element">الاسم:</span>{{$application->apply_full_name}}
+                <span class="name-element">الاسم: </span>{{$application->apply_full_name}}
 
 
             </td>
             <td class="table-row">
-                <span class="name-element">الرقم الوطني:</span>{{$application->apply_national_id}}
+                <span class="name-element">الرقم الوطني: </span>{{$application->apply_national_id}}
             </td>
 
         <tr>
             <td class="table-row">
 
-                <span class="name-element">العنوان:</span>{{$application->apply_address}}
+                <span class="name-element">العنوان: </span>{{$application->apply_address}}
 
 
             </td>
             <td class="table-row">
-                <span class="name-element">الجنس:</span>{{$application->apply_gender == 'male' ? 'ذكر':'انثى'}}
+                <span class="name-element">الجنس: </span>{{$application->apply_gender == 'male' ? 'ذكر':'انثى'}}
             </td>
 
         </tr>
@@ -429,7 +429,7 @@
 
             <td class="table-row">
 
-                <span class="name-element">الجنسية:</span>{{$application->apply_nationality}}
+                <span class="name-element">الجنسية: </span>{{$application->apply_nationality}}
 
 
             </td>
@@ -437,7 +437,7 @@
         <tr>
             <td class="table-row">
 
-                <span class="name-element">البريد الالكتروني:</span>{{$application->apply_email}}
+                <span class="name-element">البريد الالكتروني: </span>{{$application->apply_email}}
 
 
             </td>
@@ -447,11 +447,11 @@
 
             <td class="table-row">
                     <span
-                        class="name-element">تاريخ الميلاد:</span>{{$application->apply_birthdate}}
+                        class="name-element">تاريخ الميلاد: </span>{{$application->apply_birthdate}}
             </td>
             <td class="table-row">
 
-                <span class="name-element">رقم الهاتف:</span>{{$application->apply_phone}}
+                <span class="name-element">رقم الهاتف: </span>{{$application->apply_phone}}
 
 
             </td>
@@ -459,13 +459,13 @@
         <tr>
             <td class="table-row">
 
-                <span class="name-element">اسم الزوج / الزوجة:</span>{{$application->husband_wife_name}}
+                <span class="name-element">اسم الزوج / الزوجة: </span>{{$application->husband_wife_name}}
 
 
             </td>
             <td class="table-row">
 
-                <span class="name-element">عمل الزوج / الزوجة:</span>{{$application->husband_wife_work}}
+                <span class="name-element">عمل الزوج / الزوجة: </span>{{$application->husband_wife_work}}
 
 
             </td>
@@ -480,10 +480,10 @@
         <tr>
             <td class="table-row">
                     <span
-                        class="name-element">عدد المعالين:</span>{{$application->dependents}}
+                        class="name-element">عدد المعالين: </span>{{$application->dependents}}
             </td>
             <td class="table-row">
-                <span class="name-element">المؤهل العلمي:</span>{{$application->form_qualification->name}}
+                <span class="name-element">المؤهل العلمي: </span>{{$application->form_qualification->name}}
             </td>
 
         <tr>
@@ -534,24 +534,24 @@
         <tr>
             <td class="table-row">
 
-                <span class="name-element">اسم الشركة:</span>{{$application->apply_work_place}}
+                <span class="name-element">اسم الشركة: </span>{{$application->apply_work_place}}
 
 
             </td>
             <td class="table-row">
-                <span class="name-element">الوظيفة:</span>{{$application->apply_work_title}}
+                <span class="name-element">الوظيفة: </span>{{$application->apply_work_title}}
             </td>
 
         <tr>
             <td class="table-row">
 
-                <span class="name-element">رقم الهاتف:</span>{{$application->apply_work_phone}}
+                <span class="name-element">رقم الهاتف: </span>{{$application->apply_work_phone}}
 
 
             </td>
             <td class="table-row">
 
-                <span class="name-element">الموقع الالكتروني:</span>{{$application->apply_work_website}}
+                <span class="name-element">الموقع الالكتروني: </span>{{$application->apply_work_website}}
 
 
             </td>
@@ -560,13 +560,13 @@
         <tr>
             <td class="table-row" style="font-size: 20px;">
 
-                <span class="name-element">عنوان العمل:</span>{{$application->apply_work_address}}
+                <span class="name-element">عنوان العمل: </span>{{$application->apply_work_address}}
 
 
             </td>
             <td class="table-row">
 
-                <span class="name-element">تاريخ التعيين:</span>{{$application->apply_work_date}}
+                <span class="name-element">تاريخ التعيين: </span>{{$application->apply_work_date}}
 
 
             </td>
@@ -575,13 +575,13 @@
         <tr>
             <td class="table-row">
 
-                <span class="name-element">البريد الالكتروني:</span>{{$application->apply_work_email}}
+                <span class="name-element">البريد الالكتروني: </span>{{$application->apply_work_email}}
 
 
             </td>
             <td class="table-row">
 
-                <span class="name-element">الراتب الاجمالي:</span>{{$application->apply_salary}} دينار اردني
+                <span class="name-element">الراتب الاجمالي: </span>{{$application->apply_salary}} دينار اردني
 
 
             </td>
@@ -591,13 +591,13 @@
             <td class="table-row">
 
                         <span
-                            class="name-element">طريقة استلام الراتب:</span>{{$application->transfer_ways->transfer_way}}
+                            class="name-element">طريقة استلام الراتب: </span>{{$application->transfer_ways->transfer_way}}
 
 
             </td>
             <td class="table-row">
 
-                <span class="name-element">البنك:</span>{{$application->partner_bank->name}}
+                <span class="name-element">البنك: </span>{{$application->partner_bank->name}}
 
 
             </td>
@@ -607,14 +607,14 @@
             <td class="table-row">
 
                     <span
-                        class="name-element">قيمة الاقتطاعات على الراتب:</span>{{$application->salary_deduction}} دينار
+                        class="name-element">قيمة الاقتطاعات على الراتب: </span>{{$application->salary_deduction}} دينار
                 اردني
 
 
             </td>
             <td class="table-row">
 
-                <span class="name-element">تفاصيل الاقتطاعات:</span>{{$application->salary_deduction_detail}}
+                <span class="name-element">تفاصيل الاقتطاعات: </span>{{$application->salary_deduction_detail}}
 
 
             </td>
@@ -624,7 +624,7 @@
             <td class="table-row">
 
                     <span
-                        class="name-element">القروض الشخصية:</span>{{$application->personal_loan}}
+                        class="name-element">القروض الشخصية: </span>{{$application->personal_loan}}
             </td>
 
 
@@ -633,7 +633,7 @@
             <td class="table-row">
 
                     <span
-                        class="name-element">الرهونات على الاموال غير المنقولة:</span>{{$application->mortgages}}
+                        class="name-element">الرهونات على الاموال غير المنقولة: </span>{{$application->mortgages}}
 
 
             </td>
@@ -647,24 +647,24 @@
         <tr>
             <td class="table-row">
 
-                <span class="name-element">الاسم الكامل:</span>{{$application->sponsor_full_name}}
+                <span class="name-element">الاسم الكامل: </span>{{$application->sponsor_full_name}}
 
 
             </td>
             <td class="table-row">
-                <span class="name-element">الجنسية:</span>{{$application->sponsor_nationality}}
+                <span class="name-element">الجنسية: </span>{{$application->sponsor_nationality}}
             </td>
 
         <tr>
             <td class="table-row">
 
-                <span class="name-element">الرقم الوطني:</span>{{$application->sponsor_national_id}}
+                <span class="name-element">الرقم الوطني: </span>{{$application->sponsor_national_id}}
 
 
             </td>
             <td class="table-row">
 
-                <span class="name-element">الجنس:</span>{{$application->sponsor_gender == 'male' ? 'ذكر' : 'انثى'}}
+                <span class="name-element">الجنس: </span>{{$application->sponsor_gender == 'male' ? 'ذكر' : 'انثى'}}
 
 
             </td>
@@ -673,28 +673,13 @@
         <tr>
             <td class="table-row">
 
-                <span class="name-element">العنوان:</span>{{$application->sponsor_address}}
+                <span class="name-element">العنوان: </span>{{$application->sponsor_address}}
 
 
             </td>
             <td class="table-row">
 
-                <span class="name-element">القرابة:</span>{{$application->sponsor_relationship}}
-
-            </td>
-
-        </tr>
-        <tr>
-            <td class="table-row">
-
-                <span class="name-element">رقم الهاتف:</span>{{$application->sponsor_phone}}
-
-
-            </td>
-            <td class="table-row">
-
-                <span class="name-element">الراتب:</span>{{$application->sponsor_salary}} دينار اردني
-
+                <span class="name-element">القرابة: </span>{{$application->sponsor_relationship}}
 
             </td>
 
@@ -702,14 +687,13 @@
         <tr>
             <td class="table-row">
 
-                    <span
-                        class="name-element">طريقة استلام الراتب:</span>{{$application->transfer_ways_sponsor->transfer_way}}
+                <span class="name-element">رقم الهاتف: </span>{{$application->sponsor_phone}}
 
 
             </td>
             <td class="table-row">
 
-                <span class="name-element">البنك:</span>{{$application->sponsor_bank->name}}
+                <span class="name-element">الراتب: </span>{{$application->sponsor_salary}} دينار اردني
 
 
             </td>
@@ -719,7 +703,23 @@
             <td class="table-row">
 
                     <span
-                        class="name-element">عمل الكفيل:</span>{{$application->sponsor_work_title}}
+                        class="name-element">طريقة استلام الراتب: </span>{{$application->transfer_ways_sponsor->transfer_way}}
+
+
+            </td>
+            <td class="table-row">
+
+                <span class="name-element">البنك: </span>{{$application->sponsor_bank->name}}
+
+
+            </td>
+
+        </tr>
+        <tr>
+            <td class="table-row">
+
+                    <span
+                        class="name-element">عمل الكفيل: </span>{{$application->sponsor_work_title}}
             </td>
             <td class="table-row">
 
@@ -733,12 +733,12 @@
             <td class="table-row">
 
                     <span
-                        class="name-element">عنوان العمل:</span>{{$application->sponsor_work_address}}
+                        class="name-element">عنوان العمل: </span>{{$application->sponsor_work_address}}
             </td>
             <td class="table-row">
 
                     <span
-                        class="name-element">تاريخ التعيين:</span>{{$application->sponsor_work_date}}
+                        class="name-element">تاريخ التعيين: </span>{{$application->sponsor_work_date}}
 
 
             </td>
