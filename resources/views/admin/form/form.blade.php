@@ -669,7 +669,7 @@
                             </div>
                         </div>
                         <div class="form-group mb-3 row mt-5">
-                            <label for="apply_id_image" class="col-sm-1 col-form-label">
+                            <label for="apply_id_image" class="col-sm-2 col-form-label">
                                 ارفاق صورة عن هوية مقدم الطلب
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
@@ -677,7 +677,7 @@
                                 <input class="form-control" id="apply_id_image" name="apply_id_image"
                                        type="file" value="">
                             </div>
-                            <label for="sponsor_id_image" class="col-sm-1 col-form-label">
+                            <label for="sponsor_id_image" class="col-sm-2 col-form-label">
                                 ارفاق صورة عن هوية الكفيل
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12">
