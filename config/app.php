@@ -182,12 +182,12 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,
 
         /*
          * Package Service Providers...
          */
         Intervention\Image\ImageServiceProvider::class,
+        Meneses\LaravelMpdf\LaravelMpdfServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -196,6 +196,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
 
     ],
 
@@ -214,7 +215,8 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Location' => 'Stevebauman\Location\Facades\Location',
-        'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
+        'PDF' => Meneses\LaravelMpdf\Facades\LaravelMpdf::class,
+
     ])->toArray(),
 
 ];

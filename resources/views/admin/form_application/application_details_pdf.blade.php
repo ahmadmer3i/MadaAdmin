@@ -1,753 +1,815 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+{{--<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{{$application->form_services->name}}</title>
+
+    <style>
+        h2 {
+            display: flex;
+            text-align: center;
+        }
+
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            background-image: url({{public_path('frontend/content/images/heroback.png')}});
+            color: #555;
+        }
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left;
+        }
+
+        .invoice-box table td {
+            padding: 0;
+            vertical-align: top;
+        }
+
+        .invoice-box table tr td:nth-child(2) {
+            text-align: right;
+        }
+
+        .invoice-box table tr.top table td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.top table td.title {
+            font-size: 45px;
+            line-height: 45px;
+            color: #333;
+        }
+
+        .invoice-box table tr.information table td {
+            padding-bottom: 40px;
+        }
+
+        .invoice-box table tr.heading td {
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .invoice-box table tr.details td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.item td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .invoice-box table tr.item.last td {
+            border-bottom: none;
+        }
+
+        .invoice-box table tr.total td:nth-child(2) {
+            border-top: 2px solid #eee;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .invoice-box table tr.information table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /** RTL **/
+        .invoice-box.rtl {
+            direction: rtl;
+            font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        }
+
+        .invoice-box.rtl table {
+            text-align: right;
+        }
+
+        .invoice-box.rtl table tr td:nth-child(2) {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+<div class="invoice-box">
+    <table cellpadding="0" cellspacing="0"
+           style="background-image: url("{{public_path('frontend/content/images/heroback.png')}}")">
+
+    <tr class="top">
+        <td colspan="2">
+            <table>
+                <tr>
+                    <td class="title">
+                        <img src="{{public_path('backend/assets/images/logo-dark.png')}}"
+                             style="width: 50%; max-width: 200px" alt=""/>
+                    </td>
+
+
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr class="invoice-box">
+        <td colspan="3">
+            <table>
+                <tr style="text-align: right">
+
+                    <td style="padding-left: 5px">
+                        الجنسية: {{$application->apply_nationality}}<br/>
+                    </td>
+                    <td style="padding-left: 5px">
+                        الاسم: {{$application->apply_full_name}}<br/>
+                    </td>
+                    <td style="padding-left: 5px">
+                        الاسم: {{$application->apply_national_id}}<br/>
+                    </td>
+            </table>
+        </td>
+    </tr>
+
+    <tr class="heading">
+        <td>Payment Method</td>
+
+        <td>Check #</td>
+    </tr>
+
+    <tr class="details">
+        <td>Check</td>
+
+        <td>1000</td>
+    </tr>
+
+    <tr class="heading">
+        <td>Item</td>
+
+        <td>Price</td>
+    </tr>
+
+    <tr class="item">
+        <td>Website design</td>
+    </tr>
+
+    <tr class="item">
+        <td>Hosting (3 months)</td>
+
+        <td>$75.00</td>
+    </tr>
+
+    <tr class="item last">
+        <td>Domain name (1 year)</td>
+
+        <td>$10.00</td>
+    </tr>
+    <tr class="heading">
+        <td>Payment Method</td>
+
+        <td>Check #</td>
+    </tr>
+
+    <tr class="details">
+        <td>Check</td>
+
+        <td>1000</td>
+    </tr>
+
+    <tr class="heading">
+        <td>Item</td>
+
+        <td>Price</td>
+    </tr>
+
+    <tr class="item">
+        <td>Website design</td>
+
+        <td>$300.00</td>
+    </tr>
+
+    <tr class="item">
+        <td>Hosting (3 months)</td>
+
+        <td>$75.00</td>
+    </tr>
+
+    <tr class="item last">
+        <td>Domain name (1 year)</td>
+
+        <td>$10.00</td>
+    </tr>
+
+    <tr class="total">
+        <td></td>
+
+        <td>Total: $385.00</td>
+    </tr>
+    </table>
+</div>
+</body>
+</html>--}}
+
+<html lang="en" dir="rtl">
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>MADA | Admin Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="MADA | Admin Dashboard" name="description"/>
-    <meta content="" name="author"/>
-    <!-- DataTables -->
-    <!-- jquery.vectormap css -->
-    <!-- DataTables -->
-    <link href="{{asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
-          type="text/css"/>
 
-
-    <!-- Responsive datatable examples -->
-    <link href="{{asset('backend/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}"
-          rel="stylesheet" type="text/css"/>
-    <!-- Bootstrap Css -->
-    <link href="{{asset('backend/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet"
-          type="text/css"/>
-    <!-- Icons Css -->
-    <link href="{{asset('backend/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css"/>
-    <!-- App Css-->
-    <link href="{{asset('backend/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-    <link rel="stylesheet" href="{{asset('backend/assets/css/custom.css')}}">
 </head>
 
-<body data-topbar="dark">
+<body>
+<style>
+
+    table {
+        width: 100%;
+    }
+
+    table .table-row {
+        font-size: 20px;
+        width: 50%;
+        padding-left: 20px;
+        white-space: nowrap;
+    }
+
+    .body-font-size {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .name-element {
+        font-weight: bold;
+        flex-flow: nowrap row;
+    }
+
+    .container {
+        display: grid;
+    }
+
+    .table-row {
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+
+    body {
+        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        text-align: center;
+        color: #000;
+    }
+
+    .invoice-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        /*border: 1px solid #eee;*/
+        /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);*/
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color: #555;
+    }
+
+    .invoice-box table {
+        width: 100%;
+        line-height: inherit;
+        text-align: left;
+    }
+
+    .invoice-box table td {
+        padding: 5px;
+        vertical-align: top;
+    }
+
+    .invoice-box table tr td:nth-child(2) {
+        text-align: right;
+    }
+
+    .invoice-box table tr.top table td {
+        padding-bottom: 20px;
+    }
+
+    .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
+    }
+
+    .invoice-box table tr.information table td {
+        padding-bottom: 40px;
+    }
+
+    .invoice-box table tr.heading td {
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+    }
+
+    .invoice-box table tr.details td {
+        padding-bottom: 20px;
+    }
+
+    .invoice-box table tr.item td {
+        border-bottom: 1px solid #eee;
+    }
+
+    .invoice-box table tr.item.last td {
+        border-bottom: none;
+    }
+
+    .invoice-box table tr.total td:nth-child(2) {
+        border-top: 2px solid #eee;
+        font-weight: bold;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+
+        .invoice-box table tr.information table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+    }
+
+    /** RTL **/
+    .invoice-box.rtl {
+        direction: ltr;
+        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    }
+
+    .invoice-box.rtl table {
+        text-align: right;
+    }
+
+    .invoice-box.rtl table tr td:nth-child(2) {
+        text-align: left;
+    }
+
+
+    /* Clear floats after the columns */
+</style>
 
 <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
 <!-- Begin page -->
-<div id="layout-wrapper">
-    <div class="page-content" xmlns="http://www.w3.org/1999/html">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="d-flex justify-content-center">
-                    <div class="col-10">
-                        <div class="card">
-                            <div class="card-body">
+<div class="container">
+    <div class="invoice-box rtl">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="{{public_path('backend/assets/images/logo-dark.png')}}" alt="Company logo"
+                                     style="width: 100%; max-width: 300px"/>
+                            </td>
 
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div
-                                            class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h2 class="mb-sm-0">Application Details</h2>
-                                            <div class="page-title-right">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <input type="hidden" name="id" value="{{ !empty($application->id) }}">
-                                <div class="row mb-3 mt-5">
-                                    <label for="title" class="col-sm-2 col-form-label">Service
-                                        Requested</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details" type="text" id="title"
-                                               name="title"
-                                               placeholder="Applicant Name"
-                                               value="{{ !empty($application->form_services->name) ? $application->form_services->name : '' }}">
-                                    </div>
-                                    <label for="title" class="col-sm-2 col-form-label px-5">Application
-                                        Date</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details" type="text" id="title"
-                                               name="title"
-                                               placeholder="Applicant Name"
-                                               value="{{ !empty($application->created_at) ? $application->created_at : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="title" class="col-sm-2 col-form-label px-4">Application
-                                        Status</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details" type="text" id="title"
-                                               name="title"
-                                               style="color: @if(($application->approved)) green @elseif(is_null($application->approved)) orange @else red @endif"
-                                               placeholder="Applicant Name"
-                                               value="@if(($application->approved)) Approved @elseif(is_null($application->approved)) Waiting @else Rejected @endif">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div
-                                            class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h4 class="pt-5">Personal Info</h4>
-                                            <div class="page-title-right">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-1">
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Name</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details" type="text" id="title"
-                                               name="title"
-                                               placeholder="Applicant Name"
-                                               value="{{ !empty($application->apply_full_name) ? $application->apply_full_name : '' }}">
-                                    </div>
-                                    <label for="subtitle" class="col-sm-2 col-form-label  px-5">Nationality</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->apply_nationality) ? $application->apply_nationality : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Gender</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details text-uppercase" type="text"
-                                               id="title"
-                                               name="title"
-                                               placeholder="Applicant Name"
-                                               value="{{ !empty($application->apply_gender) ? $application->apply_gender : '' }}">
-                                    </div>
-                                    <label for="subtitle" class="col-sm-2 col-form-label px-5">National ID</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->apply_national_id) ? $application->apply_national_id : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Address</label>
-                                    <div class="col-sm-10">
-                                        <input disabled class="form-control form-details text-uppercase" type="text"
-                                               id="title"
-                                               name="title"
-                                               placeholder=""
-                                               value="{{ !empty($application->apply_address) ? $application->apply_address : '' }}">
-                                    </div>
-
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Birth Date</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details text-uppercase" type="text"
-                                               id="title"
-                                               name="title"
-                                               placeholder=""
-                                               value="{{ !empty($application->apply_birthdate) ? $application->apply_birthdate : '' }}">
-                                    </div>
-                                    <label for="subtitle" class="col-sm-2 col-form-label  px-5">Email</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->apply_email) ? $application->apply_email : '' }}">
-                                    </div>
+                            <td style="text-align: right">
+                                رقم الطلب:{{$application->id}}<br/>
+                                {{$date}}التاريخ:<br/>
+                                نوع الطلب: <b>{{$application->form_services->name}}</b>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
 
 
-                                </div>
-
-                                <div class="row mb-3 mt-5">
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Phone Number</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->apply_phone) ? $application->apply_phone : '0' }}">
-                                    </div>
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Material Status</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details text-uppercase" type="text"
-                                               id="title"
-                                               name="title"
-                                               placeholder=""
-                                               value="{{ !empty($application->form_material_status->name) ? $application->form_material_status->name : '' }}">
-                                    </div>
-
-
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="title"
-                                           class="col-sm-2 col-form-label  px-5">{{$application->apply_gender == 'male' ? 'Wife Work':'Husband Work'}}</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details text-uppercase" type="text"
-                                               id="title"
-                                               name="title"
-                                               placeholder=""
-                                               value="{{ !empty($application->husband_wife_work) ? $application->husband_wife_work : 'No' }}">
-                                    </div>
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Qualification</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->form_qualification->name) ? $application->form_qualification->name : '-' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">{{$application->apply_gender == 'male' ? 'Wife Work':'Husband Work'}}</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->husband_wife_name) ? $application->husband_wife_name : 'NO' }}">
-                                    </div>
-
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Dependents</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->dependents) ? $application->dependents : '0' }}">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div
-                                            class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h4 class="my-5">Relative Info</h4>
-                                            <div class="page-title-right">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <table id="datatable"
-                                                       class="table table-bordered dt-responsive wrap"
-                                                       style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th>Name</th>
-                                                        <th>Relation</th>
-                                                        <th>Work</th>
-                                                        <th>Work Place</th>
-                                                        <th>Phone Number</th>
-                                                    </tr>
-                                                    </thead>
-
-
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>
-                                                            {{$application->relative_one_name}}
-                                                        </td>
-                                                        <td>{{$application->relative_one_relation}}</td>
-                                                        <td>{{$application->relative_one_work_title}}</td>
-                                                        <td>{{$application->relative_one_work_place}}</td>
-                                                        <td>{{$application->relative_one_phone}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>
-                                                            {{$application->relative_two_name}}
-                                                        </td>
-                                                        <td>{{$application->relative_two_relation}}</td>
-                                                        <td>{{$application->relative_two_work_title}}</td>
-                                                        <td>{{$application->relative_two_work_place}}</td>
-                                                        <td>{{$application->relative_two_phone}}</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-
-                                            </div>
-                                        </div>
-                                    </div> <!-- end col -->
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div
-                                            class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h4 class="mt-5">Work Info</h4>
-                                            <div class="page-title-right">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-1">
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Work Place</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->apply_work_place) ? $application->apply_work_place : 'NO' }}">
-                                    </div>
-
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Work Title</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->apply_work_title) ? $application->apply_work_title : '0' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Work Website</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->apply_work_website) ? $application->apply_work_website : 'NO' }}">
-                                    </div>
-
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Work Phone</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->apply_work_phone) ? $application->apply_work_phone : '0' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Work Address</label>
-                                    <div class="col-sm-10">
-                                        <input disabled class="form-control form-details text-uppercase" type="text"
-                                               id="title"
-                                               name="title"
-                                               placeholder=""
-                                               value="{{ !empty($application->apply_work_address) ? $application->apply_work_address : '' }}">
-                                    </div>
-
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Work Start Date</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->apply_work_date) ? $application->apply_work_date : 'NO' }}">
-                                    </div>
-
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Salary</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->apply_salary) ? $application->apply_salary : '0' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Work Email</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->apply_work_email) ? $application->apply_work_email : 'NO' }}">
-                                    </div>
-
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label px-4">Salary Deduction</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->salary_deduction) ? $application->salary_deduction : '0' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label px-4">Transfer Way</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->transfer_ways->transfer_way) ? $application->transfer_ways->transfer_way : '0' }}">
-                                    </div>
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label px-4">Transfer Way</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->partner_bank->name) ? $application->partner_bank->name : 'No' }}">
-                                    </div>
-
-
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Personal Loans</label>
-                                    <div class="col-sm-4">
-                                            <textarea disabled
-                                                      class="form-control form-details" type="text"
-                                                      rows="5"
-                                                      id="subtitle"
-                                                      name="subtitle"
-                                                      placeholder="No Personal Loan"
-                                            >{{ !empty($application->personal_loan) ? $application->personal_loan : '' }}</textarea>
-                                    </div>
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Mortgages</label>
-                                    <div class="col-sm-4">
-                                            <textarea disabled
-                                                      class="form-control form-details" type="text"
-                                                      id="subtitle"
-                                                      rows="5"
-                                                      name="subtitle"
-                                                      placeholder="No Deductions"
-                                            >{{ !empty($application->mortgages) ? $application->mortgages : '' }}</textarea>
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Salary Deduction Details</label>
-                                    <div class="col-sm-4">
-                                            <textarea disabled
-                                                      class="form-control form-details" type="text"
-                                                      id="subtitle"
-                                                      rows="5"
-                                                      name="subtitle"
-                                                      placeholder="No Deductions"
-                                            >{{ !empty($application->salary_deduction_detail) ? $application->salary_deduction_detail : '' }}</textarea>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div
-                                            class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h4 class="mt-5">Sponsor Details</h4>
-                                            <div class="page-title-right">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-1">
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor Name</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details" type="text" id="title"
-                                               name="title"
-                                               placeholder="Applicant Name"
-                                               value="{{ !empty($application->sponsor_full_name) ? $application->sponsor_full_name : '' }}">
-                                    </div>
-                                    <label for="subtitle" class="col-sm-2 col-form-label  px-5">Nationality</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->sponsor_nationality) ? $application->sponsor_nationality : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Gender</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details text-uppercase" type="text"
-                                               id="title"
-                                               name="title"
-                                               placeholder="Applicant Name"
-                                               value="{{ !empty($application->sponsor_gender) ? $application->sponsor_gender : '' }}">
-                                    </div>
-                                    <label for="subtitle" class="col-sm-2 col-form-label px-5">National ID</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->sponsor_national_id) ? $application->sponsor_national_id : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor Address</label>
-                                    <div class="col-sm-10">
-                                        <input disabled class="form-control form-details text-uppercase" type="text"
-                                               id="title"
-                                               name="title"
-                                               placeholder=""
-                                               value="{{ !empty($application->sponsor_address) ? $application->sponsor_address : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor Phone</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details" type="text" id="title"
-                                               name="title"
-                                               placeholder="Applicant Name"
-                                               value="{{ !empty($application->sponsor_phone) ? $application->sponsor_phone : '' }}">
-                                    </div>
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Relationship</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->sponsor_relationship) ? $application->sponsor_relationship : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Work Title</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details" type="text" id="title"
-                                               name="title"
-                                               placeholder="Applicant Name"
-                                               value="{{ !empty($application->sponsor_work_title) ? $application->sponsor_work_title : '' }}">
-                                    </div>
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Work Place</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->sponsor_work_place) ? $application->sponsor_work_place : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="title" class="col-sm-2 col-form-label  px-4">Sponsor Work
-                                        Address</label>
-                                    <div class="col-sm-10">
-                                        <input disabled class="form-control form-details text-uppercase" type="text"
-                                               id="title"
-                                               name="title"
-                                               placeholder=""
-                                               value="{{ !empty($application->sponsor_work_address) ? $application->sponsor_work_address : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Work Start Date</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details" type="text" id="title"
-                                               name="title"
-                                               placeholder="Applicant Name"
-                                               value="{{ !empty($application->sponsor_work_date) ? $application->sponsor_work_date : '' }}">
-                                    </div>
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor Salary</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details" type="text" id="title"
-                                               name="title"
-                                               placeholder="Applicant Name"
-                                               value="{{ !empty($application->sponsor_bank->name) ? $application->sponsor_bank->name : 'No' }}">
-                                    </div>
-
-                                </div>
-                                <div class="row mb-3 mt-5">
-                                    <label for="subtitle"
-                                           class="col-sm-2 col-form-label  px-5">Salary Transfer</label>
-                                    <div class="col-sm-4">
-                                        <input disabled
-                                               class="form-control form-details" type="text"
-                                               id="subtitle"
-                                               name="subtitle"
-                                               placeholder="Subtitle"
-                                               value="{{ !empty($application->transfer_ways_sponsor->transfer_way) ? $application->transfer_ways_sponsor->transfer_way : '' }}">
-                                    </div>
-
-                                    <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor Bank</label>
-                                    <div class="col-sm-4">
-                                        <input disabled class="form-control form-details" type="text" id="title"
-                                               name="title"
-                                               placeholder="Applicant Name"
-                                               value="{{ !empty($application->sponsor_salary) ? $application->sponsor_salary : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div
-                                            class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h4 class="mt-5">Company Procedure</h4>
-                                            <div class="page-title-right">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-1">
-                                    <label for="service_requested" class="col-sm-2 col-form-label  px-5">Service
-                                        Required</label>
-                                    <div class="col-sm-4">
-                                        <input class="form-control form-details" type="text" id="service_requested"
-                                               name="service_requested"
-                                               placeholder="Service Requested"
-                                               value="{{ !empty($application->service_requested) ? $application->service_requested : '' }}">
-                                    </div>
-                                    <label for="type"
-                                           class="col-sm-2 col-form-label  px-5">Type</label>
-                                    <div class="col-sm-4">
-                                        <input
-                                            class="form-control form-details" type="text"
-                                            id="service_type"
-                                            name="service_type"
-                                            placeholder="Type"
-                                            value="{{ !empty($application->service_type) ? $application->service_type : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-1">
-                                    <label for="procedure_value" class="col-sm-2 col-form-label  px-5">
-                                        Procedure Value
-                                    </label>
-                                    <div class="col-sm-4">
-                                        <input class="form-control form-details" type="text" id="procedure_value"
-                                               name="procedure_value"
-                                               placeholder="Procedure Value"
-                                               value="{{ !empty($application->procedure_value) ? $application->procedure_value : '' }}">
-                                    </div>
-                                    <label for="payment_period"
-                                           class="col-sm-2 col-form-label  px-5">Payment Period</label>
-                                    <div class="col-sm-4">
-                                        <input
-                                            class="form-control form-details" type="text"
-                                            id="payment_period"
-                                            name="payment_period"
-                                            placeholder="Payment Period"
-                                            value="{{ !empty($application->payment_period) ? $application->payment_period : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-1">
-                                    <label for="profit_ratio" class="col-sm-2 col-form-label  px-5">
-                                        Profit Ratio
-                                    </label>
-                                    <div class="col-sm-4">
-                                        <input class="form-control form-details" type="number" step="0.01"
-                                               id="profit_ratio"
-                                               name="profit_ratio"
-                                               placeholder="Profit Ratio"
-                                               value="{{ !empty($application->profit_ratio) ? $application->profit_ratio : '' }}">
-                                    </div>
-                                    <label for="total_amount"
-                                           class="col-sm-2 col-form-label  px-5">Total Amount</label>
-                                    <div class="col-sm-4">
-                                        <input
-                                            class="form-control form-details" type="number"
-                                            step="0.01"
-                                            id="total_amount"
-                                            name="total_amount"
-                                            placeholder="Total Amount"
-                                            value="{{ !empty($application->total_amount) ? $application->total_amount : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3 mt-1">
-                                    <label for="first_payment" class="col-sm-2 col-form-label  px-5">
-                                        Initial Payment
-                                    </label>
-                                    <div class="col-sm-4">
-                                        <input class="form-control form-details" type="number" id="first_payment"
-                                               name="first_payment"
-                                               placeholder="Initial Payment"
-                                               value="{{ !empty($application->first_payment) ? $application->first_payment : '' }}">
-                                    </div>
-                                    <label for="installment_value"
-                                           class="col-sm-2 col-form-label  px-4">Installment Value</label>
-                                    <div class="col-sm-4">
-                                        <input
-                                            class="form-control form-details" type="number"
-                                            id="installment_value"
-                                            name="installment_value"
-                                            placeholder="Installment Value"
-                                            value="{{ !empty($application->installment_value) ? $application->installment_value : '' }}">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="card-body">
-                                    </div>
-                                    <div class="row mb-3 mt-5">
-
-                                    </div>
-                                </div>
-                                <!-- end row -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- start page title -->
+        <div>
+            <h1>طلب تمويل</h1>
         </div>
+
+
     </div>
+    <h2 style='text-align: right'>البيانات الشخصية</h2>
+    <table style="padding-top: 20px">
+
+        <tr>
+            <td class="table-row">
+
+                <span class="name-element">الاسم:</span>{{$application->apply_full_name}}
+
+
+            </td>
+            <td class="table-row">
+                <span class="name-element">الرقم الوطني:</span>{{$application->apply_national_id}}
+            </td>
+
+        <tr>
+            <td class="table-row">
+
+                <span class="name-element">العنوان:</span>{{$application->apply_address}}
+
+
+            </td>
+            <td class="table-row">
+                <span class="name-element">الجنس:</span>{{$application->apply_gender == 'male' ? 'ذكر':'انثى'}}
+            </td>
+
+        </tr>
+        <tr>
+
+
+            <td class="table-row">
+
+                <span class="name-element">الجنسية:</span>{{$application->apply_nationality}}
+
+
+            </td>
+        </tr>
+        <tr>
+            <td class="table-row">
+
+                <span class="name-element">البريد الالكتروني:</span>{{$application->apply_email}}
+
+
+            </td>
+
+        </tr>
+        <tr>
+
+            <td class="table-row">
+                    <span
+                        class="name-element">تاريخ الميلاد:</span>{{$application->apply_birthdate}}
+            </td>
+            <td class="table-row">
+
+                <span class="name-element">رقم الهاتف:</span>{{$application->apply_phone}}
+
+
+            </td>
+        </tr>
+        <tr>
+            <td class="table-row">
+
+                <span class="name-element">اسم الزوج / الزوجة:</span>{{$application->husband_wife_name}}
+
+
+            </td>
+            <td class="table-row">
+
+                <span class="name-element">عمل الزوج / الزوجة:</span>{{$application->husband_wife_work}}
+
+
+            </td>
+
+
+        </tr>
+        <tr>
+
+
+        </tr>
+
+        <tr>
+            <td class="table-row">
+                    <span
+                        class="name-element">عدد المعالين:</span>{{$application->dependents}}
+            </td>
+            <td class="table-row">
+                <span class="name-element">المؤهل العلمي:</span>{{$application->form_qualification->name}}
+            </td>
+
+        <tr>
+
+    </table>
+    <h2 style='text-align: right'>اقارب الدرجة الاولى</h2>
+    <table
+        style="border-collapse: collapse; border-spacing: 0; width: 100%; text-align: center">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>الاسم</th>
+            <th>الصلة</th>
+            <th>المهنة</th>
+            <th>مكان العمل</th>
+            <th>رقم الهاتف</th>
+        </tr>
+        </thead>
+
+
+        <tbody>
+        <tr>
+            <td class="body-font-size">1</td>
+            <td class="body-font-size">
+                {{$application->relative_one_name}}
+            </td>
+            <td class="body-font-size">{{$application->relative_one_relation}}</td>
+            <td class="body-font-size">{{$application->relative_one_work_title}}</td>
+            <td class="body-font-size">{{$application->relative_one_work_place}}</td>
+            <td class="body-font-size">{{$application->relative_one_phone}}</td>
+        </tr>
+        <tr>
+            <td class="body-font-size">2</td>
+            <td class="body-font-size">
+                {{$application->relative_two_name}}
+            </td>
+            <td class="body-font-size">{{$application->relative_two_relation}}</td>
+            <td class="body-font-size">{{$application->relative_two_work_title}}</td>
+            <td class="body-font-size">{{$application->relative_two_work_place}}</td>
+            <td class="body-font-size">{{$application->relative_two_phone}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <h2 style='text-align: right'>بيانات العمل</h2>
+    <table style="padding-top: 20px;font-size: 20px">
+
+        <tr>
+            <td class="table-row">
+
+                <span class="name-element">اسم الشركة:</span>{{$application->apply_work_place}}
+
+
+            </td>
+            <td class="table-row">
+                <span class="name-element">الوظيفة:</span>{{$application->apply_work_title}}
+            </td>
+
+        <tr>
+            <td class="table-row">
+
+                <span class="name-element">رقم الهاتف:</span>{{$application->apply_work_phone}}
+
+
+            </td>
+            <td class="table-row">
+
+                <span class="name-element">الموقع الالكتروني:</span>{{$application->apply_work_website}}
+
+
+            </td>
+
+        </tr>
+        <tr>
+            <td class="table-row" style="font-size: 20px;">
+
+                <span class="name-element">عنوان العمل:</span>{{$application->apply_work_address}}
+
+
+            </td>
+            <td class="table-row">
+
+                <span class="name-element">تاريخ التعيين:</span>{{$application->apply_work_date}}
+
+
+            </td>
+
+        </tr>
+        <tr>
+            <td class="table-row">
+
+                <span class="name-element">البريد الالكتروني:</span>{{$application->apply_work_email}}
+
+
+            </td>
+            <td class="table-row">
+
+                <span class="name-element">الراتب الاجمالي:</span>{{$application->apply_salary}} دينار اردني
+
+
+            </td>
+
+        </tr>
+        <tr>
+            <td class="table-row">
+
+                        <span
+                            class="name-element">طريقة استلام الراتب:</span>{{$application->transfer_ways->transfer_way}}
+
+
+            </td>
+            <td class="table-row">
+
+                <span class="name-element">البنك:</span>{{$application->partner_bank->name}}
+
+
+            </td>
+
+        </tr>
+        <tr>
+            <td class="table-row">
+
+                    <span
+                        class="name-element">قيمة الاقتطاعات على الراتب:</span>{{$application->salary_deduction}} دينار
+                اردني
+
+
+            </td>
+            <td class="table-row">
+
+                <span class="name-element">تفاصيل الاقتطاعات:</span>{{$application->salary_deduction_detail}}
+
+
+            </td>
+
+        </tr>
+        <tr>
+            <td class="table-row">
+
+                    <span
+                        class="name-element">القروض الشخصية:</span>{{$application->personal_loan}}
+            </td>
+
+
+        </tr>
+        <tr>
+            <td class="table-row">
+
+                    <span
+                        class="name-element">الرهونات على الاموال غير المنقولة:</span>{{$application->mortgages}}
+
+
+            </td>
+        </tr>
+
+
+    </table>
+    <h2 style='text-align: right'>تفاصيل الكفيل</h2>
+    <table style="padding-top: 20px">
+
+        <tr>
+            <td class="table-row">
+
+                <span class="name-element">الاسم الكامل:</span>{{$application->sponsor_full_name}}
+
+
+            </td>
+            <td class="table-row">
+                <span class="name-element">الجنسية:</span>{{$application->sponsor_nationality}}
+            </td>
+
+        <tr>
+            <td class="table-row">
+
+                <span class="name-element">الرقم الوطني:</span>{{$application->sponsor_national_id}}
+
+
+            </td>
+            <td class="table-row">
+
+                <span class="name-element">الجنس:</span>{{$application->sponsor_gender == 'male' ? 'ذكر' : 'انثى'}}
+
+
+            </td>
+
+        </tr>
+        <tr>
+            <td class="table-row">
+
+                <span class="name-element">العنوان:</span>{{$application->sponsor_address}}
+
+
+            </td>
+            <td class="table-row">
+
+                <span class="name-element">القرابة:</span>{{$application->sponsor_relationship}}
+
+            </td>
+
+        </tr>
+        <tr>
+            <td class="table-row">
+
+                <span class="name-element">رقم الهاتف:</span>{{$application->sponsor_phone}}
+
+
+            </td>
+            <td class="table-row">
+
+                <span class="name-element">الراتب:</span>{{$application->sponsor_salary}} دينار اردني
+
+
+            </td>
+
+        </tr>
+        <tr>
+            <td class="table-row">
+
+                    <span
+                        class="name-element">طريقة استلام الراتب:</span>{{$application->transfer_ways_sponsor->transfer_way}}
+
+
+            </td>
+            <td class="table-row">
+
+                <span class="name-element">البنك:</span>{{$application->sponsor_bank->name}}
+
+
+            </td>
+
+        </tr>
+        <tr>
+            <td class="table-row">
+
+                    <span
+                        class="name-element">عمل الكفيل:</span>{{$application->sponsor_work_title}}
+            </td>
+            <td class="table-row">
+
+                <span class="name-element">الشركة:</span>{{$application->sponsor_work_place}}
+
+
+            </td>
+
+        </tr>
+        <tr>
+            <td class="table-row">
+
+                    <span
+                        class="name-element">عنوان العمل:</span>{{$application->sponsor_work_address}}
+            </td>
+            <td class="table-row">
+
+                    <span
+                        class="name-element">تاريخ التعيين:</span>{{$application->sponsor_work_date}}
+
+
+            </td>
+
+        </tr>
+
+
+    </table>
+    <h2 style="text-align: right">اقرار</h2>
+    <p style="font-size: 24px; text-align: right">نحن الموقعين
+        ادناه.................................................................</p>
+    <p style="font-size: 24px; text-align: right">
+        اقر ان كافة المعلومات المذكورة اعلاه صحيحة و دقيقة، و انني اتحمل كافة المسؤولية عن اي معلومات مغلوطة
+        أو غير صحيحة، و أننا نفوض الشركة للإطلاع الدائم في أي وقت من الاوقات على نظام كريف و نظام سيكريت، و
+        اننا نتنازل عن حقنا بأحكام السرية المصرفية لغايات هذا التفويض عليه اوقع.
+    </p>
+
+    <table>
+        <tr>
+            <td class="table-row">
+
+                    <span
+                        class="name-element">مقدم الطلب:</span>
+            </td>
+            <td class="table-row">
+
+                    <span
+                        class="name-element" style="padding-right: 40px">الكفيل:</span>
+
+
+            </td>
+    </table>
+    <br>
+    <table>
+        <tr>
+            <td class="table-row">
+
+                    <span
+                        class="name-element">التاريخ:</span>
+            </td>
+            <td class="table-row">
+
+                    <span
+                        class="name-element" style="padding-right: 40px">التاريخ:</span>
+
+
+            </td>
+    </table>
+    <br>
+    <table>
+        <tr>
+            <td class="table-row">
+
+                    <span
+                        class="name-element">التوقيع:</span>
+            </td>
+            <td class="table-row">
+
+                    <span
+                        class="name-element" style="padding-right: 40px">التوقيع:</span>
+
+
+            </td>
+    </table>
+
+    </tr>
 </div>
-<div class="rightbar-overlay"></div>
+</div>
+<!-- end row -->
 
-<!-- JAVASCRIPT -->
-<script src="{{asset('backend/assets/libs/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('backend/assets/libs/metismenu/metisMenu.min.js')}}"></script>
-<script src="{{asset('backend/assets/libs/simplebar/simplebar.min.js')}}"></script>
-<script src="{{asset('backend/assets/libs/node-waves/waves.min.js')}}"></script>
-
-
-<!-- apexcharts -->
-<script src="{{asset('backend/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
-
-<!-- jquery.vectormap map -->
-<script src="{{asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
-<script
-    src="{{asset('backend/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js')}}"></script>
-
-<!-- Required datatable js -->
-<script src="{{asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('backend/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-
-<!-- Responsive examples -->
-<script src="{{asset('backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('backend/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
-<script src="{{asset('backend/assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js')}}"></script>
-<script src="{{asset('backend/assets/libs/datatables.net-select/js/dataTables.select.min.js')}}"></script>
-<script src="{{asset('backend/assets/libs/tinymce/tinymce.min.js')}}"></script>
-<script src="{{asset('backend/assets/js/pages/form-editor.init.js')}}"></script>
-<script src="{{asset('backend/assets/js/pages/dashboard.init.js')}}"></script>
-<!-- App js -->
-<script src="{{asset('backend/assets/js/pages/datatables.init.js')}}"></script>
-
-<script src="{{asset('backend/assets/js/app.js')}}"></script>
+<!-- End Page-content -->
 </body>
 </html>

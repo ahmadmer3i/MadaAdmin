@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\ApplyForm;
-use Barryvdh\DomPDF\Facade\Pdf as PDF;
+use ArPHP\I18N\Arabic;
 use Illuminate\Http\Request;
+use Meneses\LaravelMpdf\Facades\LaravelMpdf as PDF;
+use Illuminate\Support\Facades\App;
 
 class FormController extends Controller
 {
@@ -51,9 +53,14 @@ class FormController extends Controller
 
     public function PDF_download($id)
     {
-        $application = ApplyForm::find($id);
 
-        $pdf = PDF::loadView('admin.form_application.application_details_pdf', compact('application'));
+        $application = ApplyForm::find($id);
+        $data = [ 'application' => $application,
+            'date' => date('j F Y', strtotime($application->created_at)),
+            'image' => public_path('backend/assets/images/logo-dark.png')
+        ];
+
+        $pdf = PDF::loadView('admin.form_application.application_details_pdf', $data);
         return $pdf->download('application.pdf');
     }
 }

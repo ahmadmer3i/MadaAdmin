@@ -203,8 +203,8 @@
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
                                 <input class="form-control" id="dependents" name="dependents"
-                                       type="number"
-                                       step="0"
+                                       type="text"
+
                                        required=""
                                        placeholder="عدد المعالين">
                             </div>
@@ -367,7 +367,6 @@
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
                                 <input class="form-control" id="apply_work_title" name="apply_work_title"
                                        type="text"
-                                       step="0"
                                        required=""
                                        placeholder="الوظيفة">
                             </div>
@@ -794,6 +793,7 @@
                 },
                 dependents: {
                     required: true,
+                    digits: true,
                 },
                 relative_one_name: {
                     required: true,
@@ -870,6 +870,7 @@
                 sponsor_address: {
                     required: true,
                 },
+
                 sponsor_relationship: {
                     required: true,
                 },

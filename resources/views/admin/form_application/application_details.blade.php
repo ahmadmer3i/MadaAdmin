@@ -14,6 +14,10 @@
                                             class="page-title-box d-sm-flex align-items-center justify-content-between">
                                             <h2 class="mb-sm-0">Application Details</h2>
                                             <div class="page-title-right">
+                                                <div class="page-title-right">
+                                                    <a href="{{ route('form-application.applications.pdf', $application->id) }}"
+                                                       class="btn btn-dark">Export PDF</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -717,11 +721,6 @@
                                                     <a href="{{ route('form-application.applications') }}"
                                                        class="btn btn-danger">Back</a>
                                                 </div>
-                                                {{--                                                <div class="page-title-right">--}}
-                                                {{--                                                    <a href="{{ route('form-application.applications.pdf', $application->id) }}"--}}
-                                                {{--                                                       class="btn btn-danger">Download</a>--}}
-                                                {{--                                                </div>--}}
-
                                             </div>
                                         </div>
                                     </div>
