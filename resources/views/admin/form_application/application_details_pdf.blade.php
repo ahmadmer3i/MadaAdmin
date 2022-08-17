@@ -374,9 +374,9 @@
                 <td colspan="2">
                     <table>
                         <tr>
-                            <td class="title">
+                            <td class="title" style="text-align: left">
                                 <img src="{{public_path('backend/assets/images/logo-dark.png')}}" alt="Company logo"
-                                     style="width: 100%; max-width: 300px"/>
+                                     style="width: 100%; max-width: 300px; display: flex; justify-content: right"/>
                             </td>
 
                             <td style="text-align: right">
