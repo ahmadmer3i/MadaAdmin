@@ -61,6 +61,6 @@ class FormController extends Controller
         ];
 
         $pdf = PDF::loadView('admin.form_application.application_details_pdf', $data);
-        return $pdf->download('application.pdf');
+        return $pdf->download($application->created_at . '-' . $application->id . '.pdf');
     }
 }
