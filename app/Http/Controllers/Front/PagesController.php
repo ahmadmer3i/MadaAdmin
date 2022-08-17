@@ -8,9 +8,12 @@ use App\Models\Clients;
 use App\Models\Contact;
 use App\Models\Partners;
 use App\Models\Services;
-use FontLib\Table\Type\name;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use Pnlinh\InfobipSms\Facades\InfobipSms;
+use Twilio\Exceptions\ConfigurationException;
+use Twilio\Exceptions\TwilioException;
+use Twilio\Rest\Client;
 
 class PagesController extends Controller
 {
@@ -43,6 +46,10 @@ class PagesController extends Controller
         return view('frontend.client', compact('client_title'));
     }
 
+    /**
+     * @throws TwilioException
+     * @throws ConfigurationException
+     */
     public function submit_form(Request $request)
     {
         $sponsor_id_url = null;
@@ -129,6 +136,13 @@ class PagesController extends Controller
         $apply->sponsor_id_image = $sponsor_id_url;
         $apply->apply_id_image = $apply_id_url;
         $apply->save();
+        $id = $apply->id;
+//        $account_sid = getenv("TWILIO_SID");
+//        $auth_token = getenv("TWILIO_AUTH_TOKEN");
+//        $twilio_number = getenv("TWILIO_NUMBER");
+//        $client = new Client($account_sid, $auth_token);
+//        $client->messages->create('+962778443322',
+//            [ 'from' => $twilio_number, 'body' => $apply->apply_full_name . "\r\n application # " . $id ]);
         return redirect()->back()->with('success', 'done');
     }
 

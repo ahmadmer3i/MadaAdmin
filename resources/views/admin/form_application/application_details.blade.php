@@ -579,6 +579,71 @@
                                         <div class="col-12">
                                             <div
                                                 class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                                <h4 class="mt-5">IDs Images</h4>
+                                                <div class="page-title-right">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3 mt-5">
+                                        <label for="subtitle"
+                                               class="col-sm-2 col-form-label  px-5">Applicant ID</label>
+                                        <div class="col-4">
+                                            @if(!empty($application->apply_id_image))
+                                                <div>
+
+                                                    <a class="image-popup-vertical-fit"
+                                                       href="{{asset($application->apply_id_image)}}"
+                                                       title="Caption. Can be aligned it to any side and contain any HTML.">
+                                                        <img class="img-fluid" alt="img-2"
+                                                             src="{{asset($application->apply_id_image)}}"
+                                                             width="145">
+                                                    </a>
+                                                </div>
+                                                <div class="col-3 align-center">
+                                                    <a href="{{asset($application->apply_id_image)}}"
+                                                       download>Download</a>
+                                                </div>
+                                            @else
+                                                <div>
+                                                    <img class="img-thumbnail" alt="img-2"
+                                                         src="{{asset('backend/assets/images/Image_not_available.png')}}"
+                                                         width="145">
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor ID</label>
+                                        <div class="col-3">
+                                            @if(!empty($application->sponsor_id_image))
+                                                <div>
+
+                                                    <a class="image-popup-vertical-fit"
+                                                       href="{{asset($application->sponsor_id_image)}}"
+                                                       title="Caption. Can be aligned it to any side and contain any HTML.">
+                                                        <img class="img-fluid" alt="img-2"
+                                                             src="{{asset($application->sponsor_id_image)}}"
+                                                             width="145">
+                                                    </a>
+                                                </div>
+                                                <div class="col-3 align-center">
+                                                    <a href="{{asset($application->sponsor_id_image)}}"
+                                                       download>Download</a>
+                                                </div>
+                                            @else
+                                                <div>
+                                                    <img class="img-thumbnail" alt="img-2"
+                                                         src="{{asset('backend/assets/images/Image_not_available.png')}}"
+                                                         width="145">
+                                                </div>
+                                            @endif
+
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div
+                                                class="page-title-box d-sm-flex align-items-center justify-content-between">
                                                 <h4 class="mt-5">Company Procedure</h4>
                                                 <div class="page-title-right">
                                                 </div>

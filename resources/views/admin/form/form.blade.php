@@ -146,7 +146,7 @@
                                 <input class="form-control" id="apply_phone" name="apply_phone"
                                        type="text"
                                        required=""
-                                       placeholder="07XXXXXXXX">
+                                       placeholder="7XXXXXXXX">
                             </div>
                             <label for="apply_email" class="col-sm-1 col-form-label">البريد
                                 الالكتروني</label>
@@ -757,8 +757,8 @@
             "mobileValidation",
             function (value, element) {
                 value = value.replace(/\s+/g, "");
-                return this.optional(element) || value.length > 9 && value.match(/^07[7-9][0-9][0-9]{6}?$/);
-            }, "يرجى ادخال الرقم بالانجليزية و مبتدئاً 07 و من 9 خانات");
+                return this.optional(element) || value.length >= 9 && value.match(/^7[7-9][0-9][0-9]{6}?$/);
+            }, "يرجى ادخال الرقم بالانجليزية و مبتدئاً 7 و من 9 خانات");
         $.validator.addMethod(
             "emailValidation",
             function (value, element) {
@@ -796,8 +796,8 @@
                 apply_phone: {
                     required: true,
                     mobileValidation: true,
-                    minlength: 10,
-                    maxlength: 10,
+                    minlength: 9,
+                    maxlength: 9,
                 },
                 apply_birthdate: {
                     required: true,

@@ -23,7 +23,7 @@
     <!-- Responsive datatable examples -->
     <link href="{{asset('backend/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}"
           rel="stylesheet" type="text/css"/>
-
+    <link href="{{asset('backend/assets/libs/magnific-popup/magnific-popup.css')}}" rel="stylesheet" type="text/css">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.1/css/bootstrap-colorpicker.min.css"
           rel="stylesheet">
@@ -39,6 +39,7 @@
     <link href="{{asset('backend/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
     <link rel="stylesheet" href="{{asset('backend/assets/css/custom.css')}}">
+
 </head>
 
 <body data-topbar="dark">
@@ -139,7 +140,8 @@
     }
     @endif
 </script>
-
+<script src="{{asset('backend/assets/libs/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('backend/assets/js/pages/lightbox.init.js')}}"></script>
 
 </body>
 
