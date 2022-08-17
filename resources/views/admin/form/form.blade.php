@@ -57,6 +57,7 @@
                 <div class="p-3">
 
                     <form class="form-horizontal mt-3" action="{{ route('apply.submit') }}" method="POST"
+                          enctype="multipart/form-data"
                           id="requestForm">
                         @csrf
 
@@ -667,6 +668,24 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="form-group mb-3 row mt-5">
+                            <label for="apply_id_image" class="col-sm-1 col-form-label">
+                                ارفاق صورة عن هوية مقدم الطلب
+                            </label>
+                            <div class="col-lg-4 col-md-12 col-sm-12 error-message">
+
+                                <input class="form-control" id="apply_id_image" name="apply_id_image"
+                                       type="file" value="">
+                            </div>
+                            <label for="sponsor_id_image" class="col-sm-1 col-form-label">
+                                ارفاق صورة عن هوية الكفيل
+                            </label>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="sponsor_id_image" name="sponsor_id_image"
+                                       type="file" value="">
+                            </div>
+                        </div>
                         <div class="form-group mb-3 row">
                         </div>
                         <div class="form-group mb-3 row pt-5">
@@ -750,7 +769,8 @@
             "nameValidation",
             function (value, element) {
                 // value = value.replace(/\s+/g, "");
-                return this.optional(element) || value.match(/(^[(ёЁЇїІіЄєҐґa-zA-Zа-яА-Я\u0621-\u064A\u0660-\u0669)]{3,26})(\s)([(ёЁЇїІіЄєҐґa-zA-Zа-яА-Я\u0621-\u064A\u0660-\u0669)]{3,26})?(\s)?([(ёЁЇїІіЄєҐґa-zA-Zа-яА-Я\u0621-\u064A\u0660-\u0669)]{3,26})?(\s)?([(ёЁЇїІіЄєҐґa-zA-Zа-яА-Я\u0621-\u064A\u0660-\u0669)]{3,26})+$/);
+                return this.optional(element) || value.length >= 10 &&
+                    value.match(/(^[(ёЁЇїІіЄєҐґa-zA-Zа-яА-Я\u0621-\u064A\u0660-\u0669)]{3,26})(\s)([(ёЁЇїІіЄєҐґa-zA-Zа-яА-Я\u0621-\u064A\u0660-\u0669)]{3,26})?(\s)?([(ёЁЇїІіЄєҐґa-zA-Zа-яА-Я\u0621-\u064A\u0660-\u0669)]{3,26})?(\s)?([(ёЁЇїІіЄєҐґa-zA-Zа-яА-Я\u0621-\u064A\u0660-\u0669)]{3,26})+$/);
             }, "يرجى ادخال الاسم من اربع مقاطع");
         $('#requestForm').validate({
             rules: {
@@ -759,6 +779,7 @@
                 },
                 apply_full_name: {
                     nameValidation: true,
+
                 },
                 apply_gender: {
                     required: true,

@@ -8,7 +8,9 @@ use App\Models\Clients;
 use App\Models\Contact;
 use App\Models\Partners;
 use App\Models\Services;
+use FontLib\Table\Type\name;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class PagesController extends Controller
 {
@@ -43,9 +45,11 @@ class PagesController extends Controller
 
     public function submit_form(Request $request)
     {
+        $sponsor_id_url = null;
+        $apply_id_url = null;
         $apply = new ApplyForm();
         $request->validate([
-            'apply_full_name' => [ 'min:20' ],
+            'apply_full_name' => [ 'min:10' ],
         ]);
         $apply->apply_full_name = $request->apply_full_name;
         $apply->application_type_id = $request->application_type_id;
@@ -108,6 +112,22 @@ class PagesController extends Controller
         $apply->apply_work_email = $request->apply_work_email;
         $apply->transfer_way_id = $request->transfer_way_id;
         $apply->sponsor_salary_transfer_way_id = $request->sponsor_salary_transfer_way_id;
+        if ($request->file('sponsor_id_image')) {
+            $sponsor_id = $request->file('sponsor_id_image');
+            $sponsor_id_name = hexdec(uniqid()) . '.' . $sponsor_id->getClientOriginalExtension();
+            Image::make($sponsor_id)->save('upload/id_images/' . $sponsor_id_name);
+            $sponsor_id_url = 'upload/id_images/' . $sponsor_id_name;
+
+        }
+        if ($request->file('apply_id_image')) {
+            $apply_id = $request->file('apply_id_image');
+            $apply_id_name = hexdec(uniqid()) . '.' . $apply_id->getClientOriginalExtension();
+            Image::make($apply_id)->save('upload/id_images/' . $apply_id_name);
+            $apply_id_url = 'upload/id_images/' . $apply_id_name;
+//
+        }
+        $apply->sponsor_id_image = $sponsor_id_url;
+        $apply->apply_id_image = $apply_id_url;
         $apply->save();
         return redirect()->back()->with('success', 'done');
     }
