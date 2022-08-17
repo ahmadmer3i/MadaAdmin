@@ -380,8 +380,8 @@
                             </td>
 
                             <td style="text-align: right">
-                                رقم الطلب:{{$application->id}}<br/>
-                                {{$date}}التاريخ:<br/>
+                                رقم الطلب: {{$application->id}}<br/>
+                                {{$date}} التاريخ: <br/>
                                 نوع الطلب: <b>{{$application->form_services->name}}</b>
                             </td>
                         </tr>
@@ -597,7 +597,7 @@
             </td>
             <td class="table-row">
 
-                <span class="name-element">البنك: </span>{{$application->partner_bank->name}}
+                <span class="name-element">البنك: </span> {{$application->partner_bank->name}}
 
 
             </td>
@@ -723,7 +723,7 @@
             </td>
             <td class="table-row">
 
-                <span class="name-element">الشركة:</span>{{$application->sponsor_work_place}}
+                <span class="name-element">الشركة: </span>{{$application->sponsor_work_place}}
 
 
             </td>
