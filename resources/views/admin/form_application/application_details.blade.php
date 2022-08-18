@@ -32,7 +32,7 @@
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
-                                                   placeholder="Applicant Name"
+                                                   placeholder=""
                                                    value="{{ !empty($application->form_services->name) ? $application->form_services->name : '' }}">
                                         </div>
                                         <label for="title" class="col-sm-2 col-form-label px-5">Application
@@ -40,7 +40,7 @@
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
-                                                   placeholder="Applicant Name"
+                                                   placeholder=""
                                                    value="{{ !empty($application->created_at) ? $application->created_at : '' }}">
                                         </div>
                                     </div>
@@ -51,7 +51,7 @@
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
                                                    style="color: @if(($application->approved)) green @elseif(is_null($application->approved)) orange @else red @endif"
-                                                   placeholder="Applicant Name"
+                                                   placeholder=""
                                                    value="@if(($application->approved)) Approved @elseif(is_null($application->approved)) Waiting @else Rejected @endif">
                                         </div>
                                     </div>
@@ -70,7 +70,7 @@
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
-                                                   placeholder="Applicant Name"
+                                                   placeholder=""
                                                    value="{{ !empty($application->apply_full_name) ? $application->apply_full_name : '' }}">
                                         </div>
                                         <label for="subtitle" class="col-sm-2 col-form-label  px-5">Nationality</label>
@@ -89,7 +89,7 @@
                                             <input disabled class="form-control form-details text-uppercase" type="text"
                                                    id="title"
                                                    name="title"
-                                                   placeholder="Applicant Name"
+                                                   placeholder=""
                                                    value="{{ !empty($application->apply_gender) ? $application->apply_gender : '' }}">
                                         </div>
                                         <label for="subtitle" class="col-sm-2 col-form-label px-5">National ID</label>
@@ -447,7 +447,7 @@
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
-                                                   placeholder="Applicant Name"
+                                                   placeholder=""
                                                    value="{{ !empty($application->sponsor_full_name) ? $application->sponsor_full_name : '' }}">
                                         </div>
                                         <label for="subtitle" class="col-sm-2 col-form-label  px-5">Nationality</label>
@@ -466,7 +466,7 @@
                                             <input disabled class="form-control form-details text-uppercase" type="text"
                                                    id="title"
                                                    name="title"
-                                                   placeholder="Applicant Name"
+                                                   placeholder=""
                                                    value="{{ !empty($application->sponsor_gender) ? $application->sponsor_gender : '' }}">
                                         </div>
                                         <label for="subtitle" class="col-sm-2 col-form-label px-5">National ID</label>
@@ -494,7 +494,7 @@
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
-                                                   placeholder="Applicant Name"
+                                                   placeholder=""
                                                    value="{{ !empty($application->sponsor_phone) ? $application->sponsor_phone : '' }}">
                                         </div>
                                         <label for="subtitle"
@@ -513,7 +513,7 @@
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
-                                                   placeholder="Applicant Name"
+                                                   placeholder=""
                                                    value="{{ !empty($application->sponsor_work_title) ? $application->sponsor_work_title : '' }}">
                                         </div>
                                         <label for="subtitle"
@@ -543,14 +543,14 @@
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
-                                                   placeholder="Applicant Name"
+                                                   placeholder=""
                                                    value="{{ !empty($application->sponsor_work_date) ? $application->sponsor_work_date : '' }}">
                                         </div>
                                         <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor Salary</label>
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
-                                                   placeholder="Applicant Name"
+                                                   placeholder=""
                                                    value="{{ !empty($application->sponsor_salary) ? $application->sponsor_salary : '' }}">
                                         </div>
 
@@ -572,7 +572,7 @@
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
-                                                   placeholder="Applicant Name"
+                                                   placeholder=""
                                                    value="{{ !empty($application->sponsor_bank->name) ? $application->sponsor_bank->name : 'No' }}">
                                         </div>
                                     </div>
