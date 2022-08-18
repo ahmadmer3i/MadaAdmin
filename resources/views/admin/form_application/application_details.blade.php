@@ -79,7 +79,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->apply_nationality) ? $application->apply_nationality : '' }}">
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->apply_national_id) ? $application->apply_national_id : '' }}">
                                         </div>
                                     </div>
@@ -128,7 +128,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->apply_email) ? $application->apply_email : '' }}">
                                         </div>
 
@@ -143,7 +143,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->apply_phone) ? $application->apply_phone : '0' }}">
                                         </div>
                                         <label for="title" class="col-sm-2 col-form-label  px-5">Material Status</label>
@@ -174,7 +174,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->form_qualification->name) ? $application->form_qualification->name : '-' }}">
                                         </div>
                                     </div>
@@ -186,7 +186,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->husband_wife_name) ? $application->husband_wife_name : 'NO' }}">
                                         </div>
 
@@ -197,7 +197,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->dependents) ? $application->dependents : '0' }}">
                                         </div>
                                     </div>
@@ -276,7 +276,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->apply_work_place) ? $application->apply_work_place : 'NO' }}">
                                         </div>
 
@@ -287,7 +287,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->apply_work_title) ? $application->apply_work_title : '0' }}">
                                         </div>
                                     </div>
@@ -299,7 +299,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->apply_work_website) ? $application->apply_work_website : 'NO' }}">
                                         </div>
 
@@ -310,7 +310,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->apply_work_phone) ? $application->apply_work_phone : '0' }}">
                                         </div>
                                     </div>
@@ -333,7 +333,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->apply_work_date) ? $application->apply_work_date : 'NO' }}">
                                         </div>
 
@@ -344,7 +344,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->apply_salary) ? $application->apply_salary : '0' }}">
                                         </div>
                                     </div>
@@ -356,7 +356,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->apply_work_email) ? $application->apply_work_email : 'NO' }}">
                                         </div>
 
@@ -367,7 +367,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->salary_deduction) ? $application->salary_deduction : '0' }}">
                                         </div>
                                     </div>
@@ -379,7 +379,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->transfer_ways->transfer_way) ? $application->transfer_ways->transfer_way : '0' }}">
                                         </div>
                                         <label for="subtitle"
@@ -389,7 +389,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->partner_bank->name) ? $application->partner_bank->name : 'No' }}">
                                         </div>
 
@@ -456,7 +456,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->sponsor_nationality) ? $application->sponsor_nationality : '' }}">
                                         </div>
                                     </div>
@@ -475,7 +475,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->sponsor_national_id) ? $application->sponsor_national_id : '' }}">
                                         </div>
                                     </div>
@@ -504,7 +504,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->sponsor_relationship) ? $application->sponsor_relationship : '' }}">
                                         </div>
                                     </div>
@@ -523,7 +523,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->sponsor_work_place) ? $application->sponsor_work_place : '' }}">
                                         </div>
                                     </div>
@@ -564,7 +564,7 @@
                                                    class="form-control form-details" type="text"
                                                    id="subtitle"
                                                    name="subtitle"
-                                                   placeholder="Subtitle"
+                                                   placeholder=""
                                                    value="{{ !empty($application->transfer_ways_sponsor->transfer_way) ? $application->transfer_ways_sponsor->transfer_way : '' }}">
                                         </div>
 
