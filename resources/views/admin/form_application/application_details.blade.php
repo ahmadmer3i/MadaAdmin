@@ -546,13 +546,14 @@
                                                    placeholder="Applicant Name"
                                                    value="{{ !empty($application->sponsor_work_date) ? $application->sponsor_work_date : '' }}">
                                         </div>
-                                        <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor Bank</label>
+                                        <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor Salary</label>
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
                                                    placeholder="Applicant Name"
-                                                   value="{{ !empty($application->sponsor_bank->name) ? $application->sponsor_bank->name : 'No' }}">
+                                                   value="{{ !empty($application->sponsor_salary) ? $application->sponsor_salary : '' }}">
                                         </div>
+
 
                                     </div>
                                     <div class="row mb-3 mt-5">
@@ -567,12 +568,12 @@
                                                    value="{{ !empty($application->transfer_ways_sponsor->transfer_way) ? $application->transfer_ways_sponsor->transfer_way : '' }}">
                                         </div>
 
-                                        <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor Salary</label>
+                                        <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor Bank</label>
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
                                                    placeholder="Applicant Name"
-                                                   value="{{ !empty($application->sponsor_salary) ? $application->sponsor_salary : '' }}">
+                                                   value="{{ !empty($application->sponsor_bank->name) ? $application->sponsor_bank->name : 'No' }}">
                                         </div>
                                     </div>
                                     <div class="row">
