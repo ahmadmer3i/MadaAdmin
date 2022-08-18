@@ -39,6 +39,7 @@
     <link href="{{asset('backend/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
     <link rel="stylesheet" href="{{asset('backend/assets/css/custom.css')}}">
+    <link href="{{asset('backend/assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css"/>
 
 </head>
 
@@ -142,6 +143,42 @@
 </script>
 <script src="{{asset('backend/assets/libs/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('backend/assets/js/pages/lightbox.init.js')}}"></script>
+<!-- Sweet Alerts js -->
+<script src="{{asset('backend/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
+
+<!-- Sweet alert init js-->
+<script src="{{asset('backend/assets/js/pages/sweet-alerts.init.js')}}"></script>
+<script>
+    $(function () {
+        $(document).on('click', '#delete', function (e) {
+            e.preventDefault();
+            var link = $(this).attr("href");
+
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "Delete This Data?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = link
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
+            })
+
+
+        });
+
+    });
+</script>
 
 </body>
 

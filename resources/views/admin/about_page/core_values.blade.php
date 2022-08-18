@@ -65,7 +65,9 @@
                                                                 </a>
                                                                 <a href="{{ route('about.core-values.delete', $value->id) }}"
                                                                    class="btn btn-danger"
-                                                                   title="Delete">
+                                                                   title="Delete"
+                                                                   id="delete"
+                                                                >
                                                                     <i class="ri-delete-bin-2-fill"></i>
                                                                 </a>
                                                             </td>

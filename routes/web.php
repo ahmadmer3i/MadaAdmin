@@ -106,6 +106,7 @@ Route::middleware([ 'auth' ])->group(function () {
         Route::get('admin/services/title', 'services_title')->name('services.title');
         Route::post('admin/services/title/update', 'services_title_update')->name('services.title.update');
         Route::get('admin/services/category/edit/{id}', 'service_category_edit')->name('services.category.edit');
+        Route::get('admin/services/category/delete/{id}', 'delete_services_category')->name('services.category.delete');
         Route::post('admin/services/category/update', 'service_category_update')->name('services.category.update');
         Route::get('admin/services/category/add', 'add_service_category')->name('services.category.add');
         Route::post('admin/services/category/store', 'service_category_store')->name('services.category.store');
@@ -219,7 +220,7 @@ Route::get('apply', [ RequestController::class, 'request_page' ])->name('request
 Route::post('apply/submit', [ PagesController::class, 'submit_form' ])->name('apply.submit');
 Route::get('request-from', [ PagesController::class, 'request_form' ])->name('request_form');
 Route::post('/', [ LocationController::class, 'index' ])->name('index');
-Route::get('send-sms-notification', [ NotificationController::class, 'sendSmsNotificaition' ]);
+//Route::get('send-sms-notification', [ NotificationController::class, 'sendSmsNotificaition' ]);
 
 Route::get('/dashboard', function () {
     return view('admin.index');

@@ -138,7 +138,9 @@
                                                                     </a>
                                                                     <a href="{{ route('contact-us.social-media.delete', $social->id) }}"
                                                                        class="btn btn-danger"
-                                                                       title="Delete">
+                                                                       title="Delete"
+                                                                       id="delete"
+                                                                    >
                                                                         <i class="ri-delete-bin-2-fill"></i>
                                                                     </a>
                                                                 </td>

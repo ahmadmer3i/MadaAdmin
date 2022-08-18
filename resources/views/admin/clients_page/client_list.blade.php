@@ -56,10 +56,14 @@
                                                             <td>{{ $i++ }}</td>
                                                             <td>{{$client->name}}</td>
                                                             <td style="width: 200px">{{ $client->description }}</td>
-                                                            <td><img src="{{url($client->image)}}" alt="" width="100">
+                                                            <td><img
+                                                                    src="{{!empty($client->image) ? asset($client->image) : asset('backend/assets/images/Image_not_available.png')}}"
+                                                                    alt="" width="100">
                                                             </td>
 
-                                                            <td><img src="{{url($client->logo)}}" alt="" width="200">
+                                                            <td><img
+                                                                    src="{{!empty($client->logo) ? asset($client->logo) : asset('backend/assets/images/Image_not_available.png')}}"
+                                                                    alt="" width="200">
                                                             </td>
                                                             <td>
                                                                 <a href="{{route('category.edit.item', $client->id)}}"
@@ -68,7 +72,9 @@
                                                                 </a>
                                                                 <a href="{{ route('clients.list.delete', $client->id) }}"
                                                                    class="btn btn-danger"
-                                                                   title="Delete">
+                                                                   title="Delete"
+                                                                   id="delete"
+                                                                >
                                                                     <i class="ri-delete-bin-2-fill"></i>
                                                                 </a>
                                                             </td>

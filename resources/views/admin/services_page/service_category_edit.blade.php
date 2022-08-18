@@ -131,6 +131,7 @@
                                                                     </a>
                                                                     <a href="{{ route('category.delete.item', $cat->id) }}"
                                                                        class="btn btn-danger"
+                                                                       id="delete"
                                                                        title="Delete">
                                                                         <i class="ri-delete-bin-2-fill"></i>
                                                                     </a>

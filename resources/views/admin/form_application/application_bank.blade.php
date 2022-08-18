@@ -50,6 +50,7 @@
                                                                 </a>
                                                                 <a href="{{ route('form-application.bank.delete', $bank->id) }}"
                                                                    class="btn btn-danger"
+                                                                   id="delete"
                                                                    title="Delete">
                                                                     <i class="ri-delete-bin-2-fill"></i>
                                                                 </a>

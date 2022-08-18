@@ -131,10 +131,20 @@ class ServicesController extends Controller
             'home_subtitle' => $request->home_subtitle,
         ]);
         $notification = array(
-            'message' => 'Updated Successfully',
+            'message' => 'Service Updated Successfully',
             'alert-type' => 'warning'
         );
         return redirect()->route('services.title')->with($notification);
+    }
+
+    public function delete_services_category($id)
+    {
+        ServicesCategores::findOrFail($id)->delete();
+        $notification = array(
+            'message' => 'Service Deleted Successfully',
+            'alert-type' => 'error'
+        );
+        return redirect()->back()->with($notification);
     }
 
     public function add_service_category()

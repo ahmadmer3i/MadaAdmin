@@ -98,6 +98,7 @@
                                                                         </a>
                                                                         <a href="{{ route('contact-us.phones.delete',  $item->id )}}"
                                                                            class="btn btn-danger"
+                                                                           id="delete"
                                                                            title="Delete">
                                                                             <i class="ri-delete-bin-2-fill"></i>
                                                                         </a>

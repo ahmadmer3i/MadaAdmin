@@ -41,7 +41,7 @@
                                                             <td>
                                                                 <a href="{{route('form-application.applications.details', $application->id)}}">{{$application->apply_full_name}}</a>
                                                             </td>
-                                                            <td>{{$application->form_services->name}}</td>
+                                                            <td>{{!empty($application->form_services->name) ? $application->form_services->name : 'SERVICE DELETED' }}</td>
                                                             <td>
                                                                 @if(($application->approved))
                                                                     {!! '<i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Approved' !!}
@@ -52,11 +52,11 @@
                                                                 @endif
                                                             </td>
                                                             <td>
-                                                                <a href="{{route('form-application.transfer-way.edit', $application->id)}}"
+                                                                <a href=""
                                                                    class="btn btn-info" title="Edit">
                                                                     <i class="ri-pencil-fill"></i>
                                                                 </a>
-                                                                <a href="{{ route('form-application.transfer-way.delete', $application->id) }}"
+                                                                <a href=""
                                                                    class="btn btn-danger"
                                                                    title="Delete">
                                                                     <i class="ri-delete-bin-2-fill"></i>

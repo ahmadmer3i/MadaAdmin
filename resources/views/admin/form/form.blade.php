@@ -672,7 +672,7 @@
                             <label for="apply_id_image" class="col-sm-2 col-form-label">
                                 ارفاق صورة عن هوية مقدم الطلب
                             </label>
-                            <div class="col-lg-4 col-md-12 col-sm-12 error-message">
+                            <div class="col-lg-2 col-md-12 col-sm-12 error-message">
 
                                 <input class="form-control" id="apply_id_image" name="apply_id_image"
                                        type="file" value="">
@@ -680,7 +680,15 @@
                             <label for="sponsor_id_image" class="col-sm-2 col-form-label">
                                 ارفاق صورة عن هوية الكفيل
                             </label>
-                            <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="col-lg-2 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="sponsor_id_image" name="sponsor_id_image"
+                                       type="file" value="">
+                            </div>
+                            <label for="sponsor_id_image" class="col-sm-2 col-form-label">
+                                ارفاق صورة عن كشف الضمان او السجل التجاري
+                            </label>
+                            <div class="col-lg-2 col-md-12 col-sm-12">
 
                                 <input class="form-control" id="sponsor_id_image" name="sponsor_id_image"
                                        type="file" value="">

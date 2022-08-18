@@ -19,7 +19,7 @@
                                     <div class="col-12">
                                         <div
                                             class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h4 class="mb-sm-0">Clients</h4>
+                                            <h4 class="mb-sm-0">Partners</h4>
                                             <div class="page-title-right">
                                                 <a href="{{ route('partners.list.add') }}"
                                                    class="btn btn-dark">
@@ -56,10 +56,14 @@
                                                             <td>{{ $i++ }}</td>
                                                             <td>{{$partner->name}}</td>
                                                             <td style="width: 200px">{{ $partner->description }}</td>
-                                                            <td><img src="{{url($partner->image)}}" alt="" width="100">
+                                                            <td><img
+                                                                    src="{{!empty($partner->image) ? asset($partner->image) : asset('backend/assets/images/Image_not_available.png')}}"
+                                                                    alt="" width="100">
                                                             </td>
 
-                                                            <td><img src="{{url($partner->logo)}}" alt="" width="200">
+                                                            <td><img
+                                                                    src="{{!empty($partner->logo) ? url($partner->logo) : asset('backend/assets/images/Image_not_available.png')}}"
+                                                                    alt="" width="200">
                                                             </td>
                                                             <td>
                                                                 <a href="{{route('partners.list.edit', $partner->id)}}"
@@ -68,6 +72,7 @@
                                                                 </a>
                                                                 <a href="{{ route('partners.list.delete', $partner->id) }}"
                                                                    class="btn btn-danger"
+                                                                   id="delete"
                                                                    title="Delete">
                                                                     <i class="ri-delete-bin-2-fill"></i>
                                                                 </a>

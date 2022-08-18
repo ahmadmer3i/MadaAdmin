@@ -50,7 +50,9 @@
                                                                 </a>
                                                                 <a href="{{ route('form-application.transfer-way.delete', $transfer->id) }}"
                                                                    class="btn btn-danger"
-                                                                   title="Delete">
+                                                                   title="Delete"
+                                                                   id="delete"
+                                                                >
                                                                     <i class="ri-delete-bin-2-fill"></i>
                                                                 </a>
                                                             </td>
