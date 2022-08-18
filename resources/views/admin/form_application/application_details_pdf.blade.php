@@ -702,14 +702,15 @@
         <tr>
             <td class="table-row">
 
-                    <span
-                        class="name-element">طريقة استلام الراتب: </span>{{$application->transfer_ways_sponsor->transfer_way}}
+                <span
+                    class="name-element">طريقة استلام الراتب: </span>{{$application->transfer_ways_sponsor->transfer_way}}
 
 
             </td>
             <td class="table-row">
 
-                <span class="name-element">البنك: </span>{{$application->sponsor_bank->name}}
+                <span
+                    class="name-element">البنك: </span>{{(!empty($application->sponsor_bank->name) ?  $application->sponsor_bank->name : 'No')}}
 
 
             </td>
