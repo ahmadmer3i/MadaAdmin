@@ -2,7 +2,7 @@
      style="padding-top:45px;padding-bottom:20px;background-color:#f7f7f7">
     @php
         $social_media = \App\Models\ContactSocialMediaIcon::findOrFail(1);
-        $phone = \App\Models\ContactPhoneList::findOrFail(1);
+        $phone = \App\Models\ContactPhoneList::first();
         $phone_section = \App\Models\Phone::findOrFail(1);
     @endphp
     <div class="container" style="font-family: Gotham,sans-serif">
@@ -20,7 +20,7 @@
             <div class="col-md-6">
                 <div class="column_attr clearfix align_right mobile_align_center">
                     <h6>CALL US</h6>
-                    <h4><span style="color: #db4041;">{{$phone->phone}}</span>
+                    <h4><span style="color: #db4041;">{{!empty($phone->phone) ? $phone->phone : ''}}</span>
                     </h4></div>
                 <div class="column_attr clearfix align_right mobile_align_center">
                     <h6 class="text-uppercase">{{$social_media->footer_title}}</h6>

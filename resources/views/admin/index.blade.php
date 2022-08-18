@@ -137,7 +137,7 @@
                                         <tr>
 
                                             <td><h6 class="mb-0">{{$form->apply_full_name}}</h6></td>
-                                            <td>{{$form->form_services->name}}</td>
+                                            <td>{{(!empty($form->form_services->name) ? $form->form_services->name : 'DELETED')}}</td>
                                             <td>
                                                 @if(($form->approved))
                                                     {!! '<i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Approved' !!}

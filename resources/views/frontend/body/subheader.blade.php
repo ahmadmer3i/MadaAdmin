@@ -1,7 +1,7 @@
 @section('subheader')
     @php
         $home_hero = \App\Models\HomeHero::find(1);
-        $phone=  \App\Models\ContactPhoneList::findOrFail(1);
+        $phone=  \App\Models\ContactPhoneList::first();
     @endphp
     <div class="mfn-main-slider mfn-rev-slider pt-5">
         <p class="rs-p-wp-fix"></p>
@@ -103,7 +103,7 @@
                                   data-xy="x:c;xo:-614px,-614px,-248px,-248px;yo:784px,784px,317px,317px;"
                                   id="slider-1-slide-1-layer-8"
                                   style="z-index:14;font-family:Gotham,sans-serif;">
-                            {{ $phone->phone }}
+                            {{ !empty($phone->phone) ? $phone->phone : 'Empty' }}
                         </rs-layer>
                         <rs-layer
                             data-border="bor:50%,50%,50%,50%;"
