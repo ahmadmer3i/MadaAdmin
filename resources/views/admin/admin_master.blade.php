@@ -12,13 +12,16 @@
     <!-- jquery.vectormap css -->
     <link href="{{asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}"
           rel="stylesheet" type="text/css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="{{asset('backend/assets/libs/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css">
 
+
+    <!-- Bootstrap Css -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- DataTables -->
     <link href="{{asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
           type="text/css"/>
-
 
     <!-- Responsive datatable examples -->
     <link href="{{asset('backend/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}"
@@ -35,6 +38,16 @@
           type="text/css"/>
     <!-- Icons Css -->
     <link href="{{asset('backend/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('backend/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css')}}"
+          rel="stylesheet">
+
+    <link href="{{asset('backend/assets/libs/spectrum-colorpicker2/spectrum.min.css')}}" rel="stylesheet"
+          type="text/css">
+
+    <link href="{{asset('backend/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css')}}"
+          rel="stylesheet">
+
+
     <!-- App Css-->
     <link href="{{asset('backend/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
@@ -115,10 +128,19 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <!-- App js -->
 <script src="{{asset('backend/assets/js/pages/datatables.init.js')}}"></script>
+<script src="{{asset('backend/assets/js/pages/sweet-alerts.init.js')}}"></script>
+<script src="{{asset('backend/assets/libs/select2/js/select2.min.js')}}"></script>
+<script src="{{asset('backend/assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{asset('backend/assets/libs/admin-resources/bootstrap-filestyle/bootstrap-filestyle.min.js')}}"></script>
+<script src="{{asset('backend/assets/js/pages/form-advanced.init.js')}}"></script>
 
-<script src="{{asset('backend/assets/js/app.js')}}"></script>
+<script src="{{asset('backend/assets/libs/spectrum-colorpicker2/spectrum.min.js')}}"></script>
+<script src="{{asset('backend/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js')}}"></script>
+<script src="{{asset('backend/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="{{asset('backend/assets/js/app.js')}}"></script>
+
 <script>
     @if(Session::has('message'))
     const type = "{{ Session::get('alert-type','info') }}";
@@ -147,7 +169,8 @@
 <script src="{{asset('backend/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
 
 <!-- Sweet alert init js-->
-<script src="{{asset('backend/assets/js/pages/sweet-alerts.init.js')}}"></script>
+
+
 <script>
     $(function () {
         $(document).on('click', '#delete', function (e) {

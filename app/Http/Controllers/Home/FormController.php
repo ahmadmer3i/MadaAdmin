@@ -8,6 +8,7 @@ use ArPHP\I18N\Arabic;
 use Illuminate\Http\Request;
 use Meneses\LaravelMpdf\Facades\LaravelMpdf as PDF;
 use Illuminate\Support\Facades\App;
+use Mpdf\MpdfException;
 
 class FormController extends Controller
 {
@@ -51,6 +52,9 @@ class FormController extends Controller
         return redirect()->route('form-application.applications');
     }
 
+    /**
+     * @throws MpdfException
+     */
     public function PDF_download($id)
     {
 

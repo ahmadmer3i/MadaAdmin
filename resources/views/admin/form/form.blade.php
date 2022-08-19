@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
 
@@ -18,6 +18,9 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('backend/assets/images/favicon.ico')}}">
     <link rel="stylesheet" href="{{asset('frontend/content/webfonterarabic/stylesheet.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/content/webfontkit/stylesheet.css')}}">
+    <link href="{{asset('backend/assets/css/bootstrap-rtl.min.css')}}" id="bootstrap-style" rel="stylesheet"
+          type="text/css">
     <link rel="stylesheet" href="{{asset('frontend/content/css/custom.css')}}">
 
     <!-- Bootstrap Css -->
@@ -25,7 +28,16 @@
           type="text/css"/>
     <!-- Icons Css -->
     <link href="{{asset('backend/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css"/>
-    <!-- App Css-->
+    <link href="{{asset('backend/assets/libs/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css">
+
+    <link href="{{asset('backend/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css')}}"
+          rel="stylesheet">
+
+    <link href="{{asset('backend/assets/libs/spectrum-colorpicker2/spectrum.min.css')}}" rel="stylesheet"
+          type="text/css">
+
+    <link href="{{asset('backend/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css')}}"
+          rel="stylesheet">
     <link href="{{asset('backend/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="{{asset('backend/assets/css/form.css')}}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
@@ -143,10 +155,11 @@
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
 
-                                <input class="form-control" id="apply_phone" name="apply_phone"
+                                <input class="form-control text-right" id="apply_phone" name="apply_phone"
                                        type="text"
+                                       placeholder="7XXXXXXXX"
                                        required=""
-                                       placeholder="7XXXXXXXX">
+                                >
                             </div>
                             <label for="apply_email" class="col-sm-1 col-form-label">البريد
                                 الالكتروني</label>
@@ -162,12 +175,19 @@
                                 الميلاد
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
+                                <div class="input-group" id="datepicker1">
+                                    <input type="text" class="form-control" placeholder="dd/mm/yyyy"
+                                           data-date-format="dd/mm/yyyy" data-date-container='#datepicker1'
+                                           id="apply_birthdate" name="apply_birthdate"
+                                           data-provide="datepicker">
 
-                                <input class="form-control" id="apply_birthdate" name="apply_birthdate"
-                                       type="date"
-                                       max="{{\Illuminate\Support\Carbon::now()->subYear(13)}}"
-                                       required=""
-                                       placeholder="">
+                                    <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                </div>
+                                {{--                                <input class="form-control" id="apply_birthdate" name="apply_birthdate"--}}
+                                {{--                                       type="date"--}}
+                                {{--                                       max="{{\Illuminate\Support\Carbon::now()->subYear(13)}}"--}}
+                                {{--                                       required=""--}}
+                                {{--                                       placeholder="">--}}
                             </div>
                             <label for="qualification_id" class="col-sm-1 col-form-label">المؤهل
                                 العلمي</label>
@@ -397,7 +417,7 @@
                             </label>
                             <div class="col-lg-6 col-md-12 col-sm-12 error-message">
                                 <input class="form-control" id="apply_work_address" name="apply_work_address"
-                                       type="tel"
+                                       type="text"
                                        required=""
                                        placeholder="عنوان العمل">
                             </div>
@@ -416,7 +436,7 @@
                                 الراتب الاجمالي
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
-                                <input class="form-control" id="apply_salary" name="apply_salary"
+                                <input class="form-control" style="direction: rtl" id="apply_salary" name="apply_salary"
                                        type="number"
                                        step="0.01"
                                        required=""
@@ -470,6 +490,7 @@
                                        type="number"
                                        step="0.01"
                                        required=""
+                                       style="direction: rtl"
                                        placeholder="قيمة الاقتطاع على الراتب">
                             </div>
                             <label for="salary_deduction_detail" class="col-sm-1 col-form-label">
@@ -578,6 +599,7 @@
 
                                 <input class="form-control" id="sponsor_phone" name="sponsor_phone" type="tel"
                                        required=""
+                                       style="direction: rtl"
                                        placeholder="رقم الهاتف">
                             </div>
                             <label for="sponsor_work_title" class="col-sm-1 col-form-label">
@@ -635,6 +657,7 @@
                                        type="number"
                                        step="0.01"
                                        required=""
+                                       style="direction: rtl"
                                        placeholder="الراتب">
                             </div>
                             <label for="sponsor_salary_transfer_way_id" class="col-sm-1 col-form-label">طريقة
@@ -733,6 +756,15 @@
 <script src="{{asset('backend/assets/libs/metismenu/metisMenu.min.js')}}"></script>
 <script src="{{asset('backend/assets/libs/simplebar/simplebar.min.js')}}"></script>
 <script src="{{asset('backend/assets/libs/node-waves/waves.min.js')}}"></script>
+
+<script src="{{asset('backend/assets/libs/select2/js/select2.min.js')}}"></script>
+<script src="{{asset('backend/assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{asset('backend/assets/libs/spectrum-colorpicker2/spectrum.min.js')}}"></script>
+<script src="{{asset('backend/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js')}}"></script>
+<script src="{{asset('backend/assets/libs/admin-resources/bootstrap-filestyle/bootstrap-filestyle.min.js')}}"></script>
+<script src="{{asset('backend/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
+
+<script src="{{asset('backend/assets/js/pages/form-advanced.init.js')}}"></script>
 
 <script src="{{asset('backend/assets/js/app.js')}}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
