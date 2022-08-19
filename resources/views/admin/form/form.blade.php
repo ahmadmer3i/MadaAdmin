@@ -175,19 +175,19 @@
                                 الميلاد
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
-                                <div class="input-group" id="datepicker1">
-                                    <input type="text" class="form-control" placeholder="dd/mm/yyyy"
-                                           data-date-format="dd/mm/yyyy" data-date-container='#datepicker1'
-                                           id="apply_birthdate" name="apply_birthdate"
-                                           data-provide="datepicker">
+                                {{--                                <div class="input-group" id="datepicker1">--}}
+                                {{--                                    <input type="text" class="form-control" placeholder="dd/mm/yyyy"--}}
+                                {{--                                           data-date-format="dd/mm/yyyy" data-date-container='#datepicker1'--}}
+                                {{--                                           id="apply_birthdate" name="apply_birthdate"--}}
+                                {{--                                           data-provide="datepicker">--}}
 
-                                    <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                                </div>
-                                {{--                                <input class="form-control" id="apply_birthdate" name="apply_birthdate"--}}
-                                {{--                                       type="date"--}}
-                                {{--                                       max="{{\Illuminate\Support\Carbon::now()->subYear(13)}}"--}}
-                                {{--                                       required=""--}}
-                                {{--                                       placeholder="">--}}
+                                {{--                                    <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>--}}
+                                {{--                                </div>--}}
+                                <input class="form-control" id="apply_birthdate" name="apply_birthdate"
+                                       type="date"
+                                       max="{{\Illuminate\Support\Carbon::now()->subYear(13)}}"
+                                       required=""
+                                       placeholder="">
                             </div>
                             <label for="qualification_id" class="col-sm-1 col-form-label">المؤهل
                                 العلمي</label>
