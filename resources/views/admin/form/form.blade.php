@@ -17,6 +17,7 @@
     <meta content="" name="author"/>
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('backend/assets/images/favicon.ico')}}">
+    <link rel="stylesheet" href="{{asset('backend/assets/libs/twitter-bootstrap-wizard/prettify.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/content/webfonterarabic/stylesheet.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/content/webfontkit/stylesheet.css')}}">
     <link href="{{asset('backend/assets/css/bootstrap-rtl.min.css')}}" id="bootstrap-style" rel="stylesheet"
@@ -175,6 +176,7 @@
                                 الميلاد
                             </label>
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
+
                                 {{--                                <div class="input-group" id="datepicker1">--}}
                                 {{--                                    <input type="text" class="form-control" placeholder="dd/mm/yyyy"--}}
                                 {{--                                           data-date-format="dd/mm/yyyy" data-date-container='#datepicker1'--}}
@@ -541,14 +543,14 @@
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
 
                                 <input class="form-control" id="sponsor_full_name" name="sponsor_full_name" type="text"
-                                       required=""
+
                                        placeholder="الإسم الكامل من اربع مقاطع">
                             </div>
                             <label for="sponsor_nationality" class="col-sm-1 col-form-label">الجنسية</label>
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
                                 <input class="form-control" id="sponsor_nationality" name="sponsor_nationality"
                                        type="text"
-                                       required=""
+
                                        placeholder="على سبيل المثال اردني">
                             </div>
                         </div>
@@ -559,7 +561,7 @@
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
                                 <input class="form-control" id="sponsor_national_id" name="sponsor_national_id"
                                        type="text"
-                                       required=""
+
                                        placeholder="الرقم الوطني / جواز السفر لغير الاردنيين">
                             </div>
                             <label for="sponsor_gender" class="col-sm-1 col-form-label">الجنس</label>
@@ -578,7 +580,7 @@
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
 
                                 <input class="form-control" id="sponsor_address" name="sponsor_address" type="text"
-                                       required=""
+
                                        placeholder="العنوان">
                             </div>
                             <label for="sponsor_relationship" class="col-sm-1 col-form-label">القرابة</label>
@@ -586,7 +588,7 @@
 
                                 <input class="form-control" id="sponsor_relationship" name="sponsor_relationship"
                                        type="text"
-                                       required=""
+
                                        placeholder="القرابة">
                             </div>
                         </div>
@@ -598,7 +600,7 @@
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
 
                                 <input class="form-control" id="sponsor_phone" name="sponsor_phone" type="tel"
-                                       required=""
+
                                        style="direction: rtl"
                                        placeholder="رقم الهاتف">
                             </div>
@@ -609,7 +611,7 @@
 
                                 <input class="form-control" id="sponsor_work_title" name="sponsor_work_title"
                                        type="text"
-                                       required=""
+
                                        placeholder="عمل الكفيل">
                             </div>
 
@@ -622,7 +624,7 @@
 
                                 <input class="form-control" id="sponsor_work_place" name="sponsor_work_place"
                                        type="text"
-                                       required=""
+
                                        placeholder="اسم الشركة">
                             </div>
                             <label for="sponsor_work_date" class="col-sm-1 col-form-label">
@@ -643,7 +645,7 @@
 
                                 <input class="form-control" id="sponsor_work_address" name="sponsor_work_address"
                                        type="text"
-                                       required=""
+
                                        placeholder="عنوان العمل">
                             </div>
                         </div>
@@ -656,7 +658,7 @@
                                 <input class="form-control" id="sponsor_salary" name="sponsor_salary"
                                        type="number"
                                        step="0.01"
-                                       required=""
+
                                        style="direction: rtl"
                                        placeholder="الراتب">
                             </div>
@@ -665,7 +667,7 @@
                             <div class="col-lg-3 col-md-12 col-sm-12 error-message">
 
 
-                                <select class="form-select" aria-label="" required
+                                <select class="form-select" aria-label=""
                                         id="sponsor_salary_transfer_way_id" name="sponsor_salary_transfer_way_id">
                                     <option value="" selected disabled>
                                         اختر طريقة الاستلام
@@ -695,7 +697,7 @@
                             <label for="apply_id_image" class="col-sm-2 col-form-label">
                                 ارفاق صورة عن هوية مقدم الطلب
                             </label>
-                            <div class="col-lg-2 col-md-12 col-sm-12 error-message">
+                            <div class="col-lg-3 col-md-12 col-sm-12 error-message">
 
                                 <input class="form-control" id="apply_id_image" name="apply_id_image"
                                        type="file" value="">
@@ -703,21 +705,22 @@
                             <label for="sponsor_id_image" class="col-sm-2 col-form-label">
                                 ارفاق صورة عن هوية الكفيل
                             </label>
-                            <div class="col-lg-2 col-md-12 col-sm-12">
+                            <div class="col-lg-3 col-md-12 col-sm-12">
 
                                 <input class="form-control" id="sponsor_id_image" name="sponsor_id_image"
                                        type="file" value="">
                             </div>
+
+                        </div>
+                        <div class="form-group mb-3 row">
                             <label for="sponsor_id_image" class="col-sm-2 col-form-label">
                                 ارفاق صورة عن كشف الضمان او السجل التجاري
                             </label>
-                            <div class="col-lg-2 col-md-12 col-sm-12">
+                            <div class="col-lg-3 col-md-12 col-sm-12">
 
                                 <input class="form-control" id="sponsor_id_image" name="sponsor_id_image"
                                        type="file" value="">
                             </div>
-                        </div>
-                        <div class="form-group mb-3 row">
                         </div>
                         <div class="form-group mb-3 row pt-5">
                             <div class="form-check form-check-right error-message">
@@ -765,9 +768,13 @@
 <script src="{{asset('backend/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
 
 <script src="{{asset('backend/assets/js/pages/form-advanced.init.js')}}"></script>
+<script src="{{asset('backend/assets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js')}}"></script>
+
+<script src="{{asset('backend/assets/libs/twitter-bootstrap-wizard/prettify.js')}}"></script>
 
 <script src="{{asset('backend/assets/js/app.js')}}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="{{asset('backend/assets/js/pages/form-wizard.init.js')}}"></script>
 <script src="{{asset('backend/assets/js/validate.min.js')}}"></script>
 <script>
     @if(Session::has('message'))
@@ -916,49 +923,49 @@
                 mortgages: {
                     required: true,
                 },
-                sponsor_full_name: {
-                    required: true,
-                },
-                sponsor_nationality: {
-                    required: true,
-                },
-                sponsor_national_id: {
-                    required: true,
-                },
-                sponsor_gender: {
-                    required: true,
-                },
-                sponsor_address: {
-                    required: true,
-                },
+                // sponsor_full_name: {
+                //     required: true,
+                // },
+                // sponsor_nationality: {
+                //     required: true,
+                // },
+                // sponsor_national_id: {
+                //     required: true,
+                // },
+                // sponsor_gender: {
+                //     required: true,
+                // },
+                // sponsor_address: {
+                //     required: true,
+                // },
 
-                sponsor_relationship: {
-                    required: true,
-                },
-                sponsor_phone: {
-                    required: true,
-                },
-                sponsor_work_title: {
-                    required: true,
-                },
-                sponsor_work_place: {
-                    required: true,
-                },
-                sponsor_work_address: {
-                    required: true,
-                },
-                sponsor_salary: {
-                    required: true,
-                },
+                // sponsor_relationship: {
+                //     required: true,
+                // },
+                // sponsor_phone: {
+                //     required: true,
+                // },
+                // sponsor_work_title: {
+                //     required: true,
+                // },
+                // sponsor_work_place: {
+                //     required: true,
+                // },
+                // sponsor_work_address: {
+                //     required: true,
+                // },
+                // sponsor_salary: {
+                //     required: true,
+                // },
 
             },
             messages: {
                 application_type_id: {
                     required: '* اختر نوع الطلب',
                 },
-                sponsor_work_date: {
-                    required: '* ادخل تاريخ التعيين',
-                },
+                // sponsor_work_date: {
+                //     required: '* ادخل تاريخ التعيين',
+                // },
                 apply_gender: {
                     required: '* اختر الجنس',
                 },
@@ -1051,42 +1058,42 @@
                 mortgages: {
                     required: '* ادخل الرهونات على الاموال غير المنقولة',
                 },
-                sponsor_full_name: {
-                    required: '* ادخل اسم الكفيل من اربع مقاطع',
-                },
+                // sponsor_full_name: {
+                //     required: '* ادخل اسم الكفيل من اربع مقاطع',
+                // },
                 personal_loan: {
                     required: '* ادخل القروض الشخصية',
                 },
-                sponsor_nationality: {
-                    required: '* ادخل جنسية الكفيل',
-                },
-                sponsor_national_id: {
-                    required: '* ادخل الرقم الوطني او رقم جواز السفر',
-                },
-                sponsor_gender: {
-                    required: '* اختر جنس الكفيل',
-                },
-                sponsor_address: {
-                    required: '* ادخل عنوان الكفيل',
-                },
-                sponsor_relationship: {
-                    required: '* ادخل صلة القرابة',
-                },
-                sponsor_phone: {
-                    required: '* ادخل رقم هاتف الكفيل',
-                },
-                sponsor_work_title: {
-                    required: '* ادخل عمل الكفيل',
-                },
-                sponsor_work_place: {
-                    required: '* ادخل مكان عمل الكفيل',
-                },
-                sponsor_work_address: {
-                    required: '* ادخل عنوان عمل الكفيل',
-                },
-                sponsor_salary: {
-                    required: '* ادخل راتب الكفيل',
-                },
+                // sponsor_nationality: {
+                //     required: '* ادخل جنسية الكفيل',
+                // },
+                // sponsor_national_id: {
+                //     required: '* ادخل الرقم الوطني او رقم جواز السفر',
+                // },
+                // sponsor_gender: {
+                //     required: '* اختر جنس الكفيل',
+                // },
+                // sponsor_address: {
+                //     required: '* ادخل عنوان الكفيل',
+                // },
+                // sponsor_relationship: {
+                //     required: '* ادخل صلة القرابة',
+                // },
+                // sponsor_phone: {
+                //     required: '* ادخل رقم هاتف الكفيل',
+                // },
+                // sponsor_work_title: {
+                //     required: '* ادخل عمل الكفيل',
+                // },
+                // sponsor_work_place: {
+                //     required: '* ادخل مكان عمل الكفيل',
+                // },
+                // sponsor_work_address: {
+                //     required: '* ادخل عنوان عمل الكفيل',
+                // },
+                // sponsor_salary: {
+                //     required: '* ادخل راتب الكفيل',
+                // },
                 transfer_way_id: {
                     required: '* اختر طريقة الاستلام الراتب',
                 },
