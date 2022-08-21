@@ -567,7 +567,7 @@
                             <label for="sponsor_gender" class="col-sm-1 col-form-label">الجنس</label>
                             <div class="col-lg-4 col-md-12 col-sm-12 error-message">
 
-                                <select class="form-select" aria-label="" required
+                                <select class="form-select" aria-label=""
                                         id="sponsor_gender" name="sponsor_gender">
                                     <option value="" selected="" disabled>اختر الجنس</option>
                                     <option value="male">ذكر</option>
