@@ -662,7 +662,7 @@
                                     </div>
                                     <div class="row mb-3 mt-1">
                                         <label for="service_requested" class="col-sm-2 col-form-label  px-5">Service
-                                            Required</label>
+                                            Requested</label>
                                         <div class="col-sm-4">
                                             <input class="form-control form-details" type="text" id="service_requested"
                                                    name="service_requested"
