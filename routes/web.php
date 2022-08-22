@@ -219,6 +219,7 @@ Route::get('clients', [ PagesController::class, 'clients' ])->name('clients');
 Route::get('apply', [ RequestController::class, 'request_page' ])->name('request_page');
 Route::post('apply/submit', [ PagesController::class, 'submit_form' ])->name('apply.submit');
 Route::get('request-from', [ PagesController::class, 'request_form' ])->name('request_form');
+Route::get('request-form/success/{id}', [ PagesController::class, 'success_page' ])->name('success_page');
 Route::post('/', [ LocationController::class, 'index' ])->name('index');
 //Route::get('send-sms-notification', [ NotificationController::class, 'sendSmsNotificaition' ]);
 

@@ -46,6 +46,12 @@ class PagesController extends Controller
         return view('frontend.client', compact('client_title'));
     }
 
+    public function success_page($id)
+    {
+        $apply = ApplyForm::find($id);
+        return view('admin.form.form_success', compact('apply'));
+    }
+
     /**
      * @throws TwilioException
      * @throws ConfigurationException
@@ -135,7 +141,10 @@ class PagesController extends Controller
         }
         $apply->sponsor_id_image = $sponsor_id_url;
         $apply->apply_id_image = $apply_id_url;
+
         $apply->save();
+
+
         $id = $apply->id;
 //        $account_sid = getenv("TWILIO_SID");
 //        $auth_token = getenv("TWILIO_AUTH_TOKEN");
@@ -143,7 +152,7 @@ class PagesController extends Controller
 //        $client = new Client($account_sid, $auth_token);
 //        $client->messages->create('+962778443322',
 //            [ 'from' => $twilio_number, 'body' => $apply->apply_full_name . "\r\n application # " . $id ]);
-        return redirect()->back()->with('success', 'done');
+        return redirect()->route('success_page', [ $apply->id ]);
     }
 
     public function request_form()

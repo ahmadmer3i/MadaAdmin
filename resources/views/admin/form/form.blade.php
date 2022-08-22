@@ -737,7 +737,8 @@
                         </div>
                         <div class="form-group mb-3 text-center row mt-3 pt-1">
                             <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-end">
-                                <button class="btn btn-info w-25  waves-effect waves-light" type="submit">ارسال
+                                <button class="btn btn-info w-25  waves-effect waves-light" type="submit"
+                                        onclick="this.disabled=true;this.form.submit();">ارسال
                                 </button>
                             </div>
                         </div>
