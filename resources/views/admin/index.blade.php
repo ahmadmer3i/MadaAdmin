@@ -136,7 +136,9 @@
                                     @foreach($forms as $form)
                                         <tr>
 
-                                            <td><h6 class="mb-0">{{$form->apply_full_name}}</h6></td>
+                                            <td><h6 class="mb-0"><a
+                                                        href="{{route('form-application.applications.details', $form->id)}}">{{$form->apply_full_name}}</a>
+                                                </h6></td>
                                             <td>{{(!empty($form->form_services->name) ? $form->form_services->name : 'DELETED')}}</td>
                                             <td>
                                                 @if(($form->approved))

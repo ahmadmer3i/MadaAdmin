@@ -19,7 +19,7 @@ class FormController extends Controller
 
     public function application_list()
     {
-        $applications = ApplyForm::all();
+        $applications = ApplyForm::latest()->get();
         return view('admin.form_application.applications', compact('applications'));
     }
 
