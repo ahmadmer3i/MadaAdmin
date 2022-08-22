@@ -82,6 +82,7 @@ class PagesController extends Controller
         $apply->apply_national_id = $request->apply_national_id;
         $apply->apply_address = $request->apply_address;
         $apply->apply_phone = $request->apply_phone;
+        $apply->category_id = $request->category_id;
         $apply->apply_birthdate = date('Y-m-d', strtotime($request->apply_birthdate));
         $apply->apply_email = $request->apply_email;
         $apply->material_status_id = $request->material_status_id;

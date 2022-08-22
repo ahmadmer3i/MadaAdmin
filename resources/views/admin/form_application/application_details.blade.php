@@ -27,8 +27,9 @@
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $application->id}}">
                                     <div class="row mb-3 mt-5">
-                                        <label for="title" class="col-sm-2 col-form-label">Service
-                                            Requested</label>
+                                        <label for="title" class="col-sm-2 col-form-label">
+                                            Requested Service
+                                        </label>
                                         <div class="col-sm-4">
                                             <input disabled class="form-control form-details" type="text" id="title"
                                                    name="title"
@@ -45,6 +46,14 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3 mt-5">
+                                        <label for="title" class="col-sm-2 col-form-label px-5">Requested
+                                            Category</label>
+                                        <div class="col-sm-4">
+                                            <input disabled class="form-control form-details" type="text" id="title"
+                                                   name="title"
+                                                   placeholder=""
+                                                   value="{{ !empty($application->category_services->name) ? $application->category_services->name : '' }}">
+                                        </div>
                                         <label for="title" class="col-sm-2 col-form-label px-4">Application
                                             Status</label>
                                         <div class="col-sm-4">

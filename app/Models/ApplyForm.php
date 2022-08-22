@@ -51,4 +51,9 @@ class ApplyForm extends Model
         return $this->belongsTo(FormBank::class, 'sponsor_bank_id');
     }
 
+    function category_services(): BelongsTo
+    {
+        return $this->belongsTo(ServicesCategory::class, 'category_id');
+    }
+
 }

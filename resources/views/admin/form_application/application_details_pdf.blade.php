@@ -376,13 +376,15 @@
                         <tr>
                             <td class="title" style="text-align: left">
                                 <img src="{{public_path('backend/assets/images/logo-dark.png')}}" alt="Company logo"
-                                     style="width: 100%; max-width: 300px; display: flex; justify-content: right"/>
+                                     style="width: 100%; max-width: 200px; display: flex; justify-content: right"/>
                             </td>
 
                             <td style="text-align: right">
                                 رقم الطلب: {{$application->id}}<br/>
                                 {{$date}} التاريخ: <br/>
-                                نوع الطلب: <b>{{$application->form_services->name}}</b>
+                                نوع الطلب: <b>{{$application->form_services->name}}</b><br>
+                                الخدمة
+                                المطلوبة: {{!empty($application->category_services->name) ? $application->category_services->name : ''}}
                             </td>
                         </tr>
                     </table>
@@ -591,7 +593,7 @@
             <td class="table-row">
 
                         <span
-                            class="name-element">طريقة استلام الراتب: </span>{{$application->transfer_ways->transfer_way}}
+                            class="name-element">طريقة استلام الراتب: </span>{{!empty($application->transfer_ways->transfer_way) ? $application->transfer_ways->transfer_way : ''}}
 
 
             </td>
