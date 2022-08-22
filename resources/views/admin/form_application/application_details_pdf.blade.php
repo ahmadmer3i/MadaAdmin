@@ -705,7 +705,7 @@
             <td class="table-row">
 
                 <span
-                    class="name-element">طريقة استلام الراتب: </span>{{$application->transfer_ways_sponsor->transfer_way}}
+                    class="name-element">طريقة استلام الراتب: </span>{{!empty($application->transfer_ways_sponsor->transfer_way) ? $application->transfer_ways_sponsor->transfer_way:''}}
 
 
             </td>
