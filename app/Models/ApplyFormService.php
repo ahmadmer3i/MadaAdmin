@@ -19,7 +19,7 @@ class ApplyFormService extends Model
 
     function apply_form(): HasMany
     {
-        return $this->hasMany(ApplyForm::class);
+        return $this->hasMany(ApplyForm::class, 'application_type_id');
     }
 
     public function form_services(): HasMany
