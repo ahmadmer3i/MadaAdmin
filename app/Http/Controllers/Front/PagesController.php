@@ -160,8 +160,8 @@ class PagesController extends Controller
             $attachment1 = 'upload/id_images/' . $attachment1_name;
 
         }
-        if ($request->file('attachment1')) {
-            $attachment2 = $request->file('attachment1');
+        if ($request->file('attachment2')) {
+            $attachment2 = $request->file('attachment2');
             $attachment2_name = hexdec(uniqid()) . '.' . $attachment2->getClientOriginalExtension();
             Image::make($attachment2)->save('upload/id_images/' . $attachment2_name);
             $attachment2 = 'upload/id_images/' . $attachment2_name;

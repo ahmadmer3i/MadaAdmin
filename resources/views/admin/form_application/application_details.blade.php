@@ -650,6 +650,61 @@
                                         </div>
 
                                     </div>
+                                    <div class="row mb-3 mt-5">
+                                        <label for="subtitle"
+                                               class="col-sm-2 col-form-label  px-5">Attachment1</label>
+                                        <div class="col-4">
+                                            @if(!empty($application->attachment2))
+                                                <div>
+
+                                                    <a class="image-popup-vertical-fit"
+                                                       href="{{asset($application->attachment2)}}"
+                                                       title="Caption. Can be aligned it to any side and contain any HTML.">
+                                                        <img class="img-fluid" alt="img-2"
+                                                             src="{{asset($application->attachment2)}}"
+                                                             width="145">
+                                                    </a>
+                                                </div>
+                                                <div class="col-3 align-center">
+                                                    <a href="{{asset($application->attachment2)}}"
+                                                       download>Download</a>
+                                                </div>
+                                            @else
+                                                <div>
+                                                    <img class="img-thumbnail" alt="img-2"
+                                                         src="{{asset('backend/assets/images/Image_not_available.png')}}"
+                                                         width="145">
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <label for="title" class="col-sm-2 col-form-label  px-5">Attachment2</label>
+                                        <div class="col-3">
+                                            @if(!empty($application->attachment1))
+                                                <div>
+
+                                                    <a class="image-popup-vertical-fit"
+                                                       href="{{asset($application->attachment1)}}"
+                                                       title="Caption. Can be aligned it to any side and contain any HTML.">
+                                                        <img class="img-fluid" alt="img-2"
+                                                             src="{{asset($application->attachment1)}}"
+                                                             width="145">
+                                                    </a>
+                                                </div>
+                                                <div class="col-3 align-center">
+                                                    <a href="{{asset($application->attachment1)}}"
+                                                       download>Download</a>
+                                                </div>
+                                            @else
+                                                <div>
+                                                    <img class="img-thumbnail" alt="img-2"
+                                                         src="{{asset('backend/assets/images/Image_not_available.png')}}"
+                                                         width="145">
+                                                </div>
+                                            @endif
+
+                                        </div>
+
+                                    </div>
                                     <div class="row">
                                         <div class="col-12">
                                             <div
