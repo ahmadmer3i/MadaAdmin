@@ -202,6 +202,9 @@ Route::middleware([ 'auth' ])->group(function () {
         Route::post('admin/form-application/bank/update', 'application_banks_update')->name('form-application.bank.update');
         Route::get('admin/form-application/bank/delete/{id}', 'application_banks_delete')->name('form-application.bank.delete');
         Route::post('admin/form-application/services/category/store', 'application_service_category_store')->name('form-application.services.category.store');
+        Route::get('admin/form-application/services/category/edit/{id}', 'application_services_category_edit')->name('form-application.services.category.edit');
+        Route::post('admin/form-application/services/category/update', 'application_services_category_update')->name('form-application.services.category.update');
+        Route::get('admin/form-application/services/category/delete/{id}', 'application_service_category_delete')->name('form-application.services.category.delete');
     });
     Route::controller(FormController::class)->group(function () {
         Route::get('admin/form-application/applications', 'application_list')->name('form-application.applications');

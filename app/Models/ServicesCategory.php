@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @method static find($id)
+ */
 class ServicesCategory extends Model
 {
     use HasFactory;
@@ -15,7 +18,7 @@ class ServicesCategory extends Model
 
     public function form_service_category(): BelongsTo
     {
-        return $this->belongsTo(ApplyFormService::class);
+        return $this->belongsTo(ApplyFormService::class, 'service_id');
     }
 
     public function apply_form_services(): HasMany

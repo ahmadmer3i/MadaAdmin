@@ -240,4 +240,28 @@ class ApplyApplicationController extends Controller
         $notification = array( 'message' => 'Category Added Successfully', 'alert-type' => 'success' );
         return redirect()->back()->with($notification);
     }
+
+    public function application_services_category_edit($id)
+    {
+        $application_category = ServicesCategory::find($id);
+        return view('admin.form_application.application_services_category_edit', compact('application_category'));
+    }
+
+    public function application_services_category_update(Request $request)
+    {
+        $category = ServicesCategory::find($request->id);
+        $id = $category->form_service_category->id;
+        ServicesCategory::find($request->id)->update([
+            'name' => $request->name,
+        ]);
+        $notification = array( 'message' => 'Category Updated Successfully', 'alert-type' => 'warning' );
+        return redirect()->route('form-application.services.edit', $id)->with($notification);
+    }
+
+    public function application_service_category_delete($id)
+    {
+        ServicesCategory::find($id)->delete();
+        $notification = array( 'message' => 'Category Deleted Successfully', 'alert-type' => 'error' );
+        return redirect()->back()->with($notification);
+    }
 }

@@ -89,11 +89,11 @@
                                                             <td>{{ $i++ }}</td>
                                                             <td>{{$cat->name}}</td>
                                                             <td>
-                                                                <a href="{{route('contact-us.social-media.edit', $cat->id)}}"
+                                                                <a href="{{route('form-application.services.category.edit', $cat->id)}}"
                                                                    class="btn btn-info" title="Edit">
                                                                     <i class="ri-pencil-fill"></i>
                                                                 </a>
-                                                                <a href="{{ route('contact-us.social-media.delete', $cat->id) }}"
+                                                                <a href="{{ route('form-application.services.category.delete', $cat->id) }}"
                                                                    class="btn btn-danger"
                                                                    title="Delete"
                                                                    id="delete"
