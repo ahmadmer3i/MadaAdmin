@@ -4,12 +4,15 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\ApplyForm;
+use App\Models\ApplyFormService;
 use App\Models\Clients;
 use App\Models\Contact;
 use App\Models\Partners;
 use App\Models\Services;
+use App\Models\ServicesCategory;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use JetBrains\PhpStorm\NoReturn;
 use Pnlinh\InfobipSms\Facades\InfobipSms;
 use Twilio\Exceptions\ConfigurationException;
 use Twilio\Exceptions\TwilioException;
@@ -50,6 +53,14 @@ class PagesController extends Controller
     {
         $apply = ApplyForm::find($id);
         return view('admin.form.form_success', compact('apply'));
+    }
+
+    public function get_category(Request $request)
+    {
+        $type = $request->application_type_id;
+        $categories = ServicesCategory::where('service_id', $type)->get();
+
+        return response()->json($categories);
     }
 
     /**
@@ -159,4 +170,6 @@ class PagesController extends Controller
     {
         return view('admin.form.form');
     }
+
+
 }

@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Admin & Dashboard" name="description"/>
     <meta content="" name="author"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('backend/assets/images/favicon.ico')}}">
     <link rel="stylesheet" href="{{asset('backend/assets/libs/twitter-bootstrap-wizard/prettify.css')}}">
@@ -94,6 +95,16 @@
                                         @foreach($services as $service)
                                             <option value="{{$service->id}}">{{$service->name}}</option>
                                         @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-1 col-form-label" for="category_id">
+                                    الخدمة المطلوبة</label>
+                                <div class="col-sm-4 pr-0 error-message">
+                                    <select class="form-select"
+                                            id="category_id" name="category_id">
+                                        <option selected="" disabled value="">اختر الخدمة</option>
                                     </select>
                                 </div>
                             </div>
@@ -778,6 +789,25 @@
 <script src="{{asset('backend/assets/js/pages/form-wizard.init.js')}}"></script>
 <script src="{{asset('backend/assets/js/validate.min.js')}}"></script>
 <script>
+    $(function () {
+        $(document).on('change', '#application_type_id', function () {
+            var application_type_id = $(this).val();
+            $.ajax({
+                url: "{{route('get-category')}}",
+                type: "GET",
+                data: {application_type_id: application_type_id},
+                success: function (data) {
+                    var html = '<option selected="" disabled value="">اختر الخدمة</option>';
+                    $.each(data, function (key, v) {
+                        html += '<option value="' + v.id + '" > ' + v.name + ' </option>'
+                    });
+                    $("#category_id").html(html);
+                }
+            })
+        });
+    });
+</script>
+<script>
     @if(Session::has('message'))
     const type = "{{ Session::get('alert-type','info') }}";
     switch (type) {
@@ -1127,5 +1157,6 @@
         })
     })
 </script>
+
 </body>
 </html>

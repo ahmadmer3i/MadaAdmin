@@ -21,4 +21,9 @@ class ApplyFormService extends Model
     {
         return $this->hasMany(ApplyForm::class);
     }
+
+    public function form_services(): HasMany
+    {
+        return $this->hasMany(ServicesCategory::class, 'service_id');
+    }
 }

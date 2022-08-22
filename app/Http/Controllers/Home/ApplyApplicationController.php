@@ -8,6 +8,7 @@ use App\Models\FormBank;
 use App\Models\FormMaterialStatus;
 use App\Models\FormQualification;
 use App\Models\SalaryTransferWay;
+use App\Models\ServicesCategory;
 use Illuminate\Http\Request;
 
 class ApplyApplicationController extends Controller
@@ -225,6 +226,18 @@ class ApplyApplicationController extends Controller
     {
         FormBank::findOrFail($id)->delete();
         $notification = array( 'message' => 'Bank Deleted Successfully', 'alert-type' => 'error' );
+        return redirect()->back()->with($notification);
+    }
+
+    public function application_service_category_store(Request $request)
+    {
+        $id = $request->id;
+        $category = new ServicesCategory();
+
+        $category->name = $request->category_name;
+        $category->service_id = $id;
+        $category->save();
+        $notification = array( 'message' => 'Category Added Successfully', 'alert-type' => 'success' );
         return redirect()->back()->with($notification);
     }
 }

@@ -201,6 +201,7 @@ Route::middleware([ 'auth' ])->group(function () {
         Route::get('admin/form-application/bank/edit/{id}', 'application_banks_edit')->name('form-application.bank.edit');
         Route::post('admin/form-application/bank/update', 'application_banks_update')->name('form-application.bank.update');
         Route::get('admin/form-application/bank/delete/{id}', 'application_banks_delete')->name('form-application.bank.delete');
+        Route::post('admin/form-application/services/category/store', 'application_service_category_store')->name('form-application.services.category.store');
     });
     Route::controller(FormController::class)->group(function () {
         Route::get('admin/form-application/applications', 'application_list')->name('form-application.applications');
@@ -218,9 +219,11 @@ Route::get('contact-us', [ PagesController::class, 'contact_us' ])->name('contac
 Route::get('clients', [ PagesController::class, 'clients' ])->name('clients');
 Route::get('apply', [ RequestController::class, 'request_page' ])->name('request_page');
 Route::post('apply/submit', [ PagesController::class, 'submit_form' ])->name('apply.submit');
+Route::get('/get-category', [ PagesController::class, 'get_category' ])->name('get-category');
 Route::get('request-from', [ PagesController::class, 'request_form' ])->name('request_form');
 Route::get('request-form/success/{id}', [ PagesController::class, 'success_page' ])->name('success_page');
 Route::post('/', [ LocationController::class, 'index' ])->name('index');
+
 //Route::get('send-sms-notification', [ NotificationController::class, 'sendSmsNotificaition' ]);
 
 Route::get('/dashboard', function () {
