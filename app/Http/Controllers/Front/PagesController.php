@@ -71,6 +71,8 @@ class PagesController extends Controller
     {
         $sponsor_id_url = null;
         $apply_id_url = null;
+        $attachment1 = null;
+        $attachment2 = null;
         $apply = new ApplyForm();
         $request->validate([
             'apply_full_name' => [ 'min:10' ],
@@ -151,8 +153,24 @@ class PagesController extends Controller
             $apply_id_url = 'upload/id_images/' . $apply_id_name;
 //
         }
+        if ($request->file('attachment1')) {
+            $attachment1 = $request->file('attachment1');
+            $attachment1_name = hexdec(uniqid()) . '.' . $attachment1->getClientOriginalExtension();
+            Image::make($attachment1)->save('upload/id_images/' . $attachment1_name);
+            $attachment1 = 'upload/id_images/' . $attachment1_name;
+
+        }
+        if ($request->file('attachment1')) {
+            $attachment2 = $request->file('attachment1');
+            $attachment2_name = hexdec(uniqid()) . '.' . $attachment2->getClientOriginalExtension();
+            Image::make($attachment2)->save('upload/id_images/' . $attachment2_name);
+            $attachment2 = 'upload/id_images/' . $attachment2_name;
+
+        }
         $apply->sponsor_id_image = $sponsor_id_url;
         $apply->apply_id_image = $apply_id_url;
+        $apply->attachment1 = $attachment1;
+        $apply->attachment2 = $attachment2;
 
         $apply->save();
 

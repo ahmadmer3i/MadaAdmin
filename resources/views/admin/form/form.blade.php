@@ -15,7 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Admin & Dashboard" name="description"/>
     <meta content="" name="author"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('backend/assets/images/favicon.ico')}}">
     <link rel="stylesheet" href="{{asset('backend/assets/libs/twitter-bootstrap-wizard/prettify.css')}}">
@@ -98,9 +97,12 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-group mb-3 row">
+
                             <div class="row mb-3">
-                                <label class="col-sm-1 col-form-label" for="category_id">
-                                    الخدمة المطلوبة</label>
+                                <label class="col-sm-1 col-form-label" for="category_id">نوع
+                                    الخدمة</label>
                                 <div class="col-sm-4 pr-0 error-message">
                                     <select class="form-select"
                                             id="category_id" name="category_id">
@@ -724,12 +726,20 @@
 
                         </div>
                         <div class="form-group mb-3 row">
-                            <label for="sponsor_id_image" class="col-sm-2 col-form-label">
+                            <label for="attachment2" class="col-sm-2 col-form-label">
                                 ارفاق صورة عن كشف الضمان او السجل التجاري
                             </label>
                             <div class="col-lg-3 col-md-12 col-sm-12">
 
-                                <input class="form-control" id="sponsor_id_image" name="sponsor_id_image"
+                                <input class="form-control" id="attachment2" name="attachment2"
+                                       type="file" value="">
+                            </div>
+                            <label for="attachment1" class="col-sm-2 col-form-label">
+                                مرفقات اخرى
+                            </label>
+                            <div class="col-lg-3 col-md-12 col-sm-12">
+
+                                <input class="form-control" id="attachment1" name="attachment1"
                                        type="file" value="">
                             </div>
                         </div>
@@ -748,8 +758,7 @@
                         </div>
                         <div class="form-group mb-3 text-center row mt-3 pt-1">
                             <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-end">
-                                <button class="btn btn-info w-25  waves-effect waves-light" type="submit"
-                                        onclick="this.disabled=true;this.form.submit();">ارسال
+                                <button class="btn btn-info w-25  waves-effect waves-light" type="submit">ارسال
                                 </button>
                             </div>
                         </div>
@@ -788,25 +797,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="{{asset('backend/assets/js/pages/form-wizard.init.js')}}"></script>
 <script src="{{asset('backend/assets/js/validate.min.js')}}"></script>
-<script>
-    $(function () {
-        $(document).on('change', '#application_type_id', function () {
-            var application_type_id = $(this).val();
-            $.ajax({
-                url: "{{route('get-category')}}",
-                type: "GET",
-                data: {application_type_id: application_type_id},
-                success: function (data) {
-                    var html = '<option selected="" disabled value="">اختر الخدمة</option>';
-                    $.each(data, function (key, v) {
-                        html += '<option value="' + v.id + '" > ' + v.name + ' </option>'
-                    });
-                    $("#category_id").html(html);
-                }
-            })
-        });
-    });
-</script>
 <script>
     @if(Session::has('message'))
     const type = "{{ Session::get('alert-type','info') }}";
@@ -1157,6 +1147,22 @@
         })
     })
 </script>
-
+<script>
+    $(document).on('change', '#application_type_id', function () {
+        var application_type_id = $(this).val();
+        $.ajax({
+            url: "{{route('get-category')}}",
+            type: "GET",
+            data: {application_type_id: application_type_id},
+            success: function (data) {
+                var html = '<option selected="" disabled value="">اختر الخدمة</option>';
+                $.each(data, function (key, v) {
+                    html += '<option value="' + v.id + '" > ' + v.name + ' </option>'
+                });
+                $("#category_id").html(html);
+            }
+        })
+    });
+</script>
 </body>
 </html>
