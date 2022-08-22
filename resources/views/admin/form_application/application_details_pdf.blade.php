@@ -695,7 +695,8 @@
             </td>
             <td class="table-row">
 
-                <span class="name-element">الراتب: </span>{{$application->sponsor_salary}} دينار اردني
+                <span
+                    class="name-element">الراتب: </span>{{!empty($application->sponsor_salary) ? $application->sponsor_salary.' دينار اردني' : ''}}
 
 
             </td>
