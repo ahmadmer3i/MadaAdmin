@@ -1,7 +1,7 @@
 @extends('admin.admin_master')
 @section('admin')
     @php
-        $forms = \App\Models\ApplyForm::latest()->take(5)->get();
+        $forms = \App\Models\ApplyForm::latest()->take(10)->get();
     @endphp
     <div class="page-content">
         <div class="container-fluid">
