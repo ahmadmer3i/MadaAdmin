@@ -12,7 +12,7 @@
                                     <div class="col-12">
                                         <div
                                             class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h4 class="mb-sm-0">Edit Service</h4>
+                                            <h4 class="mb-sm-0">Edit Category</h4>
                                             <div class="page-title-right">
                                             </div>
                                         </div>
@@ -23,12 +23,12 @@
                                     @csrf
                                     <input type="hidden" name="id" value="{{$application_category->id}}">
                                     <div class="row mb-3 mt-5">
-                                        <label for="name" class="col-sm-2 col-form-label">Service Name</label>
+                                        <label for="name" class="col-sm-2 col-form-label">Category Name</label>
                                         <div class="col-sm-10">
                                             <input class="form-control" type="text" id="name"
                                                    name="name"
                                                    style="direction: rtl"
-                                                   placeholder="Service Name"
+                                                   placeholder="Category Name"
                                                    value="{{!empty($application_category->name) ? $application_category->name : ''}}">
                                         </div>
                                     </div>
@@ -46,7 +46,7 @@
                                                 <input type="submit" class="btn btn-info waves-effect waves-light"
                                                        value="Update">
                                                 <div class="page-title-right">
-                                                    <a href="{{ route('form-application.services') }}"
+                                                    <a href="{{ route('form-application.services.edit', $application_category->form_service_category->id) }}"
                                                        class="btn btn-danger">
                                                         Back
                                                     </a>
