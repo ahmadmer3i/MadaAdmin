@@ -593,7 +593,7 @@
             <td class="table-row">
 
                         <span
-                            class="name-element">طريقة استلام الراتب: </span>{{!empty($application->transfer_ways->transfer_way) ? $application->transfer_ways->transfer_way : ''}}
+                            class="name-element">طريقة استلام الراتب: </span>{{!empty($application->transfer_ways) ? $application->transfer_ways->transfer_way : ''}}
 
 
             </td>
