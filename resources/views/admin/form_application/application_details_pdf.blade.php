@@ -599,7 +599,8 @@
             </td>
             <td class="table-row">
 
-                <span class="name-element">البنك: </span> {{$application->partner_bank->name}}
+                <span
+                    class="name-element">البنك: </span> {{!empty($application->partner_bank->name) ? $application->partner_bank->name : ''}}
 
 
             </td>
