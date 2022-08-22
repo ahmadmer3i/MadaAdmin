@@ -666,7 +666,13 @@
             </td>
             <td class="table-row">
 
-                <span class="name-element">الجنس: </span>{{$application->sponsor_gender == 'male' ? 'ذكر' : 'انثى'}}
+                @if($application->sponsor_gender == 'male')
+                    <span class="name-element">الجنس: </span>ذكر
+                @elseif($application->sponsor_gender == 'female')
+                    <span class="name-element">الجنس: </span>انثى
+                @else
+                    <span class="name-element">الجنس: </span>
+                @endif
 
 
             </td>
