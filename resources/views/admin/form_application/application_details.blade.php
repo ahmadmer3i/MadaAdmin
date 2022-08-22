@@ -726,7 +726,7 @@
                                     </div>
                                     <div class="row mb-3 mt-1">
                                         <label for="first_payment" class="col-sm-2 col-form-label  px-5">
-                                            Initial Payment
+                                            Down Payment
                                         </label>
                                         <div class="col-sm-4">
                                             <input class="form-control form-details" type="number" id="first_payment"
