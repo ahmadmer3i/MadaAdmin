@@ -24,7 +24,7 @@
             <!-- end page title -->
 
             <div class="row">
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-2 col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex">
@@ -43,7 +43,7 @@
                 </div><!-- end col -->
                 <!-- end col -->
                 @foreach($services as $service)
-                    <div class="col-xl-3 col-md-6">
+                    <div class="col-xl-2 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex">
