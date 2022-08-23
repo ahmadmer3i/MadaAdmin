@@ -379,12 +379,12 @@
                                      style="width: 100%; max-width: 200px; display: flex; justify-content: right"/>
                             </td>
 
-                            <td style="text-align: right">
+                            <td style="text-align: right; direction: rtl">
                                 رقم الطلب: {{$application->id}}<br/>
-                                {{$date}} التاريخ: <br/>
+                                التاريخ: {{$date}} <br/>
                                 نوع الطلب: <b>{{$application->form_services->name}}</b><br>
                                 الخدمة
-                                المطلوبة: {{!empty($application->category_services->name) ? $application->category_services->name : ''}}
+                                المطلوبة:{{!empty($application->category_services->name) ? $application->category_services->name : ''}}
                             </td>
                         </tr>
                     </table>
