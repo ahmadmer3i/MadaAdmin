@@ -225,7 +225,7 @@ Route::post('apply/submit', [ PagesController::class, 'submit_form' ])->name('ap
 Route::get('/get-category', [ PagesController::class, 'get_category' ])->name('get-category');
 Route::get('request-from', [ PagesController::class, 'request_form' ])->name('request_form');
 Route::get('request-form/success/{id}', [ PagesController::class, 'success_page' ])->name('success_page');
-Route::post('/', [ LocationController::class, 'index' ])->name('index');
+//Route::get('data', [ LocationController::class, 'getVisitorData' ])->name('index');
 
 //Route::get('send-sms-notification', [ NotificationController::class, 'sendSmsNotificaition' ]);
 

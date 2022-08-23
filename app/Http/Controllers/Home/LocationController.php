@@ -10,5 +10,10 @@ use Stevebauman\Location\Facades\Location;
 
 class LocationController extends Controller
 {
-
+    /* function getVisitorData(Request $request)
+     {
+         $ip = $request->ip();
+         $data = Location::get('79.173.253.83');
+         dd($data);
+     }*/
 }
