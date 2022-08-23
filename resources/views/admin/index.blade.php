@@ -57,7 +57,7 @@
                                     <div class="avatar-sm">
                                                                 <span
                                                                     class="avatar-title bg-light text-primary rounded-3">
-                                                                    <i class="ri-user-3-line font-size-24"></i>
+                                                                    <i class="{{!empty($service->icon) ? $service->icon :'ri-user-3-line'}} font-size-24"></i>
                                                                 </span>
                                     </div>
                                 </div>

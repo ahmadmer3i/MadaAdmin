@@ -105,7 +105,7 @@
                                     الخدمة</label>
                                 <div class="col-sm-4 pr-0 error-message">
                                     <select class="form-select"
-                                            id="category_id" name="category_id">
+                                            id="category_id" name="category_id" required>
                                         <option selected="" disabled value="">اختر الخدمة</option>
                                     </select>
                                 </div>
@@ -1123,6 +1123,9 @@
                 }, sponsor_salary_transfer_way_id: {
                     required: '* اختر طريقة استلام الراتب',
                 },
+                category_id: {
+                    required: 'يرجى اختيار نوع الخدمة'
+                }
 
 
             },

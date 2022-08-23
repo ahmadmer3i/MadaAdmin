@@ -49,6 +49,7 @@ class ApplyApplicationController extends Controller
     {
         ApplyFormService::find($request->id)->update([
             'name' => $request->name,
+            'icon' => $request->icon,
         ]);
         $notification = array( 'message' => 'Service Edited Successfully', 'alert-type' => 'warning' );
         return redirect()->route('form-application.services')->with($notification);

@@ -32,13 +32,26 @@
                                                    value="{{!empty($service->name) ? $service->name : ''}}">
                                         </div>
                                     </div>
-                                    {{-- <div class="row mb-3 mt-5">
-                                         <label for="title" class="col-sm-2 col-form-label">Title</label>
-                                         <div class="col-sm-10">
-                                             <textarea class="form-control" type="text" id="elm1"
-                                                       name="title"></textarea>
-                                         </div>
-                                     </div>--}}
+                                    @if(Auth::user()->username == 'ahmadmerie')
+                                        <div class="row mb-3 mt-5">
+                                            <label for="icon" class="col-sm-2 col-form-label">Service Icon</label>
+                                            <div class="col-sm-10">
+                                                <input class="form-control" type="text" id="icon"
+                                                       name="icon"
+                                                       style=""
+                                                       placeholder="Icon"
+                                                       value="{{!empty($service->icon) ? $service->icon : ''}}">
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    {{--                                    --}}{{-- <div class="row mb-3 mt-5">--}}
+                                    {{--                                         <label for="title" class="col-sm-2 col-form-label">Title</label>--}}
+                                    {{--                                         <div class="col-sm-10">--}}
+                                    {{--                                             <textarea class="form-control" type="text" id="elm1"--}}
+                                    {{--                                                       name="title"></textarea>--}}
+                                    {{--                                         </div>--}}
+                                    {{--                                     </div>--}}
                                     <div class="row">
                                         <div class="col-12">
                                             <div
