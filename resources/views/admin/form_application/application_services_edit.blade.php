@@ -46,10 +46,7 @@
                                                 <input type="submit" class="btn btn-info waves-effect waves-light"
                                                        value="Update">
                                                 <div class="page-title-right">
-                                                    <a href="{{ route('form-application.services') }}"
-                                                       class="btn btn-danger">
-                                                        Back
-                                                    </a>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -138,6 +135,10 @@
                                                 <input type="submit" class="btn btn-info waves-effect waves-light"
                                                        value="Add Category">
                                                 <div class="page-title-right">
+                                                    <a href="{{ route('form-application.services') }}"
+                                                       class="btn btn-danger">
+                                                        Back
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
