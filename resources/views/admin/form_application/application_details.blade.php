@@ -189,7 +189,7 @@
                                     </div>
                                     <div class="row mb-3 mt-5">
                                         <label for="subtitle"
-                                               class="col-sm-2 col-form-label  px-5">{{$application->apply_gender == 'male' ? 'Wife Work':'Husband Work'}}</label>
+                                               class="col-sm-2 col-form-label  px-5">{{$application->apply_gender == 'male' ? 'Wife Name':'Husband Name'}}</label>
                                         <div class="col-sm-4">
                                             <input disabled
                                                    class="form-control form-details" type="text"
@@ -392,7 +392,7 @@
                                                    value="{{ !empty($application->transfer_ways->transfer_way) ? $application->transfer_ways->transfer_way : '0' }}">
                                         </div>
                                         <label for="subtitle"
-                                               class="col-sm-2 col-form-label px-4">Transfer Way</label>
+                                               class="col-sm-2 col-form-label px-4">Bank Name</label>
                                         <div class="col-sm-4">
                                             <input disabled
                                                    class="form-control form-details" type="text"
