@@ -598,7 +598,7 @@
                                     <div class="row mb-3 mt-5">
                                         <label for="subtitle"
                                                class="col-sm-2 col-form-label  px-5">Applicant ID</label>
-                                        <div class="col-3">
+                                        <div class="col-lg-4 col-md-10 col-sm-10">
                                             @if(!empty($application->apply_id_image))
                                                 <div>
 
@@ -610,7 +610,7 @@
                                                              width="145">
                                                     </a>
                                                 </div>
-                                                <div class="col-3 align-center">
+                                                <div class="col-lg-3 col-md-10 col-sm-10 align-center">
                                                     <a href="{{asset($application->apply_id_image)}}"
                                                        download>Download</a>
                                                 </div>
@@ -623,7 +623,7 @@
                                             @endif
                                         </div>
                                         <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor ID</label>
-                                        <div class="col-3">
+                                        <div class="col-lg-4 col-md-10 col-sm-10">
                                             @if(!empty($application->sponsor_id_image))
                                                 <div>
 
@@ -653,7 +653,7 @@
                                     <div class="row mb-3 mt-5">
                                         <label for="subtitle"
                                                class="col-sm-2 col-form-label  px-5">Attachment1</label>
-                                        <div class="col-3">
+                                        <div class="col-lg-4 col-md-10 col-sm-10">
                                             @if(!empty($application->attachment2))
                                                 <div>
 
@@ -678,7 +678,7 @@
                                             @endif
                                         </div>
                                         <label for="title" class="col-sm-2 col-form-label  px-5">Attachment2</label>
-                                        <div class="col-3">
+                                        <div class="col-lg-4 col-md-10 col-sm-10">
                                             @if(!empty($application->attachment1))
                                                 <div>
 
