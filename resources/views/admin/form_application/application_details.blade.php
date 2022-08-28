@@ -610,7 +610,7 @@
                                                              width="145">
                                                     </a>
                                                 </div>
-                                                <div class="col-lg-3 col-md-10 col-sm-10 align-center">
+                                                <div class="col-lg-3 col-sm-12 col-md-12 align-center">
                                                     <a href="{{asset($application->apply_id_image)}}"
                                                        download>Download</a>
                                                 </div>
@@ -635,7 +635,7 @@
                                                              width="145">
                                                     </a>
                                                 </div>
-                                                <div class="col-3 col-sm-12 col-md-12 align-center">
+                                                <div class="col-lg-3 col-sm-12 col-md-12 align-center">
                                                     <a href="{{asset($application->sponsor_id_image)}}"
                                                        download>Download</a>
                                                 </div>
