@@ -724,7 +724,7 @@
                                                    placeholder="Service Requested"
                                                    value="{{ !empty($application->service_requested) ? $application->service_requested : '' }}">
                                         </div>
-                                        <label for="type"
+                                        <label for="service_type"
                                                class="col-sm-2 col-form-label  px-5">Type</label>
                                         <div class="col-sm-4">
                                             <input
@@ -839,20 +839,20 @@
 
                                     </div>
                                     <div class="row">
-                                        <div class="col-12">
-                                            <div
-                                                class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                                <div>
-                                                    <input type="submit" class="btn btn-info waves-effect waves-light"
-                                                           value="Submit">
+                                        <div class="col-6">
+                                            <div>
+                                                <input type="submit" class="btn btn-info waves-effect waves-light"
+                                                       value="Submit">
 
-                                                </div>
-                                                <div class="page-title-right">
-                                                    <a href="{{ route('form-application.applications') }}"
-                                                       class="btn btn-danger">Back</a>
-                                                </div>
                                             </div>
                                         </div>
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <div class="page-title-right">
+                                                <a href="{{ route('form-application.applications') }}"
+                                                   class="btn btn-danger">Back</a>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </form>
                                 <!-- end row -->
