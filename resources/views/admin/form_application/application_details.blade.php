@@ -598,7 +598,7 @@
                                     <div class="row mb-3 mt-5">
                                         <label for="subtitle"
                                                class="col-sm-2 col-form-label  px-5">Applicant ID</label>
-                                        <div class="col-4">
+                                        <div class="col-3">
                                             @if(!empty($application->apply_id_image))
                                                 <div>
 
@@ -623,7 +623,7 @@
                                             @endif
                                         </div>
                                         <label for="title" class="col-sm-2 col-form-label  px-5">Sponsor ID</label>
-                                        <div class="col-3 col-sm-12">
+                                        <div class="col-3">
                                             @if(!empty($application->sponsor_id_image))
                                                 <div>
 
@@ -653,7 +653,7 @@
                                     <div class="row mb-3 mt-5">
                                         <label for="subtitle"
                                                class="col-sm-2 col-form-label  px-5">Attachment1</label>
-                                        <div class="col-3 col-sm-12">
+                                        <div class="col-3">
                                             @if(!empty($application->attachment2))
                                                 <div>
 
@@ -678,7 +678,7 @@
                                             @endif
                                         </div>
                                         <label for="title" class="col-sm-2 col-form-label  px-5">Attachment2</label>
-                                        <div class="col-3 col-sm-12">
+                                        <div class="col-3">
                                             @if(!empty($application->attachment1))
                                                 <div>
 
