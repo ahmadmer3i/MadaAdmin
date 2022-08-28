@@ -23,7 +23,8 @@
                                     @csrf
                                     <input type="hidden" name="id" value="">
                                     <div class="row mb-3 mt-5">
-                                        <label for="name" class="col-sm-2 col-form-label">Service Name</label>
+                                        <label for="name" class="col-sm-2 col-form-label">Service
+                                            Name</label>
                                         <div class="col-sm-10">
                                             <input class="form-control" type="text" id="name"
                                                    name="name"

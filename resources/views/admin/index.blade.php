@@ -1,6 +1,7 @@
 @extends('admin.admin_master')
 @section('admin')
     @php
+        $form_counts = \App\Models\ApplyForm::count();
         $forms = \App\Models\ApplyForm::latest()->take(10)->get();
         $services = \App\Models\ApplyFormService::all();
     @endphp
@@ -30,7 +31,7 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-truncate font-size-14 mb-2">Total Forms</p>
-                                    <h4 class="mb-2">{{$forms->count()}}</h4>
+                                    <h4 class="mb-2">{{$form_counts->count()}}</h4>
                                 </div>
                                 <div class="avatar-sm">
                                                 <span class="avatar-title bg-light text-primary rounded-3">
