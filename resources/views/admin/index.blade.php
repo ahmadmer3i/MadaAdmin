@@ -1,7 +1,7 @@
 @extends('admin.admin_master')
 @section('admin')
     @php
-        $form_counts = \App\Models\ApplyForm::count();
+        $form_counts = \App\Models\ApplyForm::count()->get();
         $forms = \App\Models\ApplyForm::latest()->take(10)->get();
         $services = \App\Models\ApplyFormService::all();
     @endphp
