@@ -604,7 +604,7 @@
 
                                                     <a class="image-popup-vertical-fit"
                                                        href="{{asset($application->apply_id_image)}}"
-                                                       title="Caption. Can be aligned it to any side and contain any HTML.">
+                                                       title="{{$application->apply_id_image}}">
                                                         <img class="img-fluid" alt="img-2"
                                                              src="{{asset($application->apply_id_image)}}"
                                                              width="145">
@@ -629,7 +629,7 @@
 
                                                     <a class="image-popup-vertical-fit"
                                                        href="{{asset($application->sponsor_id_image)}}"
-                                                       title="Caption. Can be aligned it to any side and contain any HTML.">
+                                                       title="{{$application->sponsor_id_image}}">
                                                         <img class="img-fluid" alt="img-2"
                                                              src="{{asset($application->sponsor_id_image)}}"
                                                              width="145">
@@ -659,7 +659,7 @@
 
                                                     <a class="image-popup-vertical-fit"
                                                        href="{{asset($application->attachment2)}}"
-                                                       title="Caption. Can be aligned it to any side and contain any HTML.">
+                                                       title="{{$application->attachment2}}">
                                                         <img class="img-fluid" alt="img-2"
                                                              src="{{asset($application->attachment2)}}"
                                                              width="145">
@@ -684,7 +684,8 @@
 
                                                     <a class="image-popup-vertical-fit"
                                                        href="{{asset($application->attachment1)}}"
-                                                       title="Caption. Can be aligned it to any side and contain any HTML.">
+                                                       title="{{$application->attachment1}}"
+                                                    >
                                                         <img class="img-fluid" alt="img-2"
                                                              src="{{asset($application->attachment1)}}"
                                                              width="145">
