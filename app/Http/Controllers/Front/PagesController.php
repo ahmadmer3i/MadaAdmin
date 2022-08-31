@@ -140,31 +140,65 @@ class PagesController extends Controller
         $apply->transfer_way_id = $request->transfer_way_id;
         $apply->sponsor_salary_transfer_way_id = $request->sponsor_salary_transfer_way_id;
         if ($request->file('sponsor_id_image')) {
+
             $sponsor_id = $request->file('sponsor_id_image');
-            $sponsor_id_name = hexdec(uniqid()) . '.' . $sponsor_id->getClientOriginalExtension();
-            Image::make($sponsor_id)->save('upload/id_images/' . $sponsor_id_name);
-            $sponsor_id_url = 'upload/id_images/' . $sponsor_id_name;
+            $sponsor_id_extension = $sponsor_id->getClientOriginalExtension();
+            if ($sponsor_id_extension == 'png' || $sponsor_id_extension == 'jpg' || $sponsor_id_extension == 'jpeg' || $sponsor_id_extension == 'bmp') {
+                $sponsor_id_name = hexdec(uniqid()) . '.' . $sponsor_id->getClientOriginalExtension();
+                Image::make($sponsor_id)->save('upload/id_images/' . $sponsor_id_name);
+                $sponsor_id_url = 'upload/id_images/' . $sponsor_id_name;
+            }
+            if ($sponsor_id_extension == 'pdf') {
+                $sponsor_id_name = hexdec(uniqid()) . '.' . $sponsor_id->getClientOriginalExtension();
+                $sponsor_id->move(public_path('upload/id_images/'), $sponsor_id_name);
+                $sponsor_id_url = 'upload/id_images/' . $sponsor_id_name;
+            }
 
         }
         if ($request->file('apply_id_image')) {
             $apply_id = $request->file('apply_id_image');
-            $apply_id_name = hexdec(uniqid()) . '.' . $apply_id->getClientOriginalExtension();
-            Image::make($apply_id)->save('upload/id_images/' . $apply_id_name);
-            $apply_id_url = 'upload/id_images/' . $apply_id_name;
+            $apply_id_extension = $apply_id->getClientOriginalExtension();
+            if ($apply_id_extension == 'png' || $apply_id_extension == 'jpeg' || $apply_id_extension == 'jpg' || $apply_id_extension == 'bmp') {
+                $apply_id_name = hexdec(uniqid()) . '.' . $apply_id->getClientOriginalExtension();
+                Image::make($apply_id)->save('upload/id_images/' . $apply_id_name);
+                $apply_id_url = 'upload/id_images/' . $apply_id_name;
+            }
+            if ($apply_id_extension == 'pdf') {
+                $apply_id_name = hexdec(uniqid()) . '.' . $apply_id->getClientOriginalExtension();
+                $apply_id->move(public_path('upload/id_images/'), $apply_id_name);
+                $apply_id_url = 'upload/id_images/' . $apply_id_name;
+            }
 //
         }
         if ($request->file('attachment1')) {
             $attachment1 = $request->file('attachment1');
-            $attachment1_name = hexdec(uniqid()) . '.' . $attachment1->getClientOriginalExtension();
-            Image::make($attachment1)->save('upload/id_images/' . $attachment1_name);
-            $attachment1 = 'upload/id_images/' . $attachment1_name;
+            $attachment1_extension = $attachment1->getClientOriginalExtension();
+            if ($attachment1_extension == 'png' || $attachment1_extension == 'jpeg' || $attachment1_extension == 'jpg' || $attachment1_extension == 'bmp') {
+                $attachment1_name = hexdec(uniqid()) . '.' . $attachment1_extension;
+                Image::make($attachment1)->save('upload/id_images/' . $attachment1_name);
+                $attachment1 = 'upload/id_images/' . $attachment1_name;
+
+            }
+            if ($attachment1_extension == 'pdf') {
+                $attachment1_name = hexdec(uniqid()) . '.' . $attachment1->getClientOriginalExtension();
+                $attachment1->move(public_path('upload/id_images/'), $attachment1_name);
+                $attachment2 = 'upload/id_images/' . $attachment1_name;
+            }
 
         }
         if ($request->file('attachment2')) {
             $attachment2 = $request->file('attachment2');
-            $attachment2_name = hexdec(uniqid()) . '.' . $attachment2->getClientOriginalExtension();
-            Image::make($attachment2)->save('upload/id_images/' . $attachment2_name);
-            $attachment2 = 'upload/id_images/' . $attachment2_name;
+            $attachment2_extension = $attachment2->getClientOriginalExtension();
+            if ($attachment2_extension == 'png' || $attachment2_extension == 'jpeg' || $attachment2_extension == 'jpg' || $attachment2_extension == 'bmp') {
+                $attachment2_name = hexdec(uniqid()) . '.' . $attachment2_extension;
+                Image::make($attachment2)->save('upload/id_images/' . $attachment2_name);
+                $attachment2 = 'upload/id_images/' . $attachment2_name;
+            }
+            if ($attachment2_extension == 'pdf') {
+                $attachment2_name = hexdec(uniqid()) . '.' . $attachment2->getClientOriginalExtension();
+                $attachment2->move(public_path('upload/id_images/'), $attachment2_name);
+                $attachment2 = 'upload/id_images/' . $attachment2_name;
+            }
 
         }
         $apply->sponsor_id_image = $sponsor_id_url;
