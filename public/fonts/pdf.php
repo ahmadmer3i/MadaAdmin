@@ -1,7 +1,5 @@
 <?php
-
 return [
-
     'mode' => '',
     'format' => 'A4',
     'default_font_size' => '12',
@@ -25,7 +23,7 @@ return [
     'watermark_image_alpha' => 0.2,
     'watermark_image_size' => 'D',
     'watermark_image_position' => 'P',
-    'custom_font_dir' => base_path('public/fonts'),
+    'custom_font_dir' => base_path('public/fonts/'),
     'custom_font_data' => [ 'almarai' => [ // must be lowercase and snake_case
         'R' => 'Almarai-Regular.ttf',    // regular font
         'B' => 'Almarai-Bold.ttf',       // optional: bold font
@@ -35,7 +33,7 @@ return [
         'useKashida' => 75,
     ] ],
     'auto_language_detection' => false,
-    'temp_dir' => rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR),
+    'temp_dir' => base_path('storage/app/pdf/'),
     'pdfa' => false,
     'pdfaauto' => false,
     'use_active_forms' => false,

@@ -263,7 +263,7 @@
     }
 
     body {
-        font-family: 'XBRiyaz', sans-serif;
+        font-family: 'almarai', sans-serif;
         text-align: center;
         color: #000;
     }
@@ -276,7 +276,7 @@
         /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);*/
         font-size: 16px;
         line-height: 24px;
-        font-family: 'XBRiyaz', sans-serif;
+        font-family: 'almarai', sans-serif;
         color: #555;
     }
 
@@ -349,7 +349,7 @@
     /** RTL **/
     .invoice-box.rtl {
         direction: ltr;
-        font-family: 'XBRiyaz', sans-serif;
+        font-family: 'almarai', sans-serif;
     }
 
     .invoice-box.rtl table {
