@@ -212,7 +212,7 @@ Route::middleware([ 'auth' ])->group(function () {
         Route::post('admin/form-application/application/submit', 'application_details_submit')->name('form-application.application.submit');
         Route::get('admin/form-application/applications/{id}/pdf', 'PDF_download')->name('form-application.applications.pdf');
         Route::get('admin/form-application/send-approval/{id}', 'send_approval_sms')->name('form-application.send-approval');
-        Route::get('admin/form-application/send-reject/{id}', 'send_approval_sms')->name('form-application.send-reject');
+        Route::get('admin/form-application/send-reject/{id}', 'send_reject_sms')->name('form-application.send-reject');
     });
 });
 
