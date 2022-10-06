@@ -64,6 +64,17 @@ class FormController extends Controller
 //        return $response->status();
     }
 
+    public function send_reject_sms($id)
+    {
+        $applyForm = ApplyForm::find($id);
+        $phone = '962' . $applyForm->apply_phone;
+        $sms_body = "your application has been rejected";
+        $response = Http::get('https://josmsservice.com/SMSServices/Clients/Prof/RestSingleSMS/SendSMS?senderid=MadaLeasing&numbers=' . $phone . '&accname=madaleasing&AccPass=wA3@gM5@uQ4@hB9zH9v&msg=' . $sms_body);
+        return back()->with([ 'message' => 'Message Sent Successfully', 'alert-type' => 'success' ]);
+//        return $response->status();
+    }
+
+
     /**
      * @throws MpdfException
      */

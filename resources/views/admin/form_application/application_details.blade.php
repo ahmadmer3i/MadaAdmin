@@ -838,10 +838,18 @@
                                     </div>
                                     <div class="row mb-3 mt-5">
                                         <div class="col-6">
-                                            <a href="{{ route('form-application.send-approval', $application->id) }}">
-                                                Send Message
+                                            <a href="{{ route('form-application.send-approval', $application->id) }}"
+                                               class="btn btn-success">
+                                                Send Approval Message
                                             </a>
                                         </div>
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <a href="{{ route('form-application.send-reject', $application->id) }}"
+                                               class="btn btn-danger">
+                                                Send Reject Message
+                                            </a>
+                                        </div>
+
                                         {{--                                        <form id="send-sms"--}}
                                         {{--                                              action="{{ route('form-application.send-approval', $application->id) }}"--}}
                                         {{--                                              method="get">--}}
@@ -859,7 +867,7 @@
                                         <div class="col-6 d-flex justify-content-end">
                                             <div class="page-title-right">
                                                 <a href="{{ route('form-application.applications') }}"
-                                                   class="btn btn-danger">Back</a>
+                                                   class="btn btn-dark">Back</a>
                                             </div>
                                         </div>
 
