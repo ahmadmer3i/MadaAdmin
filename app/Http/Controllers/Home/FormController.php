@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Models\ApplyForm;
 use ArPHP\I18N\Arabic;
+use http\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Meneses\LaravelMpdf\Facades\LaravelMpdf as PDF;
 use Illuminate\Support\Facades\App;
 use Mpdf\MpdfException;
@@ -50,6 +52,16 @@ class FormController extends Controller
             'approved' => $approved,
         ]);
         return redirect()->route('form-application.applications');
+    }
+
+    public function send_approval_sms($id)
+    {
+        $applyForm = ApplyForm::find($id);
+        $phone = '962' . $applyForm->apply_phone;
+        $sms_body = "your application has been approved";
+        $response = Http::post('https://josmsservice.com/SMSServices/Clients/Prof/RestSingleSMS/SendSMS?senderid=MadaLeasing&numbers=' . $phone . '&accname=madaleasing&AccPass=wA3@gM5@uQ4@hB9zH9v&msg=' . $sms_body);
+        dd($response);
+//        return $response->status();
     }
 
     /**

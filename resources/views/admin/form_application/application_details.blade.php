@@ -837,7 +837,16 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3 mt-5">
-
+                                        <div class="col-6">
+                                            <a href="{{ route('form-application.send-approval', $application->id) }}">
+                                                Send Message
+                                            </a>
+                                        </div>
+                                        {{--                                        <form id="send-sms"--}}
+                                        {{--                                              action="{{ route('form-application.send-approval', $application->id) }}"--}}
+                                        {{--                                              method="get">--}}
+                                        {{--                                            @csrf--}}
+                                        {{--                                        </form>--}}
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
