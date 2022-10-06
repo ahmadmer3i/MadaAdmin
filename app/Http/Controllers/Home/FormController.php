@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\ApplyForm;
+use App\Models\ShortMessageCount;
 use ArPHP\I18N\Arabic;
 use http\Client;
 use Illuminate\Http\Request;
@@ -57,9 +58,15 @@ class FormController extends Controller
     public function send_approval_sms($id)
     {
         $applyForm = ApplyForm::find($id);
+        $smsCount = ShortMessageCount::find(1);
         $phone = '962' . $applyForm->apply_phone;
         $sms_body = "your application has been approved";
-        $response = Http::get('https://josmsservice.com/SMSServices/Clients/Prof/RestSingleSMS/SendSMS?senderid=MadaLeasing&numbers=' . $phone . '&accname=madaleasing&AccPass=wA3@gM5@uQ4@hB9zH9v&msg=' . $sms_body);
+        $response = Http::get('https://josmsservice.com/SMSServices/Clients/Prof/RestSingleSMS/SendSMS?senderid=' . env('SMS_SENDER_ID') . '&numbers=' . $phone . '&accname=' . env('SMS_NAME') . '&AccPass=' . env('SMS_PASSWORD') . '&msg=' . $sms_body);
+        $count = Http::get('http://josmsservice.com/sms/api/GetBalance.cfm?AccName=' . env('SMS_NAME') . '&AccPass=' . env('SMS_PASSWORD'));
+        $smsCount->update([
+            'sent' => $smsCount->sent + 1,
+            'remaining' => $count->body(),
+        ]);
         return back()->with([ 'message' => 'Message Sent Successfully', 'alert-type' => 'success' ]);
 //        return $response->status();
     }
@@ -67,9 +74,15 @@ class FormController extends Controller
     public function send_reject_sms($id)
     {
         $applyForm = ApplyForm::find($id);
+        $smsCount = ShortMessageCount::find(1);
         $phone = '962' . $applyForm->apply_phone;
         $sms_body = "your application has been rejected";
         $response = Http::get('https://josmsservice.com/SMSServices/Clients/Prof/RestSingleSMS/SendSMS?senderid=' . env('SMS_SENDER_ID') . '&numbers=' . $phone . '&accname=' . env('SMS_NAME') . '&AccPass=' . env('SMS_PASSWORD') . '&msg=' . $sms_body);
+        $count = Http::get('http://josmsservice.com/sms/api/GetBalance.cfm?AccName=' . env('SMS_NAME') . '&AccPass=' . env('SMS_PASSWORD'));
+        $smsCount->update([
+            'sent' => $smsCount->sent + 1,
+            'remaining' => $count->body(),
+        ]);
         return back()->with([ 'message' => 'Message Sent Successfully', 'alert-type' => 'success' ]);
 //        return $response->status();
     }

@@ -4,6 +4,9 @@
         $form_counts = \App\Models\ApplyForm::all()->count();
         $forms = \App\Models\ApplyForm::latest()->take(10)->get();
         $services = \App\Models\ApplyFormService::all();
+        $sms = \App\Models\ShortMessageCount::find(1);
+        $sms_sent = $sms->sent;
+        $sms_remaining = $sms->remaining
     @endphp
     <div class="page-content">
         <div class="container-fluid">
@@ -36,6 +39,40 @@
                                 <div class="avatar-sm">
                                                 <span class="avatar-title bg-light text-primary rounded-3">
                                                     <i class="ri-shopping-cart-2-line font-size-24"></i>
+                                                </span>
+                                </div>
+                            </div>
+                        </div><!-- end cardbody -->
+                    </div><!-- end card -->
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="flex-grow-1">
+                                    <p class="text-truncate font-size-14 mb-2">Remaining SMS</p>
+                                    <h4 class="mb-2">{{$sms_remaining}}</h4>
+                                </div>
+                                <div class="avatar-sm">
+                                                <span class="avatar-title bg-light text-info rounded-3">
+                                                    <i class="ri-message-fill font-size-24"></i>
+                                                </span>
+                                </div>
+                            </div>
+                        </div><!-- end cardbody -->
+                    </div><!-- end card -->
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="flex-grow-1">
+                                    <p class="text-truncate font-size-14 mb-2">SMS Sent</p>
+                                    <h4 class="mb-2">{{$sms_sent}}</h4>
+                                </div>
+                                <div class="avatar-sm">
+                                                <span class="avatar-title bg-light text-danger rounded-3">
+                                                    <i class="ri-message-2-line font-size-24"></i>
                                                 </span>
                                 </div>
                             </div>
