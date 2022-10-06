@@ -59,7 +59,7 @@ class FormController extends Controller
         $applyForm = ApplyForm::find($id);
         $phone = '962' . $applyForm->apply_phone;
         $sms_body = "your application has been approved";
-        $response = Http::post('https://josmsservice.com/SMSServices/Clients/Prof/RestSingleSMS/SendSMS?senderid=MadaLeasing&numbers=' . $phone . '&accname=madaleasing&AccPass=wA3@gM5@uQ4@hB9zH9v&msg=' . $sms_body);
+        $response = Http::get('https://josmsservice.com/SMSServices/Clients/Prof/RestSingleSMS/SendSMS?senderid=MadaLeasing&numbers=' . $phone . '&accname=madaleasing&AccPass=wA3@gM5@uQ4@hB9zH9v&msg=' . $sms_body);
         dd($response);
 //        return $response->status();
     }
