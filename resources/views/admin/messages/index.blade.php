@@ -34,7 +34,6 @@
                                                         <th>Mobile #</th>
                                                         <th>Text</th>
                                                         <th>Sent Date</th>
-                                                        <th>Action</th>
                                                     </tr>
                                                     </thead>
 
@@ -50,17 +49,6 @@
                                                             <td>{{ $message->message }}</td>
                                                             <td>
                                                                 {{ $message->created_at->format('Y M d h:m a') }}
-                                                            </td>
-                                                            <td>
-                                                                <a href=""
-                                                                   class="btn btn-info" title="Edit">
-                                                                    <i class="ri-pencil-fill"></i>
-                                                                </a>
-                                                                <a href=""
-                                                                   class="btn btn-danger"
-                                                                   title="Delete">
-                                                                    <i class="ri-delete-bin-2-fill"></i>
-                                                                </a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
