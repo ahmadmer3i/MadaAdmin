@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\SendMessageController;
 use App\Http\Controllers\Front\PagesController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\ApplyApplicationController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\Home\PartnersController;
 use App\Http\Controllers\Home\PhoneController;
 use App\Http\Controllers\Home\RequestController;
 use App\Http\Controllers\Home\ServicesController;
+use App\Models\SendMessage;
 use App\Models\User;
 use App\Models\VisitorInfo;
 use Illuminate\Support\Carbon;
@@ -213,6 +215,11 @@ Route::middleware([ 'auth' ])->group(function () {
         Route::get('admin/form-application/applications/{id}/pdf', 'PDF_download')->name('form-application.applications.pdf');
         Route::get('admin/form-application/send-approval/{id}', 'send_approval_sms')->name('form-application.send-approval');
         Route::get('admin/form-application/send-reject/{id}', 'send_reject_sms')->name('form-application.send-reject');
+    });
+    Route::controller(SendMessageController::class)->group(function () {
+        Route::get('admin/messages/messages', 'index')->name('messages.messages');
+        Route::get('admin/messages/new-message', 'create')->name('messages.new-message');
+        Route::post('admin/messages/send', 'store')->name('messages.send');
     });
 });
 

@@ -117,6 +117,7 @@
                         <li><a href="{{route('form-application.material-status')}}">Material Status</a></li>
                         <li><a href="{{route('form-application.banks')}}">Banks</a></li>
                         <li><a href="{{route('form-application.transfer-ways')}}">Salary Transfer Methods</a></li>
+                        <li><a href="{{route('messages.messages')}}">Messages</a></li>
                     </ul>
                 </li>
                 <li class="menu-title">Users</li>
