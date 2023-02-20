@@ -846,7 +846,7 @@
                     required: true,
                 },
                 apply_full_name: {
-                    nameValidation: true,
+                    required: true,
 
                 },
                 apply_gender: {
