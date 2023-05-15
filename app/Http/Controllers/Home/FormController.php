@@ -87,6 +87,25 @@ class FormController extends Controller
 //        return $response->status();
     }
 
+    public function delete_application($id)
+    {
+        $apply_form = ApplyForm::find($id);
+        if ($apply_form->attachment1 && file_exists('uploads/id_images/' . $apply_form->apply_id_image)) {
+            unlink('uploads/id_images/' . $apply_form->apply_id_image);
+        }
+        if ($apply_form->attachment1 && file_exists('uploads/id_images/' . $apply_form->sponsor_id_image)) {
+            unlink('uploads/id_images/' . $apply_form->sponsor_id_image);
+        }
+        if ($apply_form->attachment1 && file_exists('uploads/id_images/' . $apply_form->attachment1)) {
+            unlink('uploads/id_images/' . $apply_form->attachment1);
+        }
+        if ($apply_form->attachment1 && file_exists('uploads/id_images/' . $apply_form->attachment2)) {
+            unlink('uploads/id_images/' . $apply_form->attachment2);
+        }
+        $apply_form->delete();
+        return redirect()->back()->with([ 'message' => 'Deleted Successfully', 'alert-type' => 'error' ]);
+    }
+
 
     /**
      * @throws MpdfException

@@ -215,6 +215,7 @@ Route::middleware([ 'auth' ])->group(function () {
         Route::get('admin/form-application/applications/{id}/pdf', 'PDF_download')->name('form-application.applications.pdf');
         Route::get('admin/form-application/send-approval/{id}', 'send_approval_sms')->name('form-application.send-approval');
         Route::get('admin/form-application/send-reject/{id}', 'send_reject_sms')->name('form-application.send-reject');
+        Route::get('admin/form-application/delete-application/{id}', 'delete_application')->name('form-application.delete-application');
     });
     Route::controller(SendMessageController::class)->group(function () {
         Route::get('admin/messages/messages', 'index')->name('messages.messages');

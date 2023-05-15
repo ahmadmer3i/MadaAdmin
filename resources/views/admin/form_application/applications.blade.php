@@ -45,18 +45,19 @@
                                                             <td>
                                                                 @if(($application->approved))
                                                                     {!! '<i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Approved' !!}
-                                                                @elseif(is_null($application->approved))
+                                                                @elseif($application->approved===null)
                                                                     {!! '<i class="ri-checkbox-blank-circle-fill font-size-10 text-warning align-middle me-2"></i>Waiting'  !!}
                                                                 @else
                                                                     {!!  '<i class="ri-checkbox-blank-circle-fill font-size-10 text-danger align-middle me-2"></i>Rejected' !!}
                                                                 @endif
                                                             </td>
                                                             <td>
-                                                                <a href=""
-                                                                   class="btn btn-info" title="Edit">
-                                                                    <i class="ri-pencil-fill"></i>
-                                                                </a>
-                                                                <a href=""
+                                                                {{--                                                                <a href=""--}}
+                                                                {{--                                                                   class="btn btn-info" title="Edit">--}}
+                                                                {{--                                                                    <i class="ri-pencil-fill"></i>--}}
+                                                                {{--                                                                </a>--}}
+                                                                <a href="{{ route('form-application.delete-application', $application->id) }}"
+                                                                   id="delete"
                                                                    class="btn btn-danger"
                                                                    title="Delete">
                                                                     <i class="ri-delete-bin-2-fill"></i>
