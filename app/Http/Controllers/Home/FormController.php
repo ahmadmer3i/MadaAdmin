@@ -62,6 +62,7 @@ class FormController extends Controller
         $phone = '962' . $applyForm->apply_phone;
         $sms_body = "your application has been approved";
         $count = Http::get('http://josmsservice.com/sms/api/GetBalance.cfm?AccName=' . config('app.sms_name') . '&AccPass=' . config('app.sms_password'));
+        dd($count->body());
         if ($count->body() > 0) {
             $response = Http::get('https://josmsservice.com/SMSServices/Clients/Prof/RestSingleSMS/SendSMS?senderid=' . config('app.sms_sender_id') . '&numbers=' . $phone . '&accname=' . config('app.sms_name') . '&AccPass=' . config('app.sms_password') . '&msg=' . $sms_body);
             $count = Http::get('http://josmsservice.com/sms/api/GetBalance.cfm?AccName=' . env('SMS_NAME') . '&AccPass=' . env('SMS_PASSWORD'));
