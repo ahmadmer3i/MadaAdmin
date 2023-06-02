@@ -62,10 +62,9 @@ class FormController extends Controller
         $phone = '962' . $applyForm->apply_phone;
         $sms_body = "your application has been approved";
         $count = Http::get('http://josmsservice.com/sms/api/GetBalance.cfm?AccName=' . config('app.sms_name') . '&AccPass=' . config('app.sms_password'));
-        dd($count->body());
         if ($count->body() > 0) {
             $response = Http::get('https://josmsservice.com/SMSServices/Clients/Prof/RestSingleSMS/SendSMS?senderid=' . config('app.sms_sender_id') . '&numbers=' . $phone . '&accname=' . config('app.sms_name') . '&AccPass=' . config('app.sms_password') . '&msg=' . $sms_body);
-            $count = Http::get('http://josmsservice.com/sms/api/GetBalance.cfm?AccName=' . env('SMS_NAME') . '&AccPass=' . env('SMS_PASSWORD'));
+            $count = Http::get('http://josmsservice.com/sms/api/GetBalance.cfm?AccName=' . config('app.sms_name') . '&AccPass=' . config('app.sms_password'));
             $smsCount->update([
                 'sent' => $smsCount->sent + 1,
                 'remaining' => $count->body(),
@@ -84,13 +83,19 @@ class FormController extends Controller
         $smsCount = ShortMessageCount::find(1);
         $phone = '962' . $applyForm->apply_phone;
         $sms_body = "your application has been rejected";
-        $response = Http::get('https://josmsservice.com/SMSServices/Clients/Prof/RestSingleSMS/SendSMS?senderid=' . env('SMS_SENDER_ID') . '&numbers=' . $phone . '&accname=' . env('SMS_NAME') . '&AccPass=' . env('SMS_PASSWORD') . '&msg=' . $sms_body);
-        $count = Http::get('http://josmsservice.com/sms/api/GetBalance.cfm?AccName=' . env('SMS_NAME') . '&AccPass=' . env('SMS_PASSWORD'));
-        $smsCount->update([
-            'sent' => $smsCount->sent + 1,
-            'remaining' => $count->body(),
-        ]);
-        return back()->with([ 'message' => 'Message Sent Successfully', 'alert-type' => 'success' ]);
+        $count = Http::get('http://josmsservice.com/sms/api/GetBalance.cfm?AccName=' . config('app.sms_name') . '&AccPass=' . config('app.sms_password'));
+        if ($count->body() > 0) {
+            $response = Http::get('https://josmsservice.com/SMSServices/Clients/Prof/RestSingleSMS/SendSMS?senderid=' . config('app.sms_sender_id') . '&numbers=' . $phone . '&accname=' . config('app.sms_name') . '&AccPass=' . config('app.sms_password') . '&msg=' . $sms_body);
+            $count = Http::get('http://josmsservice.com/sms/api/GetBalance.cfm?AccName=' . config('app.sms_name') . '&AccPass=' . config('app.sms_password'));
+            $smsCount->update([
+                'sent' => $smsCount->sent + 1,
+                'remaining' => $count->body(),
+
+            ]);
+            return back()->with([ 'message' => 'Message Sent Successfully', 'alert-type' => 'success' ]);
+        }
+
+        return back()->with([ 'message' => 'Please refill your sms package', 'alert-type' => 'error' ]);
 //        return $response->status();
     }
 
