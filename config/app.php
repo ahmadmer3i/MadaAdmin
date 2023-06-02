@@ -16,6 +16,10 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'sms_name' => env('SMS_NAME'),
+    'sms_password' => env('SMS_PASSWORD'),
+    'sms_sender_id' => env('SMS_SENDER_ID'),
+
 
     /*
     |--------------------------------------------------------------------------
