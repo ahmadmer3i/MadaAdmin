@@ -20,4 +20,9 @@ class Services extends Model
     {
         return $this->hasMany(ServicesCategores::class);
     }
+
+    public function form_services()
+    {
+        return $this->hasManyThrough(ApplyForm::class, ApplyFormService::class);
+    }
 }

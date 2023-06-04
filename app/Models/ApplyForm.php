@@ -56,5 +56,6 @@ class ApplyForm extends Model
     {
         return $this->belongsTo(ServicesCategory::class, 'category_id');
     }
+    
 
 }
