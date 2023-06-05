@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\FormApplicantController;
+use App\Http\Controllers\API\LogoutController;
 use App\Http\Controllers\API\UserLoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,5 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', static function (Request $reques
 });
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/applicants', [ FormApplicantController::class, 'index' ]);
+    Route::post('/logout', [ LogoutController::class, 'logout' ]);
 });
 
