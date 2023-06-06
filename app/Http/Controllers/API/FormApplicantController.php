@@ -20,7 +20,7 @@ class FormApplicantController extends Controller
             ->with('sponsor_bank')
             ->with('form_qualification')
             ->with('form_material_status')
-            ->with('transfer_ways')->latest()->get();
+            ->with('transfer_ways')->latest()->take(50);
         return response()->json($applicants);
     }
 }
