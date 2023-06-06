@@ -24,4 +24,3 @@ Route::middleware('auth:sanctum')->group(static function () {
     Route::get('/applicants', [ FormApplicantController::class, 'index' ]);
     Route::post('/logout', [ LogoutController::class, 'logout' ]);
 });
-
