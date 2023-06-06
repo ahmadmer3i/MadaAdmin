@@ -21,6 +21,9 @@ class FormApplicantController extends Controller
             ->with('form_qualification')
             ->with('form_material_status')
             ->with('transfer_ways')->latest()->get();
+        foreach ($applicants as $applicant) {
+            $applicant->attachment1 = storage_path($applicant->attachment1);
+        }
         return response()->json($applicants);
     }
 }

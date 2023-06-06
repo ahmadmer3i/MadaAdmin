@@ -20,7 +20,7 @@ Route::post('/login', [ UserLoginController::class, 'loginUser' ]);
 Route::middleware('auth:sanctum')->get('/user', static function (Request $request) {
     return $request->user();
 });
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware('auth:sanctum')->group(static function () {
     Route::get('/applicants', [ FormApplicantController::class, 'index' ]);
     Route::post('/logout', [ LogoutController::class, 'logout' ]);
 });
