@@ -32,7 +32,9 @@ class FormApplicantController extends Controller
         } else if ($request->approved === 1) {
             $approved = false;
         }
-        $updated_form = ApplyForm::find($request->id)->update(compact('approved'));
+        $updated_form = ApplyForm::find($request->id);
+        $updated_form->update(compact('approved'));
+
         return response()->json($updated_form);
     }
 }
