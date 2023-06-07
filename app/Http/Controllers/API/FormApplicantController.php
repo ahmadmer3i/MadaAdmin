@@ -31,7 +31,7 @@ class FormApplicantController extends Controller
             $approved = true;
         } else if ($request->approved === 1) {
             $approved = false;
-        } else if ($request->approved === 2) {
+        } else {
             $approved = null;
         }
         $updated_form = ApplyForm::find($request->id);
