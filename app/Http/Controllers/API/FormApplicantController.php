@@ -26,11 +26,12 @@ class FormApplicantController extends Controller
 
     public function update_approval(Request $request)
     {
-        $approved = null;
         if ($request->approved === 0) {
             $approved = true;
         } else if ($request->approved === 1) {
             $approved = false;
+        } else if ($request->approved === 2) {
+            $approved = null;
         }
         $updated_form = ApplyForm::find($request->id);
         $updated_form->update(compact('approved'));
