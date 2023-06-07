@@ -34,7 +34,13 @@ class FormApplicantController extends Controller
         }
         $updated_form = ApplyForm::find($request->id);
         $updated_form->update(compact('approved'));
-
+        $updated_form->with('form_services')
+            ->with('category_services')
+            ->with('transfer_ways_sponsor')
+            ->with('partner_bank')
+            ->with('sponsor_bank')
+            ->with('form_qualification')
+            ->with('form_material_status')->first();
         return response()->json($updated_form);
     }
 }
