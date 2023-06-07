@@ -28,9 +28,9 @@ class FormApplicantController extends Controller
     public function update_approval(Request $request)
     {
         $approved = 0;
-        if ($request->approved === 0) {
+        if ($request->approved == 0) {
             $approved = true;
-        } else if ($request->approved === 1) {
+        } else if ($request->approved == 1) {
             $approved = false;
         } else {
             $approved = null;
