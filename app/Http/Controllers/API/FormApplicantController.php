@@ -8,6 +8,7 @@ use App\Models\ApplyFormService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class FormApplicantController extends Controller
 {
@@ -34,6 +35,7 @@ class FormApplicantController extends Controller
         } else {
             $approved = null;
         }
+        Log::debug($request->approved);
         $updated_form = ApplyForm::find($request->id);
         $updated_form->update(compact('approved'));
         $updated_form = $updated_form->with('form_services')
