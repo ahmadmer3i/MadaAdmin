@@ -23,4 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', static function (Request $reques
 Route::middleware('auth:sanctum')->group(static function () {
     Route::get('/applicants', [ FormApplicantController::class, 'index' ]);
     Route::post('/logout', [ LogoutController::class, 'logout' ]);
+    Route::patch('/approval', [ FormApplicantController::class, 'update_approval' ]);
 });

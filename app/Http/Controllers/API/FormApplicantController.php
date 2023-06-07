@@ -23,4 +23,16 @@ class FormApplicantController extends Controller
             ->with('transfer_ways')->latest()->take(30)->get();
         return response()->json($applicants);
     }
+
+    public function update_approval(Request $request)
+    {
+        $approved = null;
+        if ($request->approved === 1) {
+            $approved = true;
+        } else if ($request->approved === 0) {
+            $approved = false;
+        }
+        $updated_form = ApplyForm::find($request->id)->update(compact('approved'));
+        return response()->json([ 'status' => true, $updated_form ]);
+    }
 }
