@@ -43,7 +43,7 @@ class UserLoginController extends Controller
     public function getUser(): JsonResponse
     {
         $user = Auth::user();
-        $user->profile_image = pathinfo($user->profile_image);
+        $user->profile_image = storage_path($user->profile_image);
         return response()->json($user);
     }
 }
