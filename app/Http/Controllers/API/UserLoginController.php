@@ -4,13 +4,14 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class UserLoginController extends Controller
 {
-    public function loginUser(Request $request)
+    public function loginUser(Request $request): JsonResponse
     {
         $validateUser = Validator::make($request->all(), [
             'username' => 'required',
@@ -37,5 +38,12 @@ class UserLoginController extends Controller
             'message' => 'User Logged in Successfully',
             'token' => $user->createToken("API TOKEN")->plainTextToken
         ]);
+    }
+
+    public function getUser(): JsonResponse
+    {
+        $user = Auth::user();
+        $user->profile_image = pathinfo($user->profile_image);
+        return response()->json($user);
     }
 }
