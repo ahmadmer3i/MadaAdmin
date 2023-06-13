@@ -8,6 +8,7 @@ use App\Models\ShortMessageCount;
 use ArPHP\I18N\Arabic;
 use http\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Meneses\LaravelMpdf\Facades\LaravelMpdf as PDF;
 use Illuminate\Support\Facades\App;
@@ -51,6 +52,7 @@ class FormController extends Controller
             'first_payment' => $request->first_payment,
             'installment_value' => $request->installment_value,
             'approved' => $approved,
+            'user_id' => Auth::id(),
         ]);
         return redirect()->route('form-application.applications');
     }

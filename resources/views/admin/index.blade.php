@@ -129,8 +129,8 @@
                                         <th>Name</th>
                                         <th>Category</th>
                                         <th>Status</th>
-                                        <th>Phone Number</th>
                                         <th>National ID</th>
+                                        <th>Approved By</th>
                                         <th>Application Date</th>
                                     </tr>
                                     </thead><!-- end thead -->
@@ -152,10 +152,10 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                {{$form->apply_phone}}
+                                                {{$form->apply_national_id}}
                                             </td>
                                             <td>
-                                                {{$form->apply_national_id}}
+                                                {{$form->edited_by->name ?? '--'}}
                                             </td>
                                             <td>{{$form->created_at}}</td>
                                             @endforeach

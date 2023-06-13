@@ -28,7 +28,7 @@
                                                         <th>Applicant</th>
                                                         <th>Type</th>
                                                         <th>Status</th>
-                                                        <th>Action</th>
+                                                        <th>Action By</th>
                                                     </tr>
                                                     </thead>
 
@@ -56,12 +56,13 @@
                                                                 {{--                                                                   class="btn btn-info" title="Edit">--}}
                                                                 {{--                                                                    <i class="ri-pencil-fill"></i>--}}
                                                                 {{--                                                                </a>--}}
-                                                                <a href="{{ route('form-application.delete-application', $application->id) }}"
-                                                                   id="delete"
-                                                                   class="btn btn-danger"
-                                                                   title="Delete">
-                                                                    <i class="ri-delete-bin-2-fill"></i>
-                                                                </a>
+                                                                {{--                                                                <a href="{{ route('form-application.delete-application', $application->id) }}"--}}
+                                                                {{--                                                                   id="delete"--}}
+                                                                {{--                                                                   class="btn btn-danger"--}}
+                                                                {{--                                                                   title="Delete">--}}
+                                                                {{--                                                                    <i class="ri-delete-bin-2-fill"></i>--}}
+                                                                {{--                                                                </a>--}}
+                                                                {{ $application->edited_by->name ?? '--' }}
                                                             </td>
                                                         </tr>
                                                     @endforeach
