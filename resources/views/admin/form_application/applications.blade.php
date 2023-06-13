@@ -62,7 +62,7 @@
                                                                 {{--                                                                   title="Delete">--}}
                                                                 {{--                                                                    <i class="ri-delete-bin-2-fill"></i>--}}
                                                                 {{--                                                                </a>--}}
-                                                                {{!empty($application->user_id) ? \App\Models\User::find($application->user_id)->pluck('name')->first() : '--'}}
+                                                                {{$application->edited_by->name ?? '--'}}
                                                             </td>
                                                         </tr>
                                                     @endforeach
