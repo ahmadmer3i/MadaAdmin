@@ -47,6 +47,6 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function apply_form(): BelongsTo
     {
-        return $this->belongsTo(ApplyForm::class, 'user_id');
+        return $this->belongsTo(ApplyForm::class);
     }
 }
