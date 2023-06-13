@@ -59,7 +59,7 @@ class ApplyForm extends Model
 
     public function edited_by(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 
