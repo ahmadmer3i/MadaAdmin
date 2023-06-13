@@ -62,7 +62,7 @@
                                                                 {{--                                                                   title="Delete">--}}
                                                                 {{--                                                                    <i class="ri-delete-bin-2-fill"></i>--}}
                                                                 {{--                                                                </a>--}}
-                                                                {{ !empty($application->user_id ) ?$application->edited_by->name : '--' }}
+                                                                {{ !empty($application->user_id ) ? $application->edited_by->name : '--' }}
                                                             </td>
                                                         </tr>
                                                     @endforeach
