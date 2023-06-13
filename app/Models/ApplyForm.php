@@ -57,9 +57,9 @@ class ApplyForm extends Model
         return $this->belongsTo(ServicesCategory::class, 'category_id');
     }
 
-    public function edited_by(): BelongsTo
+    public function edited_by(): HasMany
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->hasMany(User::class, 'id');
     }
 
 
