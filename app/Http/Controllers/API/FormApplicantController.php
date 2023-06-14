@@ -37,7 +37,10 @@ class FormApplicantController extends Controller
         }
         Log::debug($request->approved);
         $updated_form = ApplyForm::find($request->id);
-        $updated_form->update(compact('approved'));
+        $updated_form->update([
+            'approved' => $approved,
+            'user_id' => Auth::id(),
+        ]);
         $updated_form = $updated_form->with('form_services')
             ->with('category_services')
             ->with('transfer_ways_sponsor')
