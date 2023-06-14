@@ -43,6 +43,6 @@ class UserLoginController extends Controller
     public function getUser(): JsonResponse
     {
         $user = Auth::user();
-        return response()->json($user);
+        return response()->json($user)->header('Content-Type', 'application/json');
     }
 }
