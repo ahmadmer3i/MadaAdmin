@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\ApplyFormService;
 use App\Models\Services;
 use App\Models\ServicesCategory;
 use Illuminate\Http\JsonResponse;
@@ -12,7 +13,7 @@ class CategoryController extends Controller
 {
     public function index(): JsonResponse
     {
-        $category = Services::all();
+        $category = ApplyFormService::all();
         return response()->json($category);
     }
 }
