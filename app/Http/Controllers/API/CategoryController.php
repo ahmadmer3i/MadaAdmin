@@ -16,4 +16,10 @@ class CategoryController extends Controller
         $category = ApplyFormService::all();
         return response()->json($category);
     }
+
+    public function get_services(Request $request): JsonResponse
+    {
+        $service = ServicesCategory::find($request->id)->get();
+        return response()->json($service);
+    }
 }
