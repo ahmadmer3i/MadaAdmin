@@ -9,6 +9,7 @@ use App\Models\ServicesCategores;
 use App\Models\ServicesCategory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class CategoryController extends Controller
 {
@@ -20,7 +21,9 @@ class CategoryController extends Controller
 
     public function get_services(Request $request): JsonResponse
     {
-        $service = ServicesCategory::where('service_id', $request->id)->get();
+        $id = $request->id;
+        Log::debug($request->id);
+        $service = ServicesCategory::where('service_id', $id)->get();
         return response()->json($service);
     }
 }
