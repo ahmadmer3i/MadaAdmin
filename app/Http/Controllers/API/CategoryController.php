@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\ApplyFormService;
+use App\Models\FormMaterialStatus;
 use App\Models\Services;
 use App\Models\ServicesCategores;
 use App\Models\ServicesCategory;
@@ -25,5 +26,11 @@ class CategoryController extends Controller
         Log::debug($request->service);
         $service = ServicesCategory::where('service_id', $id)->get();
         return response()->json($service);
+    }
+
+    public function get_material_status(): JsonResponse
+    {
+        $material_status = FormMaterialStatus::all();
+        return response()->json($material_status);
     }
 }
