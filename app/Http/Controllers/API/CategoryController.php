@@ -21,8 +21,8 @@ class CategoryController extends Controller
 
     public function get_services(Request $request): JsonResponse
     {
-        $id = $request->id;
-        Log::debug($request->id);
+        $id = $request->service_id;
+        Log::debug($request->service_id);
         $service = ServicesCategory::where('service_id', $id)->get();
         return response()->json($service);
     }
