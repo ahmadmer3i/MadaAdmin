@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\ApplyFormService;
 use App\Models\FormMaterialStatus;
+use App\Models\FormQualification;
 use App\Models\Services;
 use App\Models\ServicesCategores;
 use App\Models\ServicesCategory;
@@ -32,5 +33,11 @@ class CategoryController extends Controller
     {
         $material_status = FormMaterialStatus::all();
         return response()->json($material_status);
+    }
+
+    public function get_qualification(): JsonResponse
+    {
+        $qualifications = FormQualification::all();
+        return response()->json($qualifications);
     }
 }

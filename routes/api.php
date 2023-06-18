@@ -21,6 +21,7 @@ Route::post('/login', [ UserLoginController::class, 'loginUser' ]);
 Route::get('/category', [ CategoryController::class, 'index' ]);
 Route::get('/services', [ CategoryController::class, 'get_services' ]);
 Route::get('/material-status', [ CategoryController::class, 'get_material_status' ]);
+Route::get('/qualification', [ CategoryController::class, 'get_qualification' ]);
 Route::middleware('auth:sanctum')->group(static function () {
     Route::get('/applicants', [ FormApplicantController::class, 'index' ]);
     Route::post('/logout', [ LogoutController::class, 'logout' ]);
