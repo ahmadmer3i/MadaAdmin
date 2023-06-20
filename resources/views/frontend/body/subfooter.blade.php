@@ -45,13 +45,13 @@
                     style="margin: 0 auto 20px auto"/>
             </div>
             <div class="col-md-3"><img alt="finance2"
-                                       class="scale-with-grid"
+                                       class="scale-with-grid mb-2"
                                        height="60"
                                        src="{{asset('frontend/content/images/logo-yes.png')}}"
                                        title="" width="220"/>
             </div>
             <div class="col-md-5">
-                <div class="column_attr clearfix mobile_align_center">
+                <div class="column_attr  text-justify clearfix mobile_align_center">
                     <p> One of the most advanced methods of
                         capital asset financing is financial
                         leasing.
@@ -63,6 +63,13 @@
                         of the asset is automatically
                         transferred to the lessee.</p>
                 </div>
+                <div class="clearfix mobile_align_center">
+                    <img width="100px" class="mr-3"
+                         src="{{ asset('frontend/content/images/icons/credit/visa.png') }}"
+                         alt=""><img width="80px" class=""
+                                     src="{{ asset('frontend/content/images/icons/credit/master.png') }}"
+                                     alt="">
+                </div>
             </div>
             <div class="col-md-4">
                 <div class="column_attr clearfix align_right mobile_align_center">
@@ -72,6 +79,7 @@
                                 class="icon-right-open"></i></span><span
                             class="button_label">Apply now</span></a>
                 </div>
+
             </div>
             {{-- <div class="col-12">
                  <hr class="no_line"
