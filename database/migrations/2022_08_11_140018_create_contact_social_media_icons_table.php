@@ -15,6 +15,8 @@ return new class extends Migration {
         Schema::create('contact_social_media_icons', function (Blueprint $table) {
             $table->id();
             $table->string('icon')->nullable();
+            $table->string('title')->nullable();
+            $table->string('footer_title')->nullable();
             $table->timestamps();
         });
     }

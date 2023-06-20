@@ -18,6 +18,8 @@ return new class extends Migration {
             $table->string('image')->nullable();
             $table->text('service_subtitle')->nullable();
             $table->text('service_text')->nullable();
+            $table->string('home_subtitle')->nullable();
+            $table->string('home_image')->nullable();
             $table->unsignedBigInteger('services_id');
             $table->foreign('services_id')
                 ->references('id')

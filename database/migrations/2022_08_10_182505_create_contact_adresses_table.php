@@ -18,6 +18,8 @@ return new class extends Migration {
             $table->string('building_name')->nullable();
             $table->string('street_name')->nullable();
             $table->string('city_country')->nullable();
+            $table->string('address_icon')->nullable();
+            $table->string('title')->nullable();
             $table->timestamps();
         });
     }

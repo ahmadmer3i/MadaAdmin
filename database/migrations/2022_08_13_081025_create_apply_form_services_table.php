@@ -10,10 +10,13 @@ return new class extends Migration {
      *
      * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::table('contacts', function (Blueprint $table) {
-            $table->string('subtitle')->nullable();
+        Schema::create('apply_form_services', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->nullable();
+            $table->string('icon')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -22,10 +25,8 @@ return new class extends Migration {
      *
      * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::table('contacts', function (Blueprint $table) {
-            $table->dropColumn('subtitle');
-        });
+        Schema::dropIfExists('apply_form_services');
     }
 };

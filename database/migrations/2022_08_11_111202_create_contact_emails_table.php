@@ -15,6 +15,8 @@ return new class extends Migration {
         Schema::create('contact_emails', function (Blueprint $table) {
             $table->id();
             $table->string('subtitle')->nullable();
+            $table->string('icon')->nullable();
+            $table->string('title');
             $table->timestamps();
         });
     }

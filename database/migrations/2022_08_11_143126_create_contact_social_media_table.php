@@ -22,6 +22,7 @@ return new class extends Migration {
                 ->references('id')
                 ->on('contact_social_media_icons')
                 ->onDelete('cascade');
+            $table->string('icon_color')->default('#db4041')->nullable();
             $table->timestamps();
         });
     }
