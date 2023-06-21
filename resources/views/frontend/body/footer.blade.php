@@ -3,14 +3,14 @@
         <div class="container">
             <div class="column one">
                 <div class="row mr-1.5">
-                    <div class=" col-lg-2 col-sm col-xl-2 col-md-4">
-                        <a href="" class="">Terms & Conditions</a>
+                    <div class=" col-lg-2 col-sm col-xl-2 col-md-3">
+                        <a href="{{route('terms')}}" class="">Terms & Conditions</a>
                     </div>
-                    <div class=" col-lg-2 col-sm col-xl-2">
-                        <a href="" class="">Privacy Policy</a>
+                    <div class=" col-lg-2 col-sm col-xl-2 col-md-3">
+                        <a href="{{route('privacy')}}" class="">Privacy Policy</a>
                     </div>
-                    <div class=" col-lg-2 col-sm col-xl-2">
-                        <a href="" class="">Refund Policy</a>
+                    <div class=" col-lg-2 col-sm col-xl-2 col-md-3">
+                        <a href="{{route('refund')}}" class="">Refund Policy</a>
                     </div>
                 </div>
                 <a class="footer_button"

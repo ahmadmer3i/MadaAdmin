@@ -226,6 +226,9 @@ Route::middleware([ 'auth' ])->group(function () {
 
 
 Route::get('about', [ PagesController::class, 'about' ])->name('about');
+Route::get('terms', [ PagesController::class, 'terms' ])->name('terms');
+Route::get('privacy', [ PagesController::class, 'privacy_policy' ])->name('privacy');
+Route::get('refund', [ PagesController::class, 'refund' ])->name('refund');
 Route::get('services', [ PagesController::class, 'services' ])->name('services');
 Route::get('partners', [ PagesController::class, 'partners' ])->name('partners');
 Route::get('contact-us', [ PagesController::class, 'contact_us' ])->name('contact-us');

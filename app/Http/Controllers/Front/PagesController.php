@@ -224,5 +224,20 @@ class PagesController extends Controller
         return view('admin.form.form');
     }
 
+    public function terms()
+    {
+        return view('frontend.terms');
+    }
+
+    public function privacy_policy()
+    {
+        return view('frontend.privacy');
+
+    }
+
+    public function refund()
+    {
+        return view('frontend.refund');
+    }
 
 }
