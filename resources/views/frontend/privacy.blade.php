@@ -9,7 +9,7 @@
             <div class="col-md-6" style="padding:0 4%">
                 <div class="row">
                     <div class="col-12 column-margin-40px">
-                        <h1>Understanding Our Terms and Conditions: Your Guide to Rights and Responsibilities</h1>
+                        <h1>Understanding Our Privacy Policy: Your Guide to Rights and Responsibilities</h1>
                     </div>
                     <div class="col-12">
                         <hr class="no_line"
