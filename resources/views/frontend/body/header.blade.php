@@ -19,7 +19,7 @@
                                      data-height="60"
                                      data-no-retina
                                      data-retina="{{asset('frontend/content/images/logo-no-retna.png')}}"
-                                     src="{{ asset('frontend/content/images/logo-no-small.png') }}}"/>
+                                     src="{{ asset('frontend/content/images/logo-no-small.png') }}"/>
                                 <img alt=""
                                      class="logo-mobile scale-with-grid"
                                      data-height="60"
